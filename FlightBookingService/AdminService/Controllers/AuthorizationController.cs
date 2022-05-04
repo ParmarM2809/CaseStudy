@@ -17,7 +17,7 @@ namespace AdminService.Controllers
         public IActionResult LogIn(User user)
         {
             bool IsValid = true;
-                //new AuthorizationEntity().IsAdminValid(user);
+            new AuthorizationEntity().IsAdminValid(user);
             return IsValid ? Ok() : Ok();
         }
     }

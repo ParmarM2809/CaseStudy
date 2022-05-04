@@ -71,4 +71,3 @@ D:\Mital\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\Microsoft.Ope
 D:\Mital\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
 D:\Mital\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\Mital\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
-D:\Mital\FlightBookingService\AdminService\obj\Debug\netcoreapp3.1\AdminService.csproj.CopyComplete

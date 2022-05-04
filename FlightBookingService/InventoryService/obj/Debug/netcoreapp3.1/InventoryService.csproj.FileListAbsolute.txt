@@ -24,7 +24,6 @@ D:\Mital\FlightBookingService\InventoryService\bin\Debug\netcoreapp3.1\Swashbuck
 D:\Mital\FlightBookingService\InventoryService\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 D:\Mital\FlightBookingService\InventoryService\obj\Debug\netcoreapp3.1\InventoryService.MvcApplicationPartsAssemblyInfo.cs
 D:\Mital\FlightBookingService\InventoryService\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
-D:\Mital\FlightBookingService\InventoryService\obj\Debug\netcoreapp3.1\InventoryService.csproj.CopyComplete
 D:\Mital\FlightBookingService\InventoryService\bin\Debug\netcoreapp3.1\DAL.deps.json
 D:\Mital\FlightBookingService\InventoryService\bin\Debug\netcoreapp3.1\DAL.runtimeconfig.json
 D:\Mital\FlightBookingService\InventoryService\bin\Debug\netcoreapp3.1\DAL.runtimeconfig.dev.json

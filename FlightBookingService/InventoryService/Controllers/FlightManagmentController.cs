@@ -49,5 +49,13 @@ namespace InventoryService.Controllers
             return Ok();
         }
 
+        [HttpGet]
+        [Route("GetFlightByID/{FlightID}")]
+        public IActionResult GetFlightByID(long FlightID)
+        {
+            Inventory inventory = new InventoryManagmentEntity().GetFlightByID(FlightID);
+            return Ok(inventory);
+        }
+
     }
 }

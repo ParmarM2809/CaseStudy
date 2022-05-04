@@ -44,5 +44,11 @@ namespace InventoryService.Entity
             inventory.IsAvailable = false;
             _flightBookingContext.SaveChanges();
         }
+
+        public Inventory GetFlightByID(long FlightID)
+        {
+            Inventory inventory = _flightBookingContext.Inventories.Where(x => x.Id == FlightID).FirstOrDefault();
+            return inventory;
+        }
     }
 }

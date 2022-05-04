@@ -9,20 +9,11 @@ namespace AdminService.Entity
 {
     public class AuthorizationEntity
     {
-        FlightBookingContext _flightBookingContext;
+        FlightBookingContext _flightBookingContext = new FlightBookingContext();
 
-        //public AuthorizationEntity()
-        //{
-        //}
-
-        //public AuthorizationEntity(FlightBookingContext flightBookingContext)
-        //{
-        //    _flightBookingContext = flightBookingContext;
-        //}
 
         public bool IsAdminValid(User UserModel)
         {
-            FlightBookingContext _flightBookingContext = new FlightBookingContext(); 
             UserMaster userMaster = _flightBookingContext.UserMasters.Where(x => x.Email == UserModel.Email
              && x.Password == UserModel.Password).FirstOrDefault();
             if (userMaster == null)

@@ -3,6 +3,7 @@ using InventoryService.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace InventoryService.Entity
@@ -16,7 +17,7 @@ namespace InventoryService.Entity
             return _flightBookingContext.Inventories.Where(x => x.IsAvailable).ToList();
         }
 
-        public List<Inventory> GetSearchedFLightList(FlightModel flightModel)
+        public List<Inventory> GetSearchedFlightList(FlightModel flightModel)
         {
             List<Inventory> inventoryList = _flightBookingContext.Inventories.
                 Where(x => x.IsAvailable && x.StartPoint == flightModel.StartPoint &&
@@ -24,8 +25,18 @@ namespace InventoryService.Entity
             return inventoryList;
         }
 
-        public Inventory AddUpdateFlight(Inventory inventory)
+        public Inventory AddUpdateFlight(FlightModel flightModel)
         {
+            Inventory inventory = new Inventory();
+            inventory.AirlineName = flightModel.AirlineName;
+            inventory.ContactName = flightModel.ContactName;
+            inventory.ContactNumber = flightModel.ContactNumber;
+            inventory.EndPoint = flightModel.EndPoint;
+            inventory.IsAvailable = flightModel.IsAvailable;
+            inventory.Id = flightModel.Id;
+            inventory.IsDiscountAvailable= flightModel.IsDiscountAvailable;
+            inventory.Price = flightModel.Price;
+            inventory.StartPoint = flightModel.StartPoint;
             if (inventory.Id == 0)
             {
                 _flightBookingContext.Add(inventory);

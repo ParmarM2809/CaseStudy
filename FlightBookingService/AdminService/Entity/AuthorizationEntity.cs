@@ -12,18 +12,12 @@ namespace AdminService.Entity
         FlightBookingContext _flightBookingContext = new FlightBookingContext();
 
 
-        public bool IsAdminValid(User UserModel)
+        public UserMaster IsAdminValid(User UserModel)
         {
             UserMaster userMaster = _flightBookingContext.UserMasters.Where(x => x.Email == UserModel.Email
              && x.Password == UserModel.Password).FirstOrDefault();
-            if (userMaster == null)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            return userMaster;
+
         }
     }
 }

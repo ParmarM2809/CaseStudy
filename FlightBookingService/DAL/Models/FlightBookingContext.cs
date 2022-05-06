@@ -17,6 +17,7 @@ namespace DAL.Models
         {
         }
 
+        public virtual DbSet<Booking> Bookings { get; set; }
         public virtual DbSet<CoupenCode> CoupenCodes { get; set; }
         public virtual DbSet<Inventory> Inventories { get; set; }
         public virtual DbSet<RoleMastertbl> RoleMastertbls { get; set; }
@@ -27,12 +28,47 @@ namespace DAL.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=CTSDOTNET101;Database=FlightBooking;User Id=sa;password=pass@word1;");
+                optionsBuilder.UseSqlServer("Server=CTSDOTNET101;Database=FlightBooking;User Id=sa;Password=pass@word1");
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Booking>(entity =>
+            {
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.CreatedOn).HasColumnType("datetime");
+
+                entity.Property(e => e.EndDate).HasColumnType("datetime");
+
+                entity.Property(e => e.FlightId).HasColumnName("FlightID");
+
+                entity.Property(e => e.Pnrno)
+                    .IsRequired()
+                    .HasColumnName("PNRNo");
+
+                entity.Property(e => e.StartDate).HasColumnType("datetime");
+
+                entity.Property(e => e.Total).HasColumnType("decimal(18, 5)");
+
+                entity.Property(e => e.UpdatedOn).HasColumnType("datetime");
+
+                entity.Property(e => e.UserId).HasColumnName("UserID");
+
+                entity.HasOne(d => d.Flight)
+                    .WithMany(p => p.Bookings)
+                    .HasForeignKey(d => d.FlightId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Bookings_Inventory");
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.Bookings)
+                    .HasForeignKey(d => d.UserId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Bookings_UserMaster");
+            });
+
             modelBuilder.Entity<CoupenCode>(entity =>
             {
                 entity.ToTable("CoupenCode");
@@ -54,11 +90,15 @@ namespace DAL.Models
 
                 entity.Property(e => e.AirlineName).IsRequired();
 
+                entity.Property(e => e.CreatedDate).HasColumnType("datetime");
+
                 entity.Property(e => e.EndPoint).IsRequired();
 
                 entity.Property(e => e.Price).HasColumnType("decimal(18, 5)");
 
                 entity.Property(e => e.StartPoint).IsRequired();
+
+                entity.Property(e => e.UpdatedDate).HasColumnType("datetime");
             });
 
             modelBuilder.Entity<RoleMastertbl>(entity =>

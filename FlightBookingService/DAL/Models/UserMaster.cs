@@ -7,6 +7,11 @@ namespace DAL.Models
 {
     public partial class UserMaster
     {
+        public UserMaster()
+        {
+            Bookings = new HashSet<Booking>();
+        }
+
         public long UserId { get; set; }
         public long RoleId { get; set; }
         public string UserName { get; set; }
@@ -16,5 +21,6 @@ namespace DAL.Models
         public string UpdatedOn { get; set; }
 
         public virtual RoleMastertbl Role { get; set; }
+        public virtual ICollection<Booking> Bookings { get; set; }
     }
 }

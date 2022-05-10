@@ -25,7 +25,7 @@ namespace InventoryService.Controllers
                 List<Inventory> inventoryList = new InventoryManagmentEntity().GetAllFLightList();
                 resultObject = inventoryList == null ?
                     new ResultObject(APIResponseMessage.DataNotFound, StatusType.NotFound)
-                    : new ResultObject(APIResponseMessage.DataFound, StatusType.NotFound);
+                    : new ResultObject(APIResponseMessage.DataFound, StatusType.Success);
                 resultObject.ResultData = inventoryList;
             }
             catch (Exception ex)
@@ -56,7 +56,7 @@ namespace InventoryService.Controllers
                     inventoryList = new InventoryManagmentEntity().GetSearchedFlightList(flightModel);
                     resultObject = inventoryList == null ?
                                     new ResultObject(APIResponseMessage.DataNotFound, StatusType.NotFound)
-                                    : new ResultObject(APIResponseMessage.DataFound, StatusType.NotFound);
+                                    : new ResultObject(APIResponseMessage.DataFound, StatusType.Success);
                 }
             }
             catch (Exception ex)

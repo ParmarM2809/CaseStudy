@@ -77,3 +77,17 @@ D:\Mital\FlightBookingService\AdminService\obj\Debug\netcoreapp3.1\AdminService.
 D:\Mital\FlightBookingService\AdminService\obj\Debug\netcoreapp3.1\AdminService.dll
 D:\Mital\FlightBookingService\AdminService\obj\Debug\netcoreapp3.1\AdminService.pdb
 D:\Mital\FlightBookingService\AdminService\obj\Debug\netcoreapp3.1\AdminService.genruntimeconfig.cache
+D:\Mital\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\MassTransit.dll
+D:\Mital\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\MassTransit.Abstractions.dll
+D:\Mital\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\MassTransit.AspNetCoreIntegration.dll
+D:\Mital\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\MassTransit.ExtensionsDependencyInjectionIntegration.dll
+D:\Mital\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\MassTransit.RabbitMqTransport.dll
+D:\Mital\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Mital\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Diagnostics.HealthChecks.dll
+D:\Mital\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
+D:\Mital\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\Mital\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Hosting.Abstractions.dll
+D:\Mital\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\RabbitMQ.Client.dll
+D:\Mital\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\System.Text.Encodings.Web.dll
+D:\Mital\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\System.Text.Json.dll
+D:\Mital\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\System.Threading.Channels.dll

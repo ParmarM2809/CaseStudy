@@ -20,6 +20,7 @@ namespace DAL.Models
         public long? AppliedCoupenCode { get; set; }
         public bool IsCoupenApplied { get; set; }
         public bool IsCancelled { get; set; }
+        public string Meal { get; set; }
 
         public virtual Inventory Flight { get; set; }
         public virtual UserMaster User { get; set; }

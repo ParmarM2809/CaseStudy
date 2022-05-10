@@ -44,6 +44,8 @@ namespace DAL.Models
 
                 entity.Property(e => e.FlightId).HasColumnName("FlightID");
 
+                entity.Property(e => e.Meal).HasMaxLength(50);
+
                 entity.Property(e => e.Pnrno)
                     .IsRequired()
                     .HasColumnName("PNRNo");
@@ -124,7 +126,11 @@ namespace DAL.Models
 
                 entity.Property(e => e.Email).IsRequired();
 
+                entity.Property(e => e.Gender).HasMaxLength(50);
+
                 entity.Property(e => e.RoleId).HasColumnName("RoleID");
+
+                entity.Property(e => e.Token).HasMaxLength(50);
 
                 entity.HasOne(d => d.Role)
                     .WithMany(p => p.UserMasters)

@@ -1,4 +1,5 @@
-﻿using AdminService.ViewModel;
+﻿using AdminService.Interface;
+using AdminService.ViewModel;
 using DAL.Models;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AdminService.Entity
 {
-    public class AuthorizationEntity
+    public class AuthorizationEntity : IAuthorization
     {
         FlightBookingContext _flightBookingContext = new FlightBookingContext();
 

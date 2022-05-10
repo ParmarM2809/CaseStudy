@@ -19,6 +19,9 @@ namespace DAL.Models
         public string Password { get; set; }
         public string CreatedOn { get; set; }
         public string UpdatedOn { get; set; }
+        public string Gender { get; set; }
+        public int? Age { get; set; }
+        public string Token { get; set; }
 
         public virtual RoleMastertbl Role { get; set; }
         public virtual ICollection<Booking> Bookings { get; set; }

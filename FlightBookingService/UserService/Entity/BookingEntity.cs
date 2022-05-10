@@ -1,4 +1,5 @@
 ﻿using DAL.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,20 +27,22 @@ namespace UserService.Entity
             booking.Total = bookingModel.Total;
             booking.UserId = bookingModel.UserId;
             booking.UpdatedOn = DateTime.Now;
+            booking.Meal = bookingModel.Meal;
             if (bookingModel.Id == 0)
             {
                 Guid guid = Guid.NewGuid();
                 booking.Pnrno = guid.ToString();
+                _flightBookingContext.Add(booking);
             }
             else
             {
                 booking.Pnrno = bookingModel.Pnrno;
+                _flightBookingContext.Entry(booking).State = EntityState.Modified;
             }
-            _flightBookingContext.Add(booking);
             _flightBookingContext.SaveChanges();
         }
 
-        public bool UpdateAligiability(long UserID , string Pnrno)
+        public bool UpdateAligiability(long UserID, string Pnrno)
         {
             Booking booking = _flightBookingContext.Bookings.Where(x => x.UserId == UserID && x.Pnrno == Pnrno).FirstOrDefault();
             if (booking.StartDate.AddHours(24) < DateTime.Now)

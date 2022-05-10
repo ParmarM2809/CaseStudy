@@ -12,5 +12,17 @@ namespace Utility
         Admin = 1 ,
         User = 2
     }
+
+    public enum Gender
+    {
+        Male = 1,
+        Female = 2
+    }
+
+    public enum Meal
+    {
+        Veg = 1 ,
+        NonVeg = 2
+    }
         
 }

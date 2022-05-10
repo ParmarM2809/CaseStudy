@@ -1,5 +1,6 @@
 ﻿using DAL.Models;
 using InventoryService.ViewModel;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,7 +44,7 @@ namespace InventoryService.Entity
             }
             else
             {
-                _flightBookingContext.Entry(inventory).CurrentValues.SetValues(inventory);
+                _flightBookingContext.Entry(inventory).State = EntityState.Modified;
             }
             _flightBookingContext.SaveChanges();
             return inventory;

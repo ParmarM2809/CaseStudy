@@ -19,5 +19,7 @@ namespace UserService.ViewModel
         public bool IsCoupenApplied { get; set; }
         public bool IsCancelled { get; set; }
 
+        public string Meal { get; set; }
+
     }
 }

@@ -19,6 +19,8 @@ namespace UserService.Entity
             userMaster.Password = userModel.Password;
             userMaster.UserName = userModel.UserName;
             userMaster.RoleId = (int)RoleID.User;
+            userMaster.Age = userModel.Age;
+            userMaster.Gender = userModel.Gender;
             userMaster.CreatedOn = Convert.ToString(DateTime.Now);
             userMaster.UpdatedOn = Convert.ToString(DateTime.Now);
             _flightBookingContext.Add(userMaster);

@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Utility;
 
 namespace InventoryService
 {
@@ -27,6 +28,7 @@ namespace InventoryService
         {
             services.AddControllers();
             services.AddSwaggerGen();
+            services.AddConsulConfig(Configuration);
 
         }
 
@@ -37,6 +39,7 @@ namespace InventoryService
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseConsul(Configuration);
             app.UseSwagger();
             app.UseSwaggerUI();
             app.UseHttpsRedirection();

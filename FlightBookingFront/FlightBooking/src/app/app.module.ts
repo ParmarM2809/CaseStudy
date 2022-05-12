@@ -13,6 +13,9 @@ import { AuthService } from './services/auth.service';
 import { EventService } from './services/event.service';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { SpecialEventsComponent } from './special-events/special-events.component';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -20,13 +23,17 @@ import { SpecialEventsComponent } from './special-events/special-events.componen
     EventsComponent,
     LoginComponent,
     RegisterComponent,
-    SpecialEventsComponent
+    SpecialEventsComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot()// ToastrModule added
   ],
   providers: [EventService,AuthService,AuthGaurd,{
     provide:HTTP_INTERCEPTORS,

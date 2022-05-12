@@ -1,6 +1,6 @@
+using MassTransit;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -27,6 +27,18 @@ namespace UserService
         {
             services.AddControllers();
             services.AddSwaggerGen();
+            services.AddMassTransit(x =>
+            {
+                x.UsingRabbitMq((context, cfg) =>
+                {
+                    var uri = new Uri(Configuration["ServiceBus:Uri"]);
+                    cfg.Host(uri, host =>
+                    {
+                        host.Username(Configuration["ServiceBus:Username"]);
+                        host.Password(Configuration["ServiceBus:Password"]);
+                    });
+                });
+            });
 
         }
 

@@ -2,7 +2,6 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EventsComponent } from './events/events.component';
@@ -16,6 +15,9 @@ import { SpecialEventsComponent } from './special-events/special-events.componen
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { UserlistComponent } from './userlist/userlist.component';
+import { FlightlistComponent } from './flightlist/flightlist.component';
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { ToastrModule } from 'ngx-toastr';
     LoginComponent,
     RegisterComponent,
     SpecialEventsComponent,
-
+    UserlistComponent ,
+    FlightlistComponent  
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,7 @@ import { ToastrModule } from 'ngx-toastr';
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot()// ToastrModule added
   ],
-  providers: [EventService,AuthService,AuthGaurd,{
+  providers: [EventService,AuthService,AuthGaurd,UserService,{
     provide:HTTP_INTERCEPTORS,
     useClass:TokenInterceptorService,
     multi:true

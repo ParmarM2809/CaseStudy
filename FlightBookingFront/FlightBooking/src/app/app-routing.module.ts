@@ -1,26 +1,28 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { EventsComponent } from './events/events.component';
+import { FlightlistComponent } from './flightlist/flightlist.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AuthGaurd } from './services/auth.gaurd';
 import { SpecialEventsComponent } from './special-events/special-events.component';
+import { UserlistComponent } from './userlist/userlist.component';
 
 const routes: Routes = [
 
   {
     path: '',
-    redirectTo: '/events',
+    redirectTo: '/flightlist',
     pathMatch: 'full'
   },
   {
-    path: 'events',
-    component: EventsComponent
+    path: 'flightlist',
+    component: FlightlistComponent
   },
   {
-    path: 'special',
-    canActivate:[AuthGaurd],
-    component: SpecialEventsComponent
+    path: 'userlist',
+    // canActivate:[AuthGaurd],
+    component: UserlistComponent
   },
   {
     path: 'login',

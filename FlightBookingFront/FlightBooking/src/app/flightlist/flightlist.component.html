@@ -1,10 +1,15 @@
 <div class="row mt-5">
-    <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
+    <div *ngFor="let flight of AvailablrFLights" class="card" style="width: 18rem;">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <h5 class="card-title">{{flight.airlineName}}</h5>
+          <p class="card-text">From : {{flight.startPoint}} </p>
+          <br/>
+          <p class="card-text">To : {{flight.endPoint}} </p>
+          <br/>
+          <b>Price : {{flight.price}}</b> <br/>
+          <hr>
+          <button (click)="BookTickets(flight)" class="btn btn-primary">Book Tickets</button>
         </div>
       </div>
+     <div></div> 
 </div>

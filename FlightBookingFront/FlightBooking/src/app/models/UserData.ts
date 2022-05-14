@@ -1,4 +1,4 @@
-export class UserData{
+export class UserData {
     email:string='';
     password:string='';
 }

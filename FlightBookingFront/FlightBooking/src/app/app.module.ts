@@ -18,6 +18,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { UserlistComponent } from './userlist/userlist.component';
 import { FlightlistComponent } from './flightlist/flightlist.component';
 import { UserService } from './services/user.service';
+import { FlightService } from './services/flight.service';
+import { BookflightComponent } from './bookflight/bookflight.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { UserService } from './services/user.service';
     RegisterComponent,
     SpecialEventsComponent,
     UserlistComponent ,
-    FlightlistComponent  
+    FlightlistComponent,
+    BookflightComponent  
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,7 @@ import { UserService } from './services/user.service';
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot()// ToastrModule added
   ],
-  providers: [EventService,AuthService,AuthGaurd,UserService,{
+  providers: [EventService,AuthService,AuthGaurd,UserService,FlightService,{
     provide:HTTP_INTERCEPTORS,
     useClass:TokenInterceptorService,
     multi:true

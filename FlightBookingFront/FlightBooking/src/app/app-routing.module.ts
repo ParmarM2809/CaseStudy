@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BookflightComponent } from './bookflight/bookflight.component';
 import { EventsComponent } from './events/events.component';
 import { FlightlistComponent } from './flightlist/flightlist.component';
 import { LoginComponent } from './login/login.component';
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path:'bookflight/:id',
+    component:BookflightComponent
   }
 
 ];

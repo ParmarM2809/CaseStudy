@@ -11,6 +11,7 @@ export class RegisterComponent  {
 
   registerUserData: RegistrationData = new RegistrationData();
   constructor(private _auth: AuthService, private _router: Router) { }
+  
   registerUser() {
     console.log(this.registerUserData);
     this._auth.registerUser(this.registerUserData).subscribe(res => {

@@ -14,7 +14,8 @@ export class LoginComponent {
   loginUser() {
     this._auth.loginUser(this.loginUserData).subscribe(res => {
       localStorage.setItem('token', res.token)
-      this._router.navigate(['/userlist'])
+      localStorage.setItem('userId', res.UserId)
+      this._router.navigate(['/flightlist'])
     },
       err => console.log(err));
   }

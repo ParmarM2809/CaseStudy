@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http'
 import { Router } from '@angular/router'
 import { Injectable } from '@angular/core';
 import { UserData } from '../models/UserData';
-import { RegistrationData } from '../models/RegistrationData';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class UserService {
@@ -13,18 +13,9 @@ export class UserService {
 
     }
 
-    UserList(){
+    UserList() : Observable<UserData[]> {
         debugger
-        return this.http.get(this._UserListUrl);
+        return this.http.get<UserData[]>(this._UserListUrl) 
     }
 
-    // registerUser(user: RegistrationData) {
-    //     console.log(user);
-    //     return this.http.post<any>(this._registerUrl, user)
-    // }
-
-    // logoutUser() {
-    //     localStorage.removeItem('token')
-    //     this._router.navigate(['/events'])
-    // }
 }

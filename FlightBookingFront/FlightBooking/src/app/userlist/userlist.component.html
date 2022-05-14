@@ -1,1 +1,11 @@
-<p>userlist works!</p>
+<div>
+<title>Available User</title>
+<table border="solid black 1px">
+    <tr>
+       <td>Email</td>
+    </tr>
+    <tr *ngFor="let user of UserDatas">
+        <td>{{user.email}}</td>
+    </tr>
+</table>
+</div>

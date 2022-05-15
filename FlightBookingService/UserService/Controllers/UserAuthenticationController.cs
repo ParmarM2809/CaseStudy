@@ -1,4 +1,5 @@
 ﻿using DAL.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -11,12 +12,13 @@ using Utility;
 
 namespace UserService.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/UserAuth")]
     [ApiController]
     public class UserAuthenticationController : ControllerBase
     {
+        [AllowAnonymous]
         [HttpPost]
-        [Route("Registration")]
+        [Route("RegisterUser")]
         public ResultObject RegisterUser(UserModel userModel)
         {
             ResultObject resultObject = new ResultObject();

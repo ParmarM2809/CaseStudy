@@ -15,42 +15,44 @@ namespace AdminService.Controllers
 {
     [Route("api/Auth")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class AuthorizationController : ControllerBase
     {
-        private readonly IJWTManagerRepository iJWTManager;
+        //private readonly IJWTManagerRepository iJWTManager;
 
-        private readonly IAuthorization iauthorization;
+        //private readonly IAuthorization iauthorization;
 
-        public AuthorizationController(IJWTManagerRepository jWTManager)
-        {
-            iJWTManager = jWTManager;
-        }
+        //public AuthorizationController(IJWTManagerRepository jWTManager)
+        //{
+        //    iJWTManager = jWTManager;
+        //}
 
-        public AuthorizationController(IAuthorization authorization)
-        {
-            iauthorization = authorization;
-        }
+        //public AuthorizationController(JWTManagerRepository jWTManager)
+        //{
+        //    iJWTManager = jWTManager;
+        //}
 
         [AllowAnonymous]
         [HttpPost]
         [Route("LogIn")]
-        public ResultObject LogIn(User user)
+        public IActionResult LogIn(User user)
         {
             ResultObject resultObject = new ResultObject();
             try
             {
-                var token = iJWTManager.Authenticate(user);
-                if (token == null)
-                {
-                    return resultObject;
-                }
-                UserMaster userMaster = iauthorization.IsAdminValid(user);
-                userMaster.Token = Convert.ToString(token.Token);
+                //var token = iJWTManager.Authenticate(user);
+                //if (token == null)
+                //{
+                //    return resultObject;
+                //}
+                AuthorizationEntity authorizationEntity = new AuthorizationEntity();
+                UserMaster userMaster = authorizationEntity.IsAdminValid(user);
+                //userMaster.Token = Convert.ToString(token.Token);
                 resultObject = userMaster == null ?
                         new ResultObject(APIResponseMessage.LogInDetailNotValid, StatusType.NotFound)
                         : new ResultObject(APIResponseMessage.LogInSucess, StatusType.Success);
                 resultObject.ResultData = userMaster;
+                return Ok(userMaster);
             }
             catch (Exception ex)
             {
@@ -58,8 +60,8 @@ namespace AdminService.Controllers
                 resultObject.ExceptionMessage = ex.Message;
                 resultObject.ExceptionStackTrace = ex.StackTrace;
                 resultObject.ResultException = ex.InnerException;
+                return NotFound();
             }
-            return resultObject;
         }
 
         //[AllowAnonymous]

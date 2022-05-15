@@ -10,6 +10,7 @@ namespace InventoryService.ViewModel
     {
         public long Id { get; set; }
 
+        public DateTime ScheduledDate { get; set; }
         [Required]
         public string StartPoint { get; set; }
         [Required]

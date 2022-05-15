@@ -18,11 +18,11 @@ namespace InventoryService.Entity
             return _flightBookingContext.Inventories.Where(x => x.IsAvailable).ToList();
         }
 
-        public List<Inventory> GetSearchedFlightList(FlightModel flightModel)
+        public List<Inventory> GetSearchedFlightList(string SearchText)
         {
             List<Inventory> inventoryList = _flightBookingContext.Inventories.
-                Where(x => x.IsAvailable && x.StartPoint == flightModel.StartPoint &&
-                x.EndPoint == flightModel.EndPoint).ToList();
+                Where(x => x.IsAvailable && x.StartPoint.Contains(SearchText) ||
+                x.EndPoint.Contains(SearchText)).ToList();
             return inventoryList;
         }
 
@@ -38,8 +38,11 @@ namespace InventoryService.Entity
             inventory.IsDiscountAvailable= flightModel.IsDiscountAvailable;
             inventory.Price = flightModel.Price;
             inventory.StartPoint = flightModel.StartPoint;
+            inventory.UpdatedDate = DateTime.Now;
+            inventory.ScheduledDate = flightModel.ScheduledDate;
             if (inventory.Id == 0)
             {
+                inventory.CreatedDate = DateTime.Now;
                 _flightBookingContext.Add(inventory);
             }
             else

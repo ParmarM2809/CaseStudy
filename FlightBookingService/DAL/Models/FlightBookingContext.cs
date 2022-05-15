@@ -40,8 +40,6 @@ namespace DAL.Models
 
                 entity.Property(e => e.CreatedOn).HasColumnType("datetime");
 
-                entity.Property(e => e.EndDate).HasColumnType("datetime");
-
                 entity.Property(e => e.FlightId).HasColumnName("FlightID");
 
                 entity.Property(e => e.Meal).HasMaxLength(50);
@@ -49,8 +47,6 @@ namespace DAL.Models
                 entity.Property(e => e.Pnrno)
                     .IsRequired()
                     .HasColumnName("PNRNo");
-
-                entity.Property(e => e.StartDate).HasColumnType("datetime");
 
                 entity.Property(e => e.Total).HasColumnType("decimal(18, 5)");
 
@@ -97,6 +93,8 @@ namespace DAL.Models
                 entity.Property(e => e.EndPoint).IsRequired();
 
                 entity.Property(e => e.Price).HasColumnType("decimal(18, 5)");
+
+                entity.Property(e => e.ScheduledDate).HasColumnType("datetime");
 
                 entity.Property(e => e.StartPoint).IsRequired();
 

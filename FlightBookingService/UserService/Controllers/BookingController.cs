@@ -11,32 +11,32 @@ using Utility;
 
 namespace UserService.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/Booking")]
     [ApiController]
     public class BookingController : ControllerBase
     {
 
         [HttpPost]
         [Route("AddUpdateFlightBooking")]
-        public ResultObject AddUpdateFlightBooking(BookingModel booking)
+        public async Task<IActionResult> AddUpdateFlightBooking(BookingModel booking)
         {
             ResultObject resultObject = new ResultObject();
             try
             {
-                if (!ModelState.IsValid)
-                {
-                    resultObject = new ResultObject(APIResponseMessage.DataNotValid, StatusType.NotFound);
-                    return resultObject;
-                }
+                //if (!ModelState.IsValid)
+                //{
+                //    resultObject = new ResultObject(APIResponseMessage.DataNotValid, StatusType.NotFound);
+                //    return resultObject;
+                //}
                 BookingEntity bookingEntity = new BookingEntity();
                 if (booking.Id > 0 && bookingEntity.UpdateAligiability(booking.UserId, booking.Pnrno) == false)
                 {
                     resultObject = new ResultObject(APIResponseMessage.UpdateTimePassed, StatusType.Success);
-                    return resultObject;
+                    return NotFound();
                 }
                 bookingEntity.AddUpdateBooking(booking);
                 resultObject = new ResultObject(APIResponseMessage.DataSaved, StatusType.Success);
-
+                return Ok();
             }
             catch (Exception ex)
             {
@@ -44,8 +44,8 @@ namespace UserService.Controllers
                 resultObject.ExceptionMessage = ex.Message;
                 resultObject.ExceptionStackTrace = ex.StackTrace;
                 resultObject.ResultException = ex.InnerException;
+                return NotFound();
             }
-            return resultObject;
         }
 
 
@@ -80,16 +80,17 @@ namespace UserService.Controllers
 
         [HttpGet]
         [Route("GetActiveBookingList/{UserID}")]
-        public ResultObject GetActiveBookingList(long UserID)
+        public IActionResult GetActiveBookingList(long UserID)
         {
             ResultObject resultObject = new ResultObject();
             try
             {
-                List<Booking> bookings = new BookingEntity().GetActiveBookingList(UserID);
+                List<BookingModel> bookings = new BookingEntity().GetActiveBookingList(UserID);
                 resultObject = bookings == null ?
                     new ResultObject(APIResponseMessage.DataNotFound, StatusType.NotFound)
                     : new ResultObject(APIResponseMessage.DataFound, StatusType.NotFound);
                 resultObject.ResultData = bookings;
+                return Ok(bookings);
             }
             catch (Exception ex)
             {
@@ -97,10 +98,38 @@ namespace UserService.Controllers
                 resultObject.ExceptionMessage = ex.Message;
                 resultObject.ExceptionStackTrace = ex.StackTrace;
                 resultObject.ResultException = ex.InnerException;
+                return NotFound();
             }
-            return resultObject;
         }
 
+        [HttpGet]
+        [Route("GetBookingById/{BookingId}")]
+        public IActionResult GetBookingById(long BookingId)
+        {
+            ResultObject resultObject = new ResultObject();
+            try
+            {
+                if (BookingId == 0 )
+                {
+                    resultObject = new ResultObject(APIResponseMessage.DataNotValid, StatusType.Error);
+                    return NotFound();
+                }
+                Booking booking = new BookingEntity().GetBookingByID(BookingId);
+                resultObject = booking == null ?
+                    new ResultObject(APIResponseMessage.DataNotFound, StatusType.Error) :
+                    new ResultObject(APIResponseMessage.DataFound, StatusType.Success);
+                resultObject.ResultData = booking;
+                return Ok(booking);
+            }
+            catch (Exception ex)
+            {
+                resultObject = new ResultObject(APIResponseMessage.SomethingWrong, StatusType.Error);
+                resultObject.ExceptionMessage = ex.Message;
+                resultObject.ExceptionStackTrace = ex.StackTrace;
+                resultObject.ResultException = ex.InnerException;
+                return NotFound();
+            }
+        }
 
 
     }

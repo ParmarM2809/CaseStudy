@@ -12,9 +12,7 @@ namespace DAL.Models
         public long FlightId { get; set; }
         public long UserId { get; set; }
         public long BookedSeats { get; set; }
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
-        public DateTime? CreatedOn { get; set; }
+        public DateTime CreatedOn { get; set; }
         public DateTime UpdatedOn { get; set; }
         public decimal Total { get; set; }
         public long? AppliedCoupenCode { get; set; }

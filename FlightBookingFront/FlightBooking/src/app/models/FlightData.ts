@@ -9,5 +9,5 @@ export class FlightData {
         airlineName: string = '';
         contactName : string= '';
         contactNumber:string = '';
-    
+        scheduledDate : Date = new Date;
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { RegistrationData} from '../models/RegistrationData';
+import { UserData} from '../models/UserData';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -9,14 +9,14 @@ import { AuthService } from '../services/auth.service';
 })
 export class RegisterComponent  {
 
-  registerUserData: RegistrationData = new RegistrationData();
+  registerUserData: UserData = new UserData();
   constructor(private _auth: AuthService, private _router: Router) { }
   
   registerUser() {
     console.log(this.registerUserData);
     this._auth.registerUser(this.registerUserData).subscribe(res => {
       // localStorage.setItem('token', res.token)
-      this._router.navigate(['/userlist'])
+      this._router.navigate(['/login'])
     },
       err => console.log(err));
   }

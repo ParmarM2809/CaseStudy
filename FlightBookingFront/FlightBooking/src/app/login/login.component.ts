@@ -12,9 +12,10 @@ export class LoginComponent {
   loginUserData: UserData = new UserData();
   constructor(private _auth: AuthService, private _router: Router) { }
   loginUser() {
+    
     this._auth.loginUser(this.loginUserData).subscribe(res => {
       localStorage.setItem('token', res.token)
-      localStorage.setItem('userId', res.UserId)
+      localStorage.setItem('userId', res.userId)
       this._router.navigate(['/flightlist'])
     },
       err => console.log(err));

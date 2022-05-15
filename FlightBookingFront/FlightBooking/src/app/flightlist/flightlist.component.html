@@ -1,4 +1,13 @@
 <div class="row mt-5">
+
+  <div class="mb-3 row">
+    <label for="table-complete-search" class="col-xs-3 col-sm-auto col-form-label">Search Flight:</label>
+    <div class="col-xs-3 col-sm-auto">
+      <input id="table-complete-search" type="text" class="form-control" name="searchTerm"
+      [(ngModel)]="SearchText" (ngModelChange)="SearchmodelChangeFn($event)">
+    </div>
+  </div>
+
     <div *ngFor="let flight of AvailablrFLights" class="card" style="width: 18rem;">
         <div class="card-body">
           <h5 class="card-title">{{flight.airlineName}}</h5>
@@ -7,6 +16,7 @@
           <p class="card-text">To : {{flight.endPoint}} </p>
           <br/>
           <b>Price : {{flight.price}}</b> <br/>
+          <p class="card-text">Scheduled Date : {{flight.scheduledDate | date: 'dd/MM/yyyy'}} </p>
           <hr>
           <button (click)="BookTickets(flight)" class="btn btn-primary">Book Tickets</button>
         </div>

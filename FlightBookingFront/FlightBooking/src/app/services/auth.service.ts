@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http'
 import { Router } from '@angular/router'
 import { Injectable } from '@angular/core';
 import { UserData } from '../models/UserData';
-import { RegistrationData } from '../models/RegistrationData';
 
 @Injectable()
 export class AuthService {
@@ -17,13 +16,14 @@ export class AuthService {
         return this.http.post<any>(this._loginUrl, user)
     }
 
-    registerUser(user: RegistrationData) {
+    registerUser(user: UserData) {
         console.log(user);
         return this.http.post<any>(this._registerUrl, user)
     }
 
     logoutUser() {
         localStorage.removeItem('token')
+        localStorage.removeItem('userId')
         this._router.navigate(['/login'])
     }
 
@@ -32,7 +32,8 @@ export class AuthService {
     }
 
     getUserId() {
-        return localStorage.getItem('userId')
+        debugger
+        return Number(localStorage.getItem('userId'))
     }
 
     loggedIn() {

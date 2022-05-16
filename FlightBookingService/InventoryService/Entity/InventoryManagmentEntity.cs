@@ -18,6 +18,16 @@ namespace InventoryService.Entity
             return _flightBookingContext.Inventories.Where(x => x.IsAvailable).ToList();
         }
 
+        public List<Airline> AvailableAirLine()
+        {
+            return _flightBookingContext.Airlines.ToList();
+        }
+
+        public List<ServiceCity> AvailableCity()
+        {
+            return _flightBookingContext.ServiceCities.ToList();
+        }
+
         public List<Inventory> GetSearchedFlightList(string SearchText)
         {
             List<Inventory> inventoryList = _flightBookingContext.Inventories.
@@ -25,6 +35,7 @@ namespace InventoryService.Entity
                 x.EndPoint.Contains(SearchText)).ToList();
             return inventoryList;
         }
+
 
         public Inventory AddUpdateFlight(FlightModel flightModel)
         {

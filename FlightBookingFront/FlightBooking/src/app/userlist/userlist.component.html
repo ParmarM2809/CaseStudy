@@ -1,11 +1,15 @@
 <div>
 <title>Available User</title>
-<table border="solid black 1px">
-    <tr>
-       <td>Email</td>
-    </tr>
-    <tr *ngFor="let user of UserDatas">
-        <td>{{user.email}}</td>
-    </tr>
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of UserDatas">
+            <th> {{user.email}}</th>
+        </tr>
+    </tbody>
 </table>
-</div>

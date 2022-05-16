@@ -17,10 +17,12 @@ namespace DAL.Models
         {
         }
 
+        public virtual DbSet<Airline> Airlines { get; set; }
         public virtual DbSet<Booking> Bookings { get; set; }
         public virtual DbSet<CoupenCode> CoupenCodes { get; set; }
         public virtual DbSet<Inventory> Inventories { get; set; }
         public virtual DbSet<RoleMastertbl> RoleMastertbls { get; set; }
+        public virtual DbSet<ServiceCity> ServiceCities { get; set; }
         public virtual DbSet<UserMaster> UserMasters { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -34,6 +36,11 @@ namespace DAL.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Airline>(entity =>
+            {
+                entity.Property(e => e.AirlineName).IsRequired();
+            });
+
             modelBuilder.Entity<Booking>(entity =>
             {
                 entity.Property(e => e.Id).HasColumnName("ID");
@@ -112,6 +119,13 @@ namespace DAL.Models
                 entity.Property(e => e.RoleName)
                     .IsRequired()
                     .HasMaxLength(50);
+            });
+
+            modelBuilder.Entity<ServiceCity>(entity =>
+            {
+                entity.ToTable("ServiceCity");
+
+                entity.Property(e => e.CityName).IsRequired();
             });
 
             modelBuilder.Entity<UserMaster>(entity =>

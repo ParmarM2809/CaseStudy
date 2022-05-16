@@ -2,12 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BookflightComponent } from './bookflight/bookflight.component';
 import { BookinglistComponent } from './bookinglist/bookinglist.component';
-import { EventsComponent } from './events/events.component';
 import { FlightlistComponent } from './flightlist/flightlist.component';
 import { LoginComponent } from './login/login.component';
+import { ModfiyflightComponent } from './modfiyflight/modfiyflight.component';
 import { RegisterComponent } from './register/register.component';
-import { AuthGaurd } from './services/auth.gaurd';
-import { SpecialEventsComponent } from './special-events/special-events.component';
 import { UserlistComponent } from './userlist/userlist.component';
 
 const routes: Routes = [
@@ -46,7 +44,14 @@ const routes: Routes = [
     path: 'bookinglist',
     component: BookinglistComponent
   },
-
+  {
+    path: 'modfiyflight',
+    component: ModfiyflightComponent
+  },
+  {
+    path: 'modfiyflight/:flightId',
+    component: ModfiyflightComponent
+  }
 ];
 
 @NgModule({

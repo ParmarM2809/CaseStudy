@@ -3,8 +3,8 @@
 export class UserData {
     email: string = '';
     password: string = '';
-    gender: string = 'Female';
-    age: number = 20;
+    gender: string = 'Male';
+    age: number = 0;
     userId : number = 0;
     roleId : number = 0;
 }

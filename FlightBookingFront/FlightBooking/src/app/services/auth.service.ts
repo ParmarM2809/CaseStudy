@@ -17,13 +17,13 @@ export class AuthService {
     }
 
     registerUser(user: UserData) {
-        console.log(user);
         return this.http.post<any>(this._registerUrl, user)
     }
 
     logoutUser() {
         localStorage.removeItem('token')
         localStorage.removeItem('userId')
+        localStorage.removeItem('roleId')
         this._router.navigate(['/login'])
     }
 
@@ -32,8 +32,11 @@ export class AuthService {
     }
 
     getUserId() {
-        debugger
         return Number(localStorage.getItem('userId'))
+    }
+
+    getRoleId() {
+        return Number(localStorage.getItem('roleId'))
     }
 
     loggedIn() {

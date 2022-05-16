@@ -74,7 +74,7 @@ namespace InventoryService.Controllers
 
         [HttpPost]
         [Route("AddUpdateFlight")]
-        public ResultObject AddUpdateFlight(FlightModel flightModel)
+        public IActionResult AddUpdateFlight(FlightModel flightModel)
         {
             ResultObject resultObject = new ResultObject();
             try
@@ -82,10 +82,11 @@ namespace InventoryService.Controllers
                 if (!ModelState.IsValid)
                 {
                     resultObject = new ResultObject(APIResponseMessage.DataNotValid, StatusType.NotFound);
-                    return resultObject;
+                    return NotFound();
                 }
                 new InventoryManagmentEntity().AddUpdateFlight(flightModel);
                 resultObject = new ResultObject(APIResponseMessage.DataSaved, StatusType.Success);
+                return Ok();
 
             }
             catch (Exception ex)
@@ -94,8 +95,8 @@ namespace InventoryService.Controllers
                 resultObject.ExceptionMessage = ex.Message;
                 resultObject.ExceptionStackTrace = ex.StackTrace;
                 resultObject.ResultException = ex.InnerException;
+                return NotFound();
             }
-            return resultObject;
         }
 
         [HttpPost]
@@ -142,6 +143,51 @@ namespace InventoryService.Controllers
                     new ResultObject(APIResponseMessage.DataNotFound, StatusType.Error) :
                     new ResultObject(APIResponseMessage.DataFound, StatusType.Success);
                 return Ok(inventory);
+            }
+            catch (Exception ex)
+            {
+                resultObject = new ResultObject(APIResponseMessage.SomethingWrong, StatusType.Error);
+                resultObject.ExceptionMessage = ex.Message;
+                resultObject.ExceptionStackTrace = ex.StackTrace;
+                resultObject.ResultException = ex.InnerException;
+                return NotFound();
+            }
+        }
+
+
+        [HttpGet]
+        [Route("AvailableAirline")]
+        public IActionResult AvailableAirline()
+        {
+            ResultObject resultObject = new ResultObject();
+            try
+            {
+                List<Airline> airlines = new InventoryManagmentEntity().AvailableAirLine();
+                resultObject = new ResultObject(APIResponseMessage.DataFound, StatusType.Success);
+                return Ok(airlines);
+
+            }
+            catch (Exception ex)
+            {
+                resultObject = new ResultObject(APIResponseMessage.SomethingWrong, StatusType.Error);
+                resultObject.ExceptionMessage = ex.Message;
+                resultObject.ExceptionStackTrace = ex.StackTrace;
+                resultObject.ResultException = ex.InnerException;
+                return NotFound();
+            }
+        }
+
+        [HttpGet]
+        [Route("ServiceCity")]
+        public IActionResult ServiceCity()
+        {
+            ResultObject resultObject = new ResultObject();
+            try
+            {
+                List<ServiceCity> serviceCities = new InventoryManagmentEntity().AvailableCity();
+                resultObject = new ResultObject(APIResponseMessage.DataFound, StatusType.Success);
+                return Ok(serviceCities);
+
             }
             catch (Exception ex)
             {

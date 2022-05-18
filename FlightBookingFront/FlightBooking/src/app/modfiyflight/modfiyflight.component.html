@@ -9,9 +9,8 @@
                     <div class="form">
                         <div class="form-group">
                             <label for="exampleInputairlineName">Airline Name</label>
-                            <select class="form-control" id="type" data-live-search="true">
-                                <option *ngFor="let airline of AirlineList" [(ngModel)]="FlightDetailModel.airlineName"
-                                 [value]="airline.airlineName">{{airline.airlineName}}
+                            <select class="form-control" name="airlineName" [(ngModel)]="FlightDetailModel.airlineName">
+                                <option *ngFor="let airline of AirlineList" [ngValue]="airline.airlineName">{{airline.airlineName}}
                                 </option>
                             </select>
                         </div>
@@ -32,27 +31,16 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputairlineName">Start Point</label>
-                            <select class="form-control" id="type" data-live-search="true">
-                                <option *ngFor="let city of AvailableCityList" [(ngModel)]="FlightDetailModel.startPoint"
-                                 [value]="city.cityName">{{city.cityName}}
+                            <select class="form-control" id="type" data-live-search="true" [(ngModel)]="FlightDetailModel.startPoint">
+                                <option *ngFor="let city of AvailableCityList" [ngValue]="city.cityName">{{city.cityName}}
                                 </option>
                             </select>
                         </div>
-                        <!-- <div class="form-group">
-                            <label for="exampleInputstartPoint">Start Point</label>
-                            <input type="text" class="form-control" [(ngModel)]="FlightDetailModel.startPoint"
-                                id="exampleInputstartPoint" placeholder="Start Point">
-                        </div> -->
-                        <!-- <div class="form-group">
-                            <label for="exampleInputendPoint">End Point</label>
-                            <input type="text" class="form-control" [(ngModel)]="FlightDetailModel.endPoint"
-                                id="exampleInputendPoint" placeholder="End Point">
-                        </div> -->
                         <div class="form-group">
                             <label for="exampleInputairlineName">End Point</label>
-                            <select class="form-control" id="type" data-live-search="true">
-                                <option *ngFor="let city of AvailableCityList" [(ngModel)]="FlightDetailModel.endPoint"
-                                 [value]="city.cityName">{{city.cityName}}
+                            <select class="form-control" data-live-search="true" [(ngModel)]="FlightDetailModel.endPoint">
+                                <option *ngFor="let city of AvailableCityList" [ngValue]="city.cityName">
+                                    {{city.cityName}}
                                 </option>
                             </select>
                         </div>
@@ -66,6 +54,11 @@
                             <label for="exampleInputcontactNumber">Contact Number</label>
                             <input type="text" class="form-control" [(ngModel)]="FlightDetailModel.contactNumber"
                                 id="exampleInputcontactNumber" placeholder="Contact Person Number">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-check-label">
+                               <input type="checkbox" [(ngModel)]="FlightDetailModel.isAvailable"> Is Flight Available
+                            </label>
                         </div>
                         <br />
                         <hr />

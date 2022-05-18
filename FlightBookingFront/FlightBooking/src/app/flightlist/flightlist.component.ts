@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FlightData } from '../models/FlightData';
+import { FlightData, SearchedFlight } from '../models/FlightData';
 import { FlightService } from '../services/flight.service';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from '../services/auth.service';
@@ -15,7 +15,7 @@ export class FlightlistComponent implements OnInit {
   AvailablrFLights: Array<FlightData> = new Array<FlightData>();
   FlightModel: FlightData = new FlightData();
   SearchText: string = '';
-
+  searchedFlight : SearchedFlight = new SearchedFlight();
   constructor(private _flightService: FlightService, private _router: Router,
     private toastr: ToastrService , private _auth : AuthService) { }
 
@@ -23,6 +23,9 @@ export class FlightlistComponent implements OnInit {
     this._flightService.AvailableFlight().subscribe(res => this.AvailablrFLights = res, err => console.log(err))
     this.toastr.success('', 'Your available flight list..!');
   }
+
+  SearchFlightReq(input : SearchedFlight)
+  {}
 
   SearchmodelChangeFn(value: string): void {
     this._flightService.SearchedFlight(value).subscribe(res => this.FliteredResult(res),

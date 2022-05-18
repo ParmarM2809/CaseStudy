@@ -1,34 +1,52 @@
-<div class="row mt-5">
+<br />
+<br />
+<div class="mb-3 row">
 
-  <div class="mb-3 row">
-
-    <div class="col-xs-3 col-sm-auto">
-      <button *ngIf="RoleCheck() === 1" class="btn btn-primary" (click)="CreatNewFlight()" >
-       Add New Flight</button>
-    </div>
-    <br/>
-
-    <label for="table-complete-search" class="col-xs-3 col-sm-auto col-form-label">Search Flight:</label>
-    <div class="col-xs-3 col-sm-auto">
-      <input id="table-complete-search" type="text" class="form-control" name="searchTerm" [(ngModel)]="SearchText"
-        (ngModelChange)="SearchmodelChangeFn($event)">
-    </div>
+  <div class="col-xs-3 col-sm-auto">
+    <button *ngIf="RoleCheck() === 1" class="btn btn-primary" (click)="CreatNewFlight()">
+      Add New Flight</button>
   </div>
-
-  <div *ngFor="let flight of AvailablrFLights" class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title">{{flight.airlineName}}</h5>
-      <p class="card-text">From : {{flight.startPoint}} </p>
-      <br />
-      <p class="card-text">To : {{flight.endPoint}} </p>
-      <br />
-      <b>Price : {{flight.price}}</b> <br />
-      <p class="card-text">Scheduled Date : {{flight.scheduledDate | date: 'dd/MM/yyyy'}} </p>
-      <hr>
-      <button (click)="BookTickets(flight)" *ngIf="RoleCheck() === 2" class="btn btn-primary">Book Tickets</button>
-      <button (click)="ModifyFlight(flight)" *ngIf="RoleCheck() === 1" class="btn btn-primary">Modify Flight</button>
-
-    </div>
-  </div>
-  <div></div>
 </div>
+
+<!-- <label for="table-complete-search" class="col-xs-3 col-sm-auto col-form-label">Search Flight:</label>
+<div class="mb-3 row">
+  <div class="col-xs-3 col-sm-auto">
+    <label>Source</label>
+    <input id="table-complete-search" type="text" class="form-control"
+     name="startPoint" [(ngModel)]="searchedFlight.startPoint">
+  </div>
+  <div class="col-xs-3 col-sm-auto">
+    <label>Destination</label>
+    <input id="table-complete-search" type="text" class="form-control"
+     name="endPoint" [(ngModel)]="searchedFlight.endPoint">
+  </div>
+  <div class="col-xs-3 col-sm-auto">
+    <label>Journey Date</label>
+    <input id="table-complete-search" type="date" class="form-control" 
+    name="scheduledDate" [(ngModel)]="searchedFlight.scheduledDate">
+  </div>
+  <div class="col-sm-auto">
+    <button type="button" class="btn btn-info" (click)="SearchFlightReq(searchedFlight)">Info</button>
+  </div>
+</div>
+<br /> -->
+<div class="row">
+
+  <div class="col-sm-3 mb-3" style="max-width: 18rem;" *ngFor="let flight of AvailablrFLights">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{flight.airlineName}}</h5>
+        <p class="card-text">From : {{flight.startPoint}} </p>
+        <p class="card-text">To : {{flight.endPoint}} </p>
+        <p>Price : {{flight.price}}</p>
+        <p class="card-text">Scheduled Date : {{flight.scheduledDate | date: 'dd/MM/yyyy'}} </p>
+        <hr>
+        <button (click)="BookTickets(flight)" *ngIf="RoleCheck() === 2" class="btn btn-primary">Book Tickets</button>
+        <button (click)="ModifyFlight(flight)" *ngIf="RoleCheck() === 1" class="btn btn-primary">Modify Flight</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

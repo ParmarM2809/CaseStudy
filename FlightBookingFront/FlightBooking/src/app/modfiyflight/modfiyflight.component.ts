@@ -18,15 +18,26 @@ export class ModfiyflightComponent implements OnInit {
   AirlineList: Array<Airlines> = new Array<Airlines>();
   AvailableCityList: Array<Availablecity> = new Array<Availablecity>();
 
+  FlightId: number = 0;
+
   constructor(private _router: Router, private _activatedRoute: ActivatedRoute,
     private _flightService: FlightService, private _auth: AuthService,
-    private toastr: ToastrService) { }
+    private toastr: ToastrService) {
+  }
 
   ngOnInit(): void {
     this.AvailableAirline();
     this.AvailableCity();
-    console.log(this.AirlineList);
-    console.log(this.AvailableCityList);
+    this.FlightId = Number(this._activatedRoute.snapshot.paramMap.get('flightId'))
+    if (this.FlightId > 0) {
+      this.GetFlightById(this.FlightId);
+    }
+  }
+
+  GetFlightById(FlightId: number) {
+    this.FlightDetailModel = new FlightData();
+    this._flightService.GetFlightById(FlightId).
+      subscribe(res => this.FlightDetailModel = res, err => console.log(err))
   }
 
   AvailableAirline() {
@@ -40,7 +51,6 @@ export class ModfiyflightComponent implements OnInit {
   }
 
   ModifyFlight() {
-    debugger
     console.log(this.FlightDetailModel);
     this._flightService.AddUpdateFlight(this.FlightDetailModel).subscribe(res => {
       this._router.navigate(['/flightlist'])

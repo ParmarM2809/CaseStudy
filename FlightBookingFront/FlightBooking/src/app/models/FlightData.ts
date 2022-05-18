@@ -12,3 +12,9 @@ export class FlightData {
         scheduledDate : Date = new Date;
         seatAvaibility : number = 0;
 }
+
+export class SearchedFlight{
+        scheduledDate : Date = new Date;
+        startPoint:string = '' ;
+        endPoint:string = '';
+}

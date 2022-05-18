@@ -13,7 +13,6 @@ export class FlightService {
 
     private _AirlineListUrl = "https://localhost:44340/api/Flight/AvailableAirline"
     private _CityUrl = "https://localhost:44340/api/Flight/ServiceCity"
-
     private _ModifyAirlineUrl = "https://localhost:44340/api/Flight/AddUpdateFlight"
     private _flightListUrl = "https://localhost:44340/api/Flight/GetAllFlightList"
     private _BookReservationUrl = "https://localhost:44339/api/Booking/AddUpdateFlightBooking"
@@ -23,7 +22,6 @@ export class FlightService {
     private _GetSearchedFlightUrl = "https://localhost:44340/api/Flight/GetSearchedFlightList/"
 
     constructor(private http: HttpClient, private _router: Router) {
-
     }
 
     AvailableFlight(): Observable<FlightData[]> {
@@ -53,7 +51,6 @@ export class FlightService {
     }
 
     AddUpdateFlight(flightData: FlightData) {
-        debugger
         console.log(flightData)
         return this.http.post<any>(this._ModifyAirlineUrl, flightData)
     }

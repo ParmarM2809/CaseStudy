@@ -19,5 +19,6 @@ namespace InventoryService.ViewModel
         public string AirlineName { get; set; }
         public string ContactName { get; set; }
         public string ContactNumber { get; set; }
+        public int SeatAvaibility { get; set; }
     }
 }

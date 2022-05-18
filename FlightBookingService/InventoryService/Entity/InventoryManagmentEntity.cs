@@ -50,7 +50,8 @@ namespace InventoryService.Entity
             inventory.Price = flightModel.Price;
             inventory.StartPoint = flightModel.StartPoint;
             inventory.UpdatedDate = DateTime.Now;
-            inventory.ScheduledDate = flightModel.ScheduledDate;
+            inventory.ScheduledDate = flightModel.ScheduledDate; 
+            inventory.SeatAvaibility = flightModel.SeatAvaibility;
             if (inventory.Id == 0)
             {
                 inventory.CreatedDate = DateTime.Now;
@@ -58,7 +59,7 @@ namespace InventoryService.Entity
             }
             else
             {
-                _flightBookingContext.Entry(inventory).State = EntityState.Modified;
+                _flightBookingContext.Entry(inventory).State = EntityState.Detached;
             }
             _flightBookingContext.SaveChanges();
             return inventory;

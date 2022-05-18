@@ -130,7 +130,6 @@ namespace InventoryService.Controllers
         public IActionResult GetFlightByID(long FlightID)
         {
             ResultObject resultObject = new ResultObject();
-
             try
             {
                 if (FlightID <= 0)

@@ -183,4 +183,3 @@ D:\CaseStudy\FlightBookingService\AdminService\obj\Debug\netcoreapp3.1\AdminServ
 D:\CaseStudy\FlightBookingService\AdminService\obj\Debug\netcoreapp3.1\AdminService.dll
 D:\CaseStudy\FlightBookingService\AdminService\obj\Debug\netcoreapp3.1\AdminService.pdb
 D:\CaseStudy\FlightBookingService\AdminService\obj\Debug\netcoreapp3.1\AdminService.genruntimeconfig.cache
-D:\CaseStudy\FlightBookingService\AdminService\obj\Debug\netcoreapp3.1\AdminService.csproj.CopyComplete

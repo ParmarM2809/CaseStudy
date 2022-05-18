@@ -14,7 +14,7 @@
         <tr *ngFor="let booking of BookingList">
             <th> {{booking.pnrno}}</th>
             <td>{{booking.flightName}}</td>
-            <td>{{booking.scheduledDate}}</td>
+            <td>{{booking.scheduledDate | date: 'dd/MM/yyyy'}}</td>
             <td>{{booking.total}}</td>
             <td>{{booking.startPoint}} - {{booking.endPoint}}</td>
             <td>

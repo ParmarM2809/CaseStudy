@@ -5,11 +5,13 @@
     <thead>
         <tr>
             <th scope="col">Email</th>
+            <th scope="col">Reservation Count</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let user of UserDatas">
-            <th> {{user.email}}</th>
+            <td> {{user.email}}</td>
+            <td> {{user.reservationCount}}</td>
         </tr>
     </tbody>
 </table>

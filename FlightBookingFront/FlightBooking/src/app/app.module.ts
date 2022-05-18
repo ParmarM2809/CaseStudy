@@ -19,6 +19,9 @@ import { FlightService } from './services/flight.service';
 import { BookflightComponent } from './bookflight/bookflight.component';
 import { BookinglistComponent } from './bookinglist/bookinglist.component';
 import { ModfiyflightComponent } from './modfiyflight/modfiyflight.component';
+import { BookingsComponent } from './bookings/bookings.component';
+import {DatePipe} from '@angular/common';    
+import {  ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,10 +32,13 @@ import { ModfiyflightComponent } from './modfiyflight/modfiyflight.component';
     FlightlistComponent,
     BookflightComponent,
     BookinglistComponent,
-    ModfiyflightComponent  
+    ModfiyflightComponent,
+    BookingsComponent
   ],
   imports: [
     BrowserModule,
+        FormsModule,
+        ReactiveFormsModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
@@ -40,7 +46,7 @@ import { ModfiyflightComponent } from './modfiyflight/modfiyflight.component';
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot()// ToastrModule added
   ],
-  providers: [AuthService,AuthGaurd,UserService,FlightService,{
+  providers: [DatePipe,AuthService,AuthGaurd,UserService,FlightService,{
     provide:HTTP_INTERCEPTORS,
     useClass:TokenInterceptorService,
     multi:true

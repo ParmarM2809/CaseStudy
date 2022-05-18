@@ -2,7 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http'
 import { Router } from '@angular/router'
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { FlightData } from '../models/FlightData';
+import { Booking, FlightData, SearchedFlight } from '../models/FlightData';
 import { BookFlightModel } from '../models/BookFlightModel';
 import { Airlines } from '../models/Airlines';
 import { Availablecity } from '../models/Availablecity';
@@ -11,6 +11,9 @@ import { Availablecity } from '../models/Availablecity';
 @Injectable()
 export class FlightService {
 
+    private _EditAvailListUrl = "https://localhost:44339/api/Booking/EditTicketAvaibility"
+
+    private _BookingsListUrl = "https://localhost:44340/api/Flight/BookingList/"
     private _AirlineListUrl = "https://localhost:44340/api/Flight/AvailableAirline"
     private _CityUrl = "https://localhost:44340/api/Flight/ServiceCity"
     private _ModifyAirlineUrl = "https://localhost:44340/api/Flight/AddUpdateFlight"
@@ -24,8 +27,18 @@ export class FlightService {
     constructor(private http: HttpClient, private _router: Router) {
     }
 
+    EditFlightAvail(input: BookFlightModel): Observable<BookFlightModel> {
+        debugger
+        return this.http.post<BookFlightModel>(this._EditAvailListUrl,input)
+    }
+
     AvailableFlight(): Observable<FlightData[]> {
         return this.http.get<FlightData[]>(this._flightListUrl)
+    }
+
+    Bookings(SearchDate : Date): Observable<Booking[]> {
+        debugger
+        return this.http.get<Booking[]>(this._BookingsListUrl+SearchDate)
     }
 
 
@@ -38,8 +51,8 @@ export class FlightService {
     }
 
 
-    SearchedFlight(SearchText: string): Observable<FlightData[]> {
-        return this.http.get<FlightData[]>(this._GetSearchedFlightUrl + SearchText)
+    SearchedFlight(SearchText: SearchedFlight): Observable<FlightData[]> {
+        return this.http.post<FlightData[]>(this._GetSearchedFlightUrl,SearchText)
     }
 
     YourBookings(userId: number): Observable<BookFlightModel[]> {

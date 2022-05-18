@@ -1,39 +1,38 @@
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:darkslateblue;">
-<b>  <label style="color: black;">Flight Booking Service</label></b>
-
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#0d6efd;">
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" style="cursor:pointer" *ngIf="LoggedIn(true) && RoleCheck() === 2"
+        <a class="nav-link" style="cursor:pointer;color: aliceblue;" *ngIf="LoggedIn(true) && RoleCheck() === 2"
           routerLink="/flightlist"><b>Available Flights</b></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" style="cursor:pointer" *ngIf="LoggedIn(true) && RoleCheck() === 2"
+        <a class="nav-link" style="cursor:pointer;color: aliceblue;" *ngIf="LoggedIn(true) && RoleCheck() === 2"
           routerLink="/bookinglist"><b>Your Bookings</b></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" style="cursor:pointer" *ngIf="LoggedIn(true) && RoleCheck() === 1"
+        <a class="nav-link" style="cursor:pointer;color: aliceblue;" *ngIf="LoggedIn(true) && RoleCheck() === 1"
           routerLink="/flightlist"><b>Flight Management</b></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" style="cursor:pointer" *ngIf="LoggedIn(true) && RoleCheck() === 1"
+        <a class="nav-link" style="cursor:pointer;color: aliceblue;" *ngIf="LoggedIn(true) && RoleCheck() === 1"
           routerLink="/userlist"><b>User Management</b></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" style="cursor:pointer" *ngIf="LoggedIn(true) && RoleCheck() === 1"
-          routerLink="/userlist"><b>Today's Reservation</b></a>
+        <a class="nav-link" style="cursor:pointer;color: aliceblue;" *ngIf="LoggedIn(true) && RoleCheck() === 1"
+          routerLink="/bookings"><b>Bookings</b></a>
       </li>
     </ul>
     <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" style="cursor:pointer;display: flex;" *ngIf="LoggedIn(false)" routerLink="/login">Login</a>
+      <!-- <li class="nav-item active">
+        <a class="nav-link" style="cursor:pointer;display: flex;color: aliceblue;" *ngIf="LoggedIn(false)" routerLink="/login">Login</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" style="cursor:pointer" *ngIf="LoggedIn(false)" routerLink="/register">
+        <a class="nav-link" style="cursor:pointer;color: aliceblue;" *ngIf="LoggedIn(false)" routerLink="/register">
           <b>Register</b></a>
-      </li>
+      </li> -->
       <li class="nav-item">
-        <a class="nav-link" style="cursor:pointer" *ngIf="LoggedIn(true)" (click)="LogOut()">
+        <a class="nav-link" style="cursor:pointer;color: aliceblue;margin-left: 900%;" 
+        *ngIf="LoggedIn(true)" (click)="LogOut()">
           <b>Logout</b>
         </a>
       </li>

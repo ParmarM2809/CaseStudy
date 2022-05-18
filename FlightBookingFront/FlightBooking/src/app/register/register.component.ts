@@ -10,10 +10,16 @@ import { AuthService } from '../services/auth.service';
 })
 export class RegisterComponent  {
 
+  imgsrc : string='';
   registerUserData: UserData = new UserData();
   constructor(private _auth: AuthService, private _router: Router,
     private toastr: ToastrService) { }
   
+    ngOnInit(): void {
+      this.imgsrc = '../assets/RegBackground.jpg';
+      }
+    
+
   registerUser() {
     console.log(this.registerUserData);
     this._auth.registerUser(this.registerUserData).subscribe(res => {

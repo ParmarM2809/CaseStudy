@@ -8,10 +8,17 @@ import { NotificationService } from './notification.service'
 })
 export class AppComponent {
 
+  imgSrc : string = '';
   constructor(private _authService: AuthService,
     private notifyService: NotificationService) {
 
   }
+
+  ngOnInit(): void {
+    this.imgSrc = '../assets/flightIcon.jpg';
+    }
+  
+
 
   LogOut() {
     this._authService.logoutUser();

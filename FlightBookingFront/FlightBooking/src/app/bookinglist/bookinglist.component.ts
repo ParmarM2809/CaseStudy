@@ -22,9 +22,13 @@ export class BookinglistComponent implements OnInit {
     this.userId = this._auth.getUserId()
     this._flightService.YourBookings(this.userId).
       subscribe(res => this.BookingList = res, err => console.log(err))
+      console.log(this.BookingList);
   }
 
   EditBooking(input:BookFlightModel ) {
+    debugger
+    this._flightService.EditFlightAvail(input).
+    subscribe(res => console.log(res), err => console.log(err))
     this._router.navigate(['bookflight/', input.flightId , input.id ]);
   }
 

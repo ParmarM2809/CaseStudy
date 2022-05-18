@@ -9,7 +9,7 @@ export class FlightData {
         airlineName: string = '';
         contactName : string= '';
         contactNumber:string = '';
-        scheduledDate : Date = new Date;
+        scheduledDate : string = '';
         seatAvaibility : number = 0;
 }
 
@@ -17,4 +17,15 @@ export class SearchedFlight{
         scheduledDate : Date = new Date;
         startPoint:string = '' ;
         endPoint:string = '';
+        airlineName : string = '';
+}
+
+export class Booking
+{
+        startPoint : string = '';
+        endPoint : string = '';
+        total : number = 0.0;
+        airlineName : string = '';
+        email : string = '' ;
+        seat : number = 0;
 }

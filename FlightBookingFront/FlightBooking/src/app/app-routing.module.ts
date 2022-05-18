@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BookflightComponent } from './bookflight/bookflight.component';
 import { BookinglistComponent } from './bookinglist/bookinglist.component';
+import { BookingsComponent } from './bookings/bookings.component';
 import { FlightlistComponent } from './flightlist/flightlist.component';
 import { LoginComponent } from './login/login.component';
 import { ModfiyflightComponent } from './modfiyflight/modfiyflight.component';
@@ -51,6 +52,10 @@ const routes: Routes = [
   {
     path: 'modfiyflight/:flightId',
     component: ModfiyflightComponent
+  },
+  {
+    path: 'bookings',
+    component: BookingsComponent
   }
 ];
 

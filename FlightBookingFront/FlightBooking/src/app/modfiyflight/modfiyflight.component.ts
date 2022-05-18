@@ -31,13 +31,14 @@ export class ModfiyflightComponent implements OnInit {
     this.FlightId = Number(this._activatedRoute.snapshot.paramMap.get('flightId'))
     if (this.FlightId > 0) {
       this.GetFlightById(this.FlightId);
+      console.log(this.FlightDetailModel);
     }
   }
 
   GetFlightById(FlightId: number) {
-    this.FlightDetailModel = new FlightData();
     this._flightService.GetFlightById(FlightId).
       subscribe(res => this.FlightDetailModel = res, err => console.log(err))
+   
   }
 
   AvailableAirline() {

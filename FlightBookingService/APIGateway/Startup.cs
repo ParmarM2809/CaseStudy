@@ -76,6 +76,7 @@ namespace APIGateway
             app.UseOcelot().Wait();
             app.UseSwagger();
             app.UseSwaggerUI();
+            app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
         }
     }
 }

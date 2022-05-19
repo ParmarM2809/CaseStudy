@@ -18,13 +18,24 @@ namespace InventoryService.Entity
             return _flightBookingContext.Inventories.Where(x => x.IsAvailable).ToList();
         }
 
-        public List<Inventory> GetSearchedFlightList(FlightModel flightModel)
+        public List<Airline> AvailableAirLine()
+        {
+            return _flightBookingContext.Airlines.ToList();
+        }
+
+        public List<ServiceCity> AvailableCity()
+        {
+            return _flightBookingContext.ServiceCities.ToList();
+        }
+
+        public List<Inventory> GetSearchedFlightList(string SearchText)
         {
             List<Inventory> inventoryList = _flightBookingContext.Inventories.
-                Where(x => x.IsAvailable && x.StartPoint == flightModel.StartPoint &&
-                x.EndPoint == flightModel.EndPoint).ToList();
+                Where(x => x.IsAvailable && x.StartPoint.Contains(SearchText) ||
+                x.EndPoint.Contains(SearchText)).ToList();
             return inventoryList;
         }
+
 
         public Inventory AddUpdateFlight(FlightModel flightModel)
         {
@@ -38,13 +49,17 @@ namespace InventoryService.Entity
             inventory.IsDiscountAvailable= flightModel.IsDiscountAvailable;
             inventory.Price = flightModel.Price;
             inventory.StartPoint = flightModel.StartPoint;
+            inventory.UpdatedDate = DateTime.Now;
+            inventory.ScheduledDate = flightModel.ScheduledDate; 
+            inventory.SeatAvaibility = flightModel.SeatAvaibility;
             if (inventory.Id == 0)
             {
+                inventory.CreatedDate = DateTime.Now;
                 _flightBookingContext.Add(inventory);
             }
             else
             {
-                _flightBookingContext.Entry(inventory).State = EntityState.Modified;
+                _flightBookingContext.Entry(inventory).State = EntityState.Detached;
             }
             _flightBookingContext.SaveChanges();
             return inventory;

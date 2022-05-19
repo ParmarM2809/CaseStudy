@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "E/LcJpeH10n6XVNsGUp7zaIj4LMlZMcZzHkgQt0IAowC9agh1RzlmB2EIRJbqcrcVTrLMUrtGXtk86Wp50sxLQ==",
+  "dgSpecHash": "USMoM6uGhqhooZe2NjKIeiPUT41vnRQYjaNqkc1jiNB38DsTvP+gWrM1ut/UvxzOIgfxPuoYWN629IH/Exovww==",
   "success": true,
-  "projectFilePath": "D:\\Mital\\FlightBookingService\\InventoryService\\InventoryService.csproj",
+  "projectFilePath": "C:\\Users\\cogdotnet12\\Desktop\\MItal\\CasStudy\\FlightBookingService\\InventoryService\\InventoryService.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\cogdotnet12\\.nuget\\packages\\confluent.kafka\\1.4.0\\confluent.kafka.1.4.0.nupkg.sha512",
     "C:\\Users\\cogdotnet12\\.nuget\\packages\\consul\\1.6.10.5\\consul.1.6.10.5.nupkg.sha512",
     "C:\\Users\\cogdotnet12\\.nuget\\packages\\entityframework\\5.0.0\\entityframework.5.0.0.nupkg.sha512",
+    "C:\\Users\\cogdotnet12\\.nuget\\packages\\librdkafka.redist\\1.4.0\\librdkafka.redist.1.4.0.nupkg.sha512",
     "C:\\Users\\cogdotnet12\\.nuget\\packages\\masstransit\\8.0.2\\masstransit.8.0.2.nupkg.sha512",
     "C:\\Users\\cogdotnet12\\.nuget\\packages\\masstransit.abstractions\\8.0.2\\masstransit.abstractions.8.0.2.nupkg.sha512",
     "C:\\Users\\cogdotnet12\\.nuget\\packages\\masstransit.aspnetcore\\7.3.1\\masstransit.aspnetcore.7.3.1.nupkg.sha512",

@@ -1,0 +1,72 @@
+<div class="py-5">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card rounded-0">
+                <div class="Card-header">
+                    <h3 class="mb-0">Flight Management</h3>
+                </div>
+                <div class="card-body">
+                    <div class="form">
+                        <div class="form-group">
+                            <label for="exampleInputairlineName">Airline Name</label>
+                            <select class="form-control" name="airlineName" [(ngModel)]="FlightDetailModel.airlineName">
+                                <option *ngFor="let airline of AirlineList" [ngValue]="airline.airlineName">{{airline.airlineName}}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputscheduledDate">Scheduled Date</label>
+                            <input type="date" class="form-control" [(ngModel)]="FlightDetailModel.scheduledDate"
+                                id="exampleInputscheduledDate" placeholder="End Point">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputSeat">Available Seats</label>
+                            <input type="number" class="form-control" [(ngModel)]="FlightDetailModel.seatAvaibility"
+                                id="exampleInputSeat">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputprice">Price</label>
+                            <input type="number" class="form-control" [(ngModel)]="FlightDetailModel.price"
+                                id="exampleInputprice" placeholder="Price">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputairlineName">Start Point</label>
+                            <select class="form-control" id="type" data-live-search="true" [(ngModel)]="FlightDetailModel.startPoint">
+                                <option *ngFor="let city of AvailableCityList" [ngValue]="city.cityName">{{city.cityName}}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputairlineName">End Point</label>
+                            <select class="form-control" data-live-search="true" [(ngModel)]="FlightDetailModel.endPoint">
+                                <option *ngFor="let city of AvailableCityList" [ngValue]="city.cityName">
+                                    {{city.cityName}}
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputcontactName">Contact Name</label>
+                            <input type="text" class="form-control" [(ngModel)]="FlightDetailModel.contactName"
+                                id="exampleInputcontactName" placeholder="Contact Person Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputcontactNumber">Contact Number</label>
+                            <input type="text" class="form-control" [(ngModel)]="FlightDetailModel.contactNumber"
+                                id="exampleInputcontactNumber" placeholder="Contact Person Number">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-check-label">
+                               <input type="checkbox" [(ngModel)]="FlightDetailModel.isAvailable"> Is Flight Available
+                            </label>
+                        </div>
+                        <br />
+                        <hr />
+                        <button type="submit" (click)="ModifyFlight()" class="btn btn-primary float-right">Add Flight
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

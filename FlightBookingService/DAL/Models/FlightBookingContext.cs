@@ -17,10 +17,12 @@ namespace DAL.Models
         {
         }
 
+        public virtual DbSet<Airline> Airlines { get; set; }
         public virtual DbSet<Booking> Bookings { get; set; }
         public virtual DbSet<CoupenCode> CoupenCodes { get; set; }
         public virtual DbSet<Inventory> Inventories { get; set; }
         public virtual DbSet<RoleMastertbl> RoleMastertbls { get; set; }
+        public virtual DbSet<ServiceCity> ServiceCities { get; set; }
         public virtual DbSet<UserMaster> UserMasters { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -34,13 +36,16 @@ namespace DAL.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Airline>(entity =>
+            {
+                entity.Property(e => e.AirlineName).IsRequired();
+            });
+
             modelBuilder.Entity<Booking>(entity =>
             {
                 entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.Property(e => e.CreatedOn).HasColumnType("datetime");
-
-                entity.Property(e => e.EndDate).HasColumnType("datetime");
 
                 entity.Property(e => e.FlightId).HasColumnName("FlightID");
 
@@ -49,8 +54,6 @@ namespace DAL.Models
                 entity.Property(e => e.Pnrno)
                     .IsRequired()
                     .HasColumnName("PNRNo");
-
-                entity.Property(e => e.StartDate).HasColumnType("datetime");
 
                 entity.Property(e => e.Total).HasColumnType("decimal(18, 5)");
 
@@ -98,6 +101,8 @@ namespace DAL.Models
 
                 entity.Property(e => e.Price).HasColumnType("decimal(18, 5)");
 
+                entity.Property(e => e.ScheduledDate).HasColumnType("datetime");
+
                 entity.Property(e => e.StartPoint).IsRequired();
 
                 entity.Property(e => e.UpdatedDate).HasColumnType("datetime");
@@ -114,6 +119,13 @@ namespace DAL.Models
                 entity.Property(e => e.RoleName)
                     .IsRequired()
                     .HasMaxLength(50);
+            });
+
+            modelBuilder.Entity<ServiceCity>(entity =>
+            {
+                entity.ToTable("ServiceCity");
+
+                entity.Property(e => e.CityName).IsRequired();
             });
 
             modelBuilder.Entity<UserMaster>(entity =>

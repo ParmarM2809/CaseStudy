@@ -10,21 +10,15 @@ namespace InventoryService.ViewModel
     {
         public long Id { get; set; }
 
-        [Required]
+        public DateTime ScheduledDate { get; set; }
         public string StartPoint { get; set; }
-        [Required]
         public string EndPoint { get; set; }
-        [Required]
         public decimal Price { get; set; }
-        [Required]
         public bool IsAvailable { get; set; }
-        [Required]
         public bool IsDiscountAvailable { get; set; }
-        [Required]
         public string AirlineName { get; set; }
-        [Required]
         public string ContactName { get; set; }
-        [Required]
         public string ContactNumber { get; set; }
+        public int SeatAvaibility { get; set; }
     }
 }

@@ -17,7 +17,7 @@ namespace InventoryService.Controllers
     {
         [HttpGet]
         [Route("GetAllFlightList")]
-        public ResultObject GetAllFlightList()
+        public IActionResult GetAllFlightList()
         {
             ResultObject resultObject = new ResultObject();
             try
@@ -27,6 +27,7 @@ namespace InventoryService.Controllers
                     new ResultObject(APIResponseMessage.DataNotFound, StatusType.NotFound)
                     : new ResultObject(APIResponseMessage.DataFound, StatusType.Success);
                 resultObject.ResultData = inventoryList;
+                return Ok(inventoryList);
             }
             catch (Exception ex)
             {
@@ -34,13 +35,13 @@ namespace InventoryService.Controllers
                 resultObject.ExceptionMessage = ex.Message;
                 resultObject.ExceptionStackTrace = ex.StackTrace;
                 resultObject.ResultException = ex.InnerException;
+                return NotFound();
             }
-            return resultObject;
         }
 
-        [HttpPost]
-        [Route("GetSearchedFlightList")]
-        public ResultObject GetSearchedFlightList(FlightModel flightModel)
+        [HttpGet]
+        [Route("GetSearchedFlightList/{SearchText}")]
+        public IActionResult GetSearchedFlightList(string SearchText)
         {
             ResultObject resultObject = new ResultObject();
             try
@@ -50,13 +51,15 @@ namespace InventoryService.Controllers
                 {
                     resultObject = new ResultObject(APIResponseMessage.DataNotValid, StatusType.NotFound);
                     resultObject.ResultData = inventoryList;
+                    return NotFound();
                 }
                 else
                 {
-                    inventoryList = new InventoryManagmentEntity().GetSearchedFlightList(flightModel);
+                    inventoryList = new InventoryManagmentEntity().GetSearchedFlightList(SearchText);
                     resultObject = inventoryList == null ?
                                     new ResultObject(APIResponseMessage.DataNotFound, StatusType.NotFound)
                                     : new ResultObject(APIResponseMessage.DataFound, StatusType.Success);
+                    return Ok(inventoryList);
                 }
             }
             catch (Exception ex)
@@ -65,13 +68,13 @@ namespace InventoryService.Controllers
                 resultObject.ExceptionMessage = ex.Message;
                 resultObject.ExceptionStackTrace = ex.StackTrace;
                 resultObject.ResultException = ex.InnerException;
+                return NotFound();
             }
-            return resultObject;
         }
 
         [HttpPost]
         [Route("AddUpdateFlight")]
-        public ResultObject AddUpdateFlight(FlightModel flightModel)
+        public IActionResult AddUpdateFlight(FlightModel flightModel)
         {
             ResultObject resultObject = new ResultObject();
             try
@@ -79,10 +82,11 @@ namespace InventoryService.Controllers
                 if (!ModelState.IsValid)
                 {
                     resultObject = new ResultObject(APIResponseMessage.DataNotValid, StatusType.NotFound);
-                    return resultObject;
+                    return NotFound();
                 }
                 new InventoryManagmentEntity().AddUpdateFlight(flightModel);
                 resultObject = new ResultObject(APIResponseMessage.DataSaved, StatusType.Success);
+                return Ok();
 
             }
             catch (Exception ex)
@@ -91,8 +95,8 @@ namespace InventoryService.Controllers
                 resultObject.ExceptionMessage = ex.Message;
                 resultObject.ExceptionStackTrace = ex.StackTrace;
                 resultObject.ResultException = ex.InnerException;
+                return NotFound();
             }
-            return resultObject;
         }
 
         [HttpPost]
@@ -123,22 +127,21 @@ namespace InventoryService.Controllers
 
         [HttpGet]
         [Route("GetFlightByID/{FlightID}")]
-        public ResultObject GetFlightByID(long FlightID)
+        public IActionResult GetFlightByID(long FlightID)
         {
             ResultObject resultObject = new ResultObject();
-
             try
             {
                 if (FlightID <= 0)
                 {
                     resultObject = new ResultObject(APIResponseMessage.DataNotValid, StatusType.Error);
-                    return resultObject;
+                    return NotFound(APIResponseMessage.DataNotValid);
                 }
                 Inventory inventory = new InventoryManagmentEntity().GetFlightByID(FlightID);
                 resultObject = inventory == null ?
                     new ResultObject(APIResponseMessage.DataNotFound, StatusType.Error) :
                     new ResultObject(APIResponseMessage.DataFound, StatusType.Success);
-                resultObject.ResultData = inventory;
+                return Ok(inventory);
             }
             catch (Exception ex)
             {
@@ -146,8 +149,53 @@ namespace InventoryService.Controllers
                 resultObject.ExceptionMessage = ex.Message;
                 resultObject.ExceptionStackTrace = ex.StackTrace;
                 resultObject.ResultException = ex.InnerException;
+                return NotFound();
             }
-            return resultObject;
+        }
+
+
+        [HttpGet]
+        [Route("AvailableAirline")]
+        public IActionResult AvailableAirline()
+        {
+            ResultObject resultObject = new ResultObject();
+            try
+            {
+                List<Airline> airlines = new InventoryManagmentEntity().AvailableAirLine();
+                resultObject = new ResultObject(APIResponseMessage.DataFound, StatusType.Success);
+                return Ok(airlines);
+
+            }
+            catch (Exception ex)
+            {
+                resultObject = new ResultObject(APIResponseMessage.SomethingWrong, StatusType.Error);
+                resultObject.ExceptionMessage = ex.Message;
+                resultObject.ExceptionStackTrace = ex.StackTrace;
+                resultObject.ResultException = ex.InnerException;
+                return NotFound();
+            }
+        }
+
+        [HttpGet]
+        [Route("ServiceCity")]
+        public IActionResult ServiceCity()
+        {
+            ResultObject resultObject = new ResultObject();
+            try
+            {
+                List<ServiceCity> serviceCities = new InventoryManagmentEntity().AvailableCity();
+                resultObject = new ResultObject(APIResponseMessage.DataFound, StatusType.Success);
+                return Ok(serviceCities);
+
+            }
+            catch (Exception ex)
+            {
+                resultObject = new ResultObject(APIResponseMessage.SomethingWrong, StatusType.Error);
+                resultObject.ExceptionMessage = ex.Message;
+                resultObject.ExceptionStackTrace = ex.StackTrace;
+                resultObject.ResultException = ex.InnerException;
+                return NotFound();
+            }
         }
 
     }

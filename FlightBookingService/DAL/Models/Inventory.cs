@@ -22,8 +22,9 @@ namespace DAL.Models
         public string ContactName { get; set; }
         public string ContactNumber { get; set; }
         public long SeatAvaibility { get; set; }
-        public DateTime? CreatedDate { get; set; }
-        public DateTime? UpdatedDate { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public DateTime UpdatedDate { get; set; }
+        public DateTime ScheduledDate { get; set; }
 
         public virtual ICollection<Booking> Bookings { get; set; }
     }

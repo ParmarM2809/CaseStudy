@@ -1,26 +1,29 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { EventsComponent } from './events/events.component';
+import { BookflightComponent } from './bookflight/bookflight.component';
+import { BookinglistComponent } from './bookinglist/bookinglist.component';
+import { BookingsComponent } from './bookings/bookings.component';
+import { FlightlistComponent } from './flightlist/flightlist.component';
 import { LoginComponent } from './login/login.component';
+import { ModfiyflightComponent } from './modfiyflight/modfiyflight.component';
 import { RegisterComponent } from './register/register.component';
-import { AuthGaurd } from './services/auth.gaurd';
-import { SpecialEventsComponent } from './special-events/special-events.component';
+import { UserlistComponent } from './userlist/userlist.component';
 
 const routes: Routes = [
 
   {
     path: '',
-    redirectTo: '/events',
+    redirectTo: '/flightlist',
     pathMatch: 'full'
   },
   {
-    path: 'events',
-    component: EventsComponent
+    path: 'flightlist',
+    component: FlightlistComponent
   },
   {
-    path: 'special',
-    canActivate:[AuthGaurd],
-    component: SpecialEventsComponent
+    path: 'userlist',
+    // canActivate:[AuthGaurd],
+    component: UserlistComponent
   },
   {
     path: 'login',
@@ -29,8 +32,31 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path:'bookflight/:id',
+    component:BookflightComponent
+  },
+  {
+    path:'bookflight/:id/:bookingid',
+    component:BookflightComponent
+  },
+  {
+    path: 'bookinglist',
+    component: BookinglistComponent
+  },
+  {
+    path: 'modfiyflight',
+    component: ModfiyflightComponent
+  },
+  {
+    path: 'modfiyflight/:flightId',
+    component: ModfiyflightComponent
+  },
+  {
+    path: 'bookings',
+    component: BookingsComponent
   }
-
 ];
 
 @NgModule({

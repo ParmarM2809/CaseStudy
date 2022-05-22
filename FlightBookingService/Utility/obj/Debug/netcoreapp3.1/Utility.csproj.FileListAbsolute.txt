@@ -1,0 +1,10 @@
+C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\Utility\bin\Debug\netcoreapp3.1\Utility.deps.json
+C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\Utility\bin\Debug\netcoreapp3.1\Utility.dll
+C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\Utility\bin\Debug\netcoreapp3.1\Utility.pdb
+C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\Utility\obj\Debug\netcoreapp3.1\Utility.csproj.AssemblyReference.cache
+C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\Utility\obj\Debug\netcoreapp3.1\Utility.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\Utility\obj\Debug\netcoreapp3.1\Utility.AssemblyInfoInputs.cache
+C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\Utility\obj\Debug\netcoreapp3.1\Utility.AssemblyInfo.cs
+C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\Utility\obj\Debug\netcoreapp3.1\Utility.csproj.CoreCompileInputs.cache
+C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\Utility\obj\Debug\netcoreapp3.1\Utility.dll
+C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\Utility\obj\Debug\netcoreapp3.1\Utility.pdb

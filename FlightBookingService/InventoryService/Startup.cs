@@ -28,7 +28,7 @@ namespace InventoryService
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddSwaggerGen();
+            //services.AddSwaggerGen();
             services.AddConsulConfig(Configuration);
 
         }
@@ -41,8 +41,8 @@ namespace InventoryService
                 app.UseDeveloperExceptionPage();
             }
             app.UseConsul(Configuration);
-            app.UseSwagger();
-            app.UseSwaggerUI();
+            //app.UseSwagger();
+            //app.UseSwaggerUI();
             app.UseHttpsRedirection();
 
             app.UseRouting();

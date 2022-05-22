@@ -37,6 +37,26 @@ namespace InventoryService.Entity
         }
 
 
+        public List<BookingModel> BookingList(DateTime SearchText)
+        {
+            List<BookingModel> inventoryList = (from In in _flightBookingContext.Inventories
+                                                join B in _flightBookingContext.Bookings
+                                                on In.Id equals B.FlightId
+                                                join U in _flightBookingContext.UserMasters
+                                                on B.UserId equals U.UserId
+                                                where In.ScheduledDate == SearchText
+                                                select new BookingModel
+                                                {
+                                                    AirlineName = In.AirlineName,
+                                                    Email = U.Email,
+                                                    EndPoint = In.EndPoint,
+                                                    StartPoint = In.StartPoint,
+                                                    Seat = B.BookedSeats,
+                                                    Total = B.Total
+                                                }).ToList();
+            return inventoryList;
+        }
+
         public Inventory AddUpdateFlight(FlightModel flightModel)
         {
             Inventory inventory = new Inventory();

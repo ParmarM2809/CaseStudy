@@ -21,4 +21,15 @@ namespace InventoryService.ViewModel
         public string ContactNumber { get; set; }
         public int SeatAvaibility { get; set; }
     }
+
+    public class BookingModel
+    {
+
+      public string  StartPoint { get; set; }
+        public string  EndPoint { get; set; }
+        public decimal  Total { get; set; }
+        public string  AirlineName { get; set; }
+        public string  Email { get; set; }
+        public long  Seat { get; set; }
+    }
 }

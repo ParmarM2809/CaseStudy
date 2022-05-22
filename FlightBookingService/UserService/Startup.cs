@@ -35,7 +35,7 @@ namespace UserService
     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
             services.AddControllers();
-            services.AddSwaggerGen();
+            //services.AddSwaggerGen();
             services.AddMassTransit(x =>
             {
                 x.UsingRabbitMq((context, cfg) =>
@@ -58,8 +58,8 @@ namespace UserService
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseSwagger();
-            app.UseSwaggerUI();
+            //app.UseSwagger();
+            //app.UseSwaggerUI();
             app.UseHttpsRedirection();
 
             app.UseRouting();

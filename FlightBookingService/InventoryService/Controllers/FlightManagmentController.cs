@@ -198,5 +198,28 @@ namespace InventoryService.Controllers
             }
         }
 
+
+        [HttpGet]
+        [Route("BookingList/{Date}")]
+        public IActionResult BookingList(string Date)
+        {
+            ResultObject resultObject = new ResultObject();
+            try
+            {
+                List<BookingModel> serviceCities = new InventoryManagmentEntity().BookingList(Convert.ToDateTime(Date));
+                resultObject = new ResultObject(APIResponseMessage.DataFound, StatusType.Success);
+                return Ok(serviceCities);
+
+            }
+            catch (Exception ex)
+            {
+                resultObject = new ResultObject(APIResponseMessage.SomethingWrong, StatusType.Error);
+                resultObject.ExceptionMessage = ex.Message;
+                resultObject.ExceptionStackTrace = ex.StackTrace;
+                resultObject.ResultException = ex.InnerException;
+                return NotFound();
+            }
+        }
+
     }
 }

@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
-using Microsoft.OpenApi.Models;
+//using Microsoft.OpenApi.Models;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
 using Ocelot.Provider.Consul;
@@ -24,29 +24,29 @@ namespace APIGateway
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddSwaggerGen(c =>
-            {
-                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
-                {
-                    Name = "Authorization",
-                    Type = SecuritySchemeType.ApiKey,
-                    Scheme = "Bearer",
-                    BearerFormat = "JWT",
-                    In = ParameterLocation.Header,
-                    Description = "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 1safsfsdfdfd\"",
-                });
-                c.AddSecurityRequirement(new OpenApiSecurityRequirement {
-                {
-                    new OpenApiSecurityScheme {
-                        Reference = new OpenApiReference {
-                            Type = ReferenceType.SecurityScheme,
-                                Id = "Bearer"
-                        }
-                    },
-                    new string[] {}
-                }
-            });
-            });
+            //services.AddSwaggerGen(c =>
+            //{
+            //    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
+            //    {
+            //        Name = "Authorization",
+            //        Type = SecuritySchemeType.ApiKey,
+            //        Scheme = "Bearer",
+            //        BearerFormat = "JWT",
+            //        In = ParameterLocation.Header,
+            //        Description = "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 1safsfsdfdfd\"",
+            //    });
+            //    c.AddSecurityRequirement(new OpenApiSecurityRequirement {
+            //    {
+            //        new OpenApiSecurityScheme {
+            //            Reference = new OpenApiReference {
+            //                Type = ReferenceType.SecurityScheme,
+            //                    Id = "Bearer"
+            //            }
+            //        },
+            //        new string[] {}
+            //    }
+            //});
+            //});
             services.AddAuthentication(x =>
             {
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -74,8 +74,8 @@ namespace APIGateway
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseOcelot().Wait();
-            app.UseSwagger();
-            app.UseSwaggerUI();
+            //app.UseSwagger();
+            //app.UseSwaggerUI();
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
         }
     }

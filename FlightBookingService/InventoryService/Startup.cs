@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,8 +29,12 @@ namespace InventoryService
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            //services.AddSwaggerGen();
+            services.AddSwaggerGen();
             services.AddConsulConfig(Configuration);
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "www.compilemode.com", Version = "v1" });
+            });
 
         }
 
@@ -41,11 +46,15 @@ namespace InventoryService
                 app.UseDeveloperExceptionPage();
             }
             app.UseConsul(Configuration);
-            //app.UseSwagger();
-            //app.UseSwaggerUI();
+            app.UseSwagger();
+            app.UseSwaggerUI();
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("./v1/swagger.json", "My API V1"); //originally "./swagger/v1/swagger.json"
+            });
 
             app.UseAuthorization();
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());

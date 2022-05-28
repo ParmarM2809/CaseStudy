@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cogdotnet12\\Desktop\\Mital\\CasStudy\\FlightBookingService\\APIGateway\\APIGateway.csproj": {}
+    "C:\\Users\\cogdotnet12\\Desktop\\MItal\\CasStudy\\FlightBookingService\\APIGateway\\APIGateway.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cogdotnet12\\Desktop\\Mital\\CasStudy\\FlightBookingService\\APIGateway\\APIGateway.csproj": {
+    "C:\\Users\\cogdotnet12\\Desktop\\MItal\\CasStudy\\FlightBookingService\\APIGateway\\APIGateway.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cogdotnet12\\Desktop\\Mital\\CasStudy\\FlightBookingService\\APIGateway\\APIGateway.csproj",
+        "projectUniqueName": "C:\\Users\\cogdotnet12\\Desktop\\MItal\\CasStudy\\FlightBookingService\\APIGateway\\APIGateway.csproj",
         "projectName": "APIGateway",
-        "projectPath": "C:\\Users\\cogdotnet12\\Desktop\\Mital\\CasStudy\\FlightBookingService\\APIGateway\\APIGateway.csproj",
+        "projectPath": "C:\\Users\\cogdotnet12\\Desktop\\MItal\\CasStudy\\FlightBookingService\\APIGateway\\APIGateway.csproj",
         "packagesPath": "C:\\Users\\cogdotnet12\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cogdotnet12\\Desktop\\Mital\\CasStudy\\FlightBookingService\\APIGateway\\obj\\",
+        "outputPath": "C:\\Users\\cogdotnet12\\Desktop\\MItal\\CasStudy\\FlightBookingService\\APIGateway\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -88,19 +88,15 @@
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.3.1, )"
-            },
-            "Swashbuckle.AspNetCore.Swagger": {
-              "target": "Package",
-              "version": "[6.3.1, )"
+              "version": "[4.0.0, )"
             },
             "Swashbuckle.AspNetCore.SwaggerGen": {
               "target": "Package",
-              "version": "[6.3.1, )"
+              "version": "[5.0.0, )"
             },
             "Swashbuckle.AspNetCore.SwaggerUI": {
               "target": "Package",
-              "version": "[6.3.1, )"
+              "version": "[5.0.0, )"
             }
           },
           "imports": [

@@ -14,7 +14,10 @@
           "Microsoft.AspNetCore.Session": "2.2.0",
           "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
-          "Microsoft.Extensions.Logging.Abstractions": "6.0.1"
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.1",
+          "Swashbuckle.AspNetCore": "4.0.0",
+          "Swashbuckle.AspNetCore.SwaggerGen": "5.0.0",
+          "Swashbuckle.AspNetCore.SwaggerUI": "5.0.0"
         },
         "runtime": {
           "Utility.dll": {}
@@ -31,14 +34,7 @@
           }
         }
       },
-      "Microsoft.AspNetCore.Cryptography.Internal/2.2.0": {
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.AspNetCore.Cryptography.Internal.dll": {
-            "assemblyVersion": "2.2.0.0",
-            "fileVersion": "2.2.0.18316"
-          }
-        }
-      },
+      "Microsoft.AspNetCore.Cryptography.Internal/2.2.0": {},
       "Microsoft.AspNetCore.DataProtection/2.2.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Cryptography.Internal": "2.2.0",
@@ -50,68 +46,31 @@
           "Microsoft.Win32.Registry": "4.5.0",
           "System.Security.Cryptography.Xml": "4.5.0",
           "System.Security.Principal.Windows": "4.5.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.AspNetCore.DataProtection.dll": {
-            "assemblyVersion": "2.2.0.0",
-            "fileVersion": "2.2.0.18316"
-          }
         }
       },
-      "Microsoft.AspNetCore.DataProtection.Abstractions/2.2.0": {
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.AspNetCore.DataProtection.Abstractions.dll": {
-            "assemblyVersion": "2.2.0.0",
-            "fileVersion": "2.2.0.18316"
-          }
-        }
-      },
+      "Microsoft.AspNetCore.DataProtection.Abstractions/2.2.0": {},
       "Microsoft.AspNetCore.Hosting.Abstractions/2.2.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Hosting.Server.Abstractions": "2.2.0",
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
           "Microsoft.Extensions.Hosting.Abstractions": "2.2.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.AspNetCore.Hosting.Abstractions.dll": {
-            "assemblyVersion": "2.2.0.0",
-            "fileVersion": "2.2.0.18316"
-          }
         }
       },
       "Microsoft.AspNetCore.Hosting.Server.Abstractions/2.2.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Http.Features": "2.2.0",
           "Microsoft.Extensions.Configuration.Abstractions": "6.0.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.AspNetCore.Hosting.Server.Abstractions.dll": {
-            "assemblyVersion": "2.2.0.0",
-            "fileVersion": "2.2.0.18316"
-          }
         }
       },
       "Microsoft.AspNetCore.Http.Abstractions/2.2.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Http.Features": "2.2.0",
           "System.Text.Encodings.Web": "4.5.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Abstractions.dll": {
-            "assemblyVersion": "2.2.0.0",
-            "fileVersion": "2.2.0.18316"
-          }
         }
       },
       "Microsoft.AspNetCore.Http.Features/2.2.0": {
         "dependencies": {
           "Microsoft.Extensions.Primitives": "6.0.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll": {
-            "assemblyVersion": "2.2.0.0",
-            "fileVersion": "2.2.0.18316"
-          }
         }
       },
       "Microsoft.AspNetCore.Session/2.2.0": {
@@ -121,12 +80,6 @@
           "Microsoft.Extensions.Caching.Abstractions": "2.2.0",
           "Microsoft.Extensions.Logging.Abstractions": "6.0.1",
           "Microsoft.Extensions.Options": "2.2.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.AspNetCore.Session.dll": {
-            "assemblyVersion": "2.2.0.0",
-            "fileVersion": "2.2.0.18316"
-          }
         }
       },
       "Microsoft.CSharp/4.3.0": {
@@ -152,12 +105,6 @@
       "Microsoft.Extensions.Caching.Abstractions/2.2.0": {
         "dependencies": {
           "Microsoft.Extensions.Primitives": "6.0.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.Caching.Abstractions.dll": {
-            "assemblyVersion": "2.2.0.0",
-            "fileVersion": "2.2.0.18315"
-          }
         }
       },
       "Microsoft.Extensions.Configuration.Abstractions/6.0.0": {
@@ -182,12 +129,6 @@
       "Microsoft.Extensions.FileProviders.Abstractions/2.2.0": {
         "dependencies": {
           "Microsoft.Extensions.Primitives": "6.0.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {
-            "assemblyVersion": "2.2.0.0",
-            "fileVersion": "2.2.0.18315"
-          }
         }
       },
       "Microsoft.Extensions.Hosting.Abstractions/2.2.0": {
@@ -196,12 +137,6 @@
           "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
           "Microsoft.Extensions.FileProviders.Abstractions": "2.2.0",
           "Microsoft.Extensions.Logging.Abstractions": "6.0.1"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.Hosting.Abstractions.dll": {
-            "assemblyVersion": "2.2.0.0",
-            "fileVersion": "2.2.0.18316"
-          }
         }
       },
       "Microsoft.Extensions.Logging.Abstractions/6.0.1": {
@@ -221,12 +156,6 @@
           "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
           "Microsoft.Extensions.Primitives": "6.0.0",
           "System.ComponentModel.Annotations": "4.5.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.Options.dll": {
-            "assemblyVersion": "2.2.0.0",
-            "fileVersion": "2.2.0.18315"
-          }
         }
       },
       "Microsoft.Extensions.Primitives/6.0.0": {
@@ -242,6 +171,14 @@
       },
       "Microsoft.NETCore.Platforms/2.0.0": {},
       "Microsoft.NETCore.Targets/1.1.0": {},
+      "Microsoft.OpenApi/1.1.4": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.OpenApi.dll": {
+            "assemblyVersion": "1.1.4.0",
+            "fileVersion": "1.1.4.0"
+          }
+        }
+      },
       "Microsoft.Win32.Primitives/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.0.0",
@@ -367,6 +304,49 @@
       "runtime.ubuntu.14.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.ubuntu.16.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.ubuntu.16.10-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
+      "Swashbuckle.AspNetCore/4.0.0": {
+        "dependencies": {
+          "Swashbuckle.AspNetCore.Swagger": "5.0.0",
+          "Swashbuckle.AspNetCore.SwaggerGen": "5.0.0",
+          "Swashbuckle.AspNetCore.SwaggerUI": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Swashbuckle.AspNetCore.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.0.0"
+          }
+        }
+      },
+      "Swashbuckle.AspNetCore.Swagger/5.0.0": {
+        "dependencies": {
+          "Microsoft.OpenApi": "1.1.4"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.Swagger.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.0.0"
+          }
+        }
+      },
+      "Swashbuckle.AspNetCore.SwaggerGen/5.0.0": {
+        "dependencies": {
+          "Swashbuckle.AspNetCore.Swagger": "5.0.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.0.0"
+          }
+        }
+      },
+      "Swashbuckle.AspNetCore.SwaggerUI/5.0.0": {
+        "runtime": {
+          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.0.0"
+          }
+        }
+      },
       "System.AppContext/4.3.0": {
         "dependencies": {
           "System.Runtime": "4.3.0"
@@ -888,20 +868,6 @@
       "System.Security.Cryptography.Pkcs/4.5.0": {
         "dependencies": {
           "System.Security.Cryptography.Cng": "4.5.0"
-        },
-        "runtime": {
-          "lib/netcoreapp2.1/System.Security.Cryptography.Pkcs.dll": {
-            "assemblyVersion": "4.0.3.0",
-            "fileVersion": "4.6.26515.6"
-          }
-        },
-        "runtimeTargets": {
-          "runtimes/win/lib/netcoreapp2.1/System.Security.Cryptography.Pkcs.dll": {
-            "rid": "win",
-            "assetType": "runtime",
-            "assemblyVersion": "4.0.3.0",
-            "fileVersion": "4.6.26515.6"
-          }
         }
       },
       "System.Security.Cryptography.Primitives/4.3.0": {
@@ -948,23 +914,11 @@
         "dependencies": {
           "System.Security.Cryptography.Pkcs": "4.5.0",
           "System.Security.Permissions": "4.5.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Security.Cryptography.Xml.dll": {
-            "assemblyVersion": "4.0.1.0",
-            "fileVersion": "4.6.26515.6"
-          }
         }
       },
       "System.Security.Permissions/4.5.0": {
         "dependencies": {
           "System.Security.AccessControl": "4.5.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Security.Permissions.dll": {
-            "assemblyVersion": "4.0.1.0",
-            "fileVersion": "4.6.26515.6"
-          }
         }
       },
       "System.Security.Principal.Windows/4.5.0": {
@@ -1217,6 +1171,13 @@
       "path": "microsoft.netcore.targets/1.1.0",
       "hashPath": "microsoft.netcore.targets.1.1.0.nupkg.sha512"
     },
+    "Microsoft.OpenApi/1.1.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6SW0tpbJslc8LAY1XniRfLVcJa7bJUbbwvo2/ZRqfkMbJrsqIj9045vg3STtZhDhYRKhpYgjqGU11eeW4Pzyrg==",
+      "path": "microsoft.openapi/1.1.4",
+      "hashPath": "microsoft.openapi.1.1.4.nupkg.sha512"
+    },
     "Microsoft.Win32.Primitives/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -1356,6 +1317,34 @@
       "sha512": "sha512-VB5cn/7OzUfzdnC8tqAIMQciVLiq2epm2NrAm1E9OjNRyG4lVhfR61SMcLizejzQP8R8Uf/0l5qOIbUEi+RdEg==",
       "path": "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "hashPath": "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore/4.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MMX6LXrBVGbqp48A5xaPmQ/vDeMSATUge3+lUvVESFt869YgiRHu9de11EXXYapj6N5y+pG73DJSd64WALjJpw==",
+      "path": "swashbuckle.aspnetcore/4.0.0",
+      "hashPath": "swashbuckle.aspnetcore.4.0.0.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore.Swagger/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4MhbjCErPsLnkyYrNc7OFUWVYoyhJRGAoFwbuDONslIOhIn5CmM52a4hO8s/jaM5i55uDms/veh24d/fR1UvZw==",
+      "path": "swashbuckle.aspnetcore.swagger/5.0.0",
+      "hashPath": "swashbuckle.aspnetcore.swagger.5.0.0.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore.SwaggerGen/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-liZs2B35w1bHNacpNoDofNCJKmEhUaHVgvtUsjt/AToKQdZQpk9dvLWrEfRHiuwZVUiKLL30lsiV4dEF/Drzlw==",
+      "path": "swashbuckle.aspnetcore.swaggergen/5.0.0",
+      "hashPath": "swashbuckle.aspnetcore.swaggergen.5.0.0.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore.SwaggerUI/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MKDE976W6VUKc+3N/os/xgfj/WpxoHLGBlnURNyC8cb81XjKfTduoJ4JcsBgFsevSM2Yp4lxNaBeJ6vRYN3V0Q==",
+      "path": "swashbuckle.aspnetcore.swaggerui/5.0.0",
+      "hashPath": "swashbuckle.aspnetcore.swaggerui.5.0.0.nupkg.sha512"
     },
     "System.AppContext/4.3.0": {
       "type": "package",

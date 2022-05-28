@@ -7,6 +7,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
+using Swashbuckle.Swagger;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,7 +37,10 @@ namespace UserService
     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
             services.AddControllers();
-            //services.AddSwaggerGen();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "www.compilemode.com", Version = "v1" });
+            });
             services.AddMassTransit(x =>
             {
                 x.UsingRabbitMq((context, cfg) =>
@@ -48,7 +53,7 @@ namespace UserService
                     });
                 });
             });
-
+           
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -58,18 +63,25 @@ namespace UserService
             {
                 app.UseDeveloperExceptionPage();
             }
-            //app.UseSwagger();
-            //app.UseSwaggerUI();
+            app.UseSwagger();
+            app.UseSwaggerUI();
             app.UseHttpsRedirection();
 
             app.UseRouting();
 
             app.UseAuthorization();
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("./v1/swagger.json", "My API V1"); //originally "./swagger/v1/swagger.json"
+            });
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
+            app.UseDeveloperExceptionPage();
         }
     }
 }

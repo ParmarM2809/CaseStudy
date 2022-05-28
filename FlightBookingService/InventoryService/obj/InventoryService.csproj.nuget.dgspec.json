@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cogdotnet12\\Desktop\\Mital\\CasStudy\\FlightBookingService\\InventoryService\\InventoryService.csproj": {}
+    "C:\\Users\\cogdotnet12\\Desktop\\MItal\\CasStudy\\FlightBookingService\\InventoryService\\InventoryService.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cogdotnet12\\Desktop\\Mital\\CasStudy\\FlightBookingService\\DAL\\DAL.csproj": {
+    "C:\\Users\\cogdotnet12\\Desktop\\MItal\\CasStudy\\FlightBookingService\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cogdotnet12\\Desktop\\Mital\\CasStudy\\FlightBookingService\\DAL\\DAL.csproj",
+        "projectUniqueName": "C:\\Users\\cogdotnet12\\Desktop\\MItal\\CasStudy\\FlightBookingService\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "C:\\Users\\cogdotnet12\\Desktop\\Mital\\CasStudy\\FlightBookingService\\DAL\\DAL.csproj",
+        "projectPath": "C:\\Users\\cogdotnet12\\Desktop\\MItal\\CasStudy\\FlightBookingService\\DAL\\DAL.csproj",
         "packagesPath": "C:\\Users\\cogdotnet12\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cogdotnet12\\Desktop\\Mital\\CasStudy\\FlightBookingService\\DAL\\obj\\",
+        "outputPath": "C:\\Users\\cogdotnet12\\Desktop\\MItal\\CasStudy\\FlightBookingService\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -71,6 +71,18 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[4.0.0, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerGen": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerUI": {
+              "target": "Package",
+              "version": "[5.0.0, )"
             }
           },
           "imports": [
@@ -95,14 +107,14 @@
         }
       }
     },
-    "C:\\Users\\cogdotnet12\\Desktop\\Mital\\CasStudy\\FlightBookingService\\InventoryService\\InventoryService.csproj": {
+    "C:\\Users\\cogdotnet12\\Desktop\\MItal\\CasStudy\\FlightBookingService\\InventoryService\\InventoryService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cogdotnet12\\Desktop\\Mital\\CasStudy\\FlightBookingService\\InventoryService\\InventoryService.csproj",
+        "projectUniqueName": "C:\\Users\\cogdotnet12\\Desktop\\MItal\\CasStudy\\FlightBookingService\\InventoryService\\InventoryService.csproj",
         "projectName": "InventoryService",
-        "projectPath": "C:\\Users\\cogdotnet12\\Desktop\\Mital\\CasStudy\\FlightBookingService\\InventoryService\\InventoryService.csproj",
+        "projectPath": "C:\\Users\\cogdotnet12\\Desktop\\MItal\\CasStudy\\FlightBookingService\\InventoryService\\InventoryService.csproj",
         "packagesPath": "C:\\Users\\cogdotnet12\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cogdotnet12\\Desktop\\Mital\\CasStudy\\FlightBookingService\\InventoryService\\obj\\",
+        "outputPath": "C:\\Users\\cogdotnet12\\Desktop\\MItal\\CasStudy\\FlightBookingService\\InventoryService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -125,11 +137,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\cogdotnet12\\Desktop\\Mital\\CasStudy\\FlightBookingService\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\Users\\cogdotnet12\\Desktop\\Mital\\CasStudy\\FlightBookingService\\DAL\\DAL.csproj"
+              "C:\\Users\\cogdotnet12\\Desktop\\MItal\\CasStudy\\FlightBookingService\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\cogdotnet12\\Desktop\\MItal\\CasStudy\\FlightBookingService\\DAL\\DAL.csproj"
               },
-              "C:\\Users\\cogdotnet12\\Desktop\\Mital\\CasStudy\\FlightBookingService\\Utility\\Utility.csproj": {
-                "projectPath": "C:\\Users\\cogdotnet12\\Desktop\\Mital\\CasStudy\\FlightBookingService\\Utility\\Utility.csproj"
+              "C:\\Users\\cogdotnet12\\Desktop\\MItal\\CasStudy\\FlightBookingService\\Utility\\Utility.csproj": {
+                "projectPath": "C:\\Users\\cogdotnet12\\Desktop\\MItal\\CasStudy\\FlightBookingService\\Utility\\Utility.csproj"
               }
             }
           }
@@ -174,19 +186,15 @@
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.3.1, )"
-            },
-            "Swashbuckle.AspNetCore.Swagger": {
-              "target": "Package",
-              "version": "[6.3.1, )"
+              "version": "[4.0.0, )"
             },
             "Swashbuckle.AspNetCore.SwaggerGen": {
               "target": "Package",
-              "version": "[6.3.1, )"
+              "version": "[5.0.0, )"
             },
             "Swashbuckle.AspNetCore.SwaggerUI": {
               "target": "Package",
-              "version": "[6.3.1, )"
+              "version": "[5.0.0, )"
             }
           },
           "imports": [
@@ -211,14 +219,14 @@
         }
       }
     },
-    "C:\\Users\\cogdotnet12\\Desktop\\Mital\\CasStudy\\FlightBookingService\\Utility\\Utility.csproj": {
+    "C:\\Users\\cogdotnet12\\Desktop\\MItal\\CasStudy\\FlightBookingService\\Utility\\Utility.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cogdotnet12\\Desktop\\Mital\\CasStudy\\FlightBookingService\\Utility\\Utility.csproj",
+        "projectUniqueName": "C:\\Users\\cogdotnet12\\Desktop\\MItal\\CasStudy\\FlightBookingService\\Utility\\Utility.csproj",
         "projectName": "Utility",
-        "projectPath": "C:\\Users\\cogdotnet12\\Desktop\\Mital\\CasStudy\\FlightBookingService\\Utility\\Utility.csproj",
+        "projectPath": "C:\\Users\\cogdotnet12\\Desktop\\MItal\\CasStudy\\FlightBookingService\\Utility\\Utility.csproj",
         "packagesPath": "C:\\Users\\cogdotnet12\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cogdotnet12\\Desktop\\Mital\\CasStudy\\FlightBookingService\\Utility\\obj\\",
+        "outputPath": "C:\\Users\\cogdotnet12\\Desktop\\MItal\\CasStudy\\FlightBookingService\\Utility\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -280,6 +288,18 @@
             "Microsoft.Extensions.Logging.Abstractions": {
               "target": "Package",
               "version": "[6.0.1, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[4.0.0, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerGen": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerUI": {
+              "target": "Package",
+              "version": "[5.0.0, )"
             }
           },
           "imports": [

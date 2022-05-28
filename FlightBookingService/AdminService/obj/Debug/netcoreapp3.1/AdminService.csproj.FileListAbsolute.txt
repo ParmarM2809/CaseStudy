@@ -1,9 +1,9 @@
-C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\appsettings.Development.json
-C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\DAL.deps.json
 C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\DAL.runtimeconfig.json
 C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\DAL.runtimeconfig.dev.json
 C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\DAL.exe
+C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\AdminService.exe
 C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\AdminService.deps.json
 C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\AdminService.runtimeconfig.json
@@ -43,12 +43,8 @@ C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\AdminService\bi
 C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
 C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
-C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
 C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\RabbitMQ.Client.dll
-C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
-C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
-C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
 C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
 C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
@@ -87,7 +83,11 @@ C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\AdminService\ob
 C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\AdminService\obj\Debug\netcoreapp3.1\staticwebassets\AdminService.StaticWebAssets.xml
 C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\AdminService\obj\Debug\netcoreapp3.1\scopedcss\bundle\AdminService.styles.css
 C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\AdminService\obj\Debug\netcoreapp3.1\AdminService.RazorTargetAssemblyInfo.cache
-C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\AdminService\obj\Debug\netcoreapp3.1\AdminService.csproj.CopyComplete
 C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\AdminService\obj\Debug\netcoreapp3.1\AdminService.dll
 C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\AdminService\obj\Debug\netcoreapp3.1\AdminService.pdb
 C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\AdminService\obj\Debug\netcoreapp3.1\AdminService.genruntimeconfig.cache
+C:\Users\cogdotnet12\Desktop\MItal\CasStudy\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\cogdotnet12\Desktop\MItal\CasStudy\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\cogdotnet12\Desktop\MItal\CasStudy\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\cogdotnet12\Desktop\MItal\CasStudy\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\cogdotnet12\Desktop\MItal\CasStudy\FlightBookingService\AdminService\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.dll

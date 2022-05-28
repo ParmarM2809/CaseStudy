@@ -62,3 +62,10 @@ C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\DAL\obj\Debug\n
 C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\DAL\obj\Debug\netcoreapp3.1\DAL.dll
 C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\DAL\obj\Debug\netcoreapp3.1\DAL.pdb
 C:\Users\cogdotnet12\Desktop\Mital\CasStudy\FlightBookingService\DAL\obj\Debug\netcoreapp3.1\DAL.genruntimeconfig.cache
+C:\Users\cogdotnet12\Desktop\MItal\CasStudy\FlightBookingService\DAL\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\cogdotnet12\Desktop\MItal\CasStudy\FlightBookingService\DAL\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\cogdotnet12\Desktop\MItal\CasStudy\FlightBookingService\DAL\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\cogdotnet12\Desktop\MItal\CasStudy\FlightBookingService\DAL\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\cogdotnet12\Desktop\MItal\CasStudy\FlightBookingService\DAL\obj\Debug\netcoreapp3.1\DAL.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\cogdotnet12\Desktop\MItal\CasStudy\FlightBookingService\DAL\obj\Debug\netcoreapp3.1\DAL.csproj.CopyComplete
+C:\Users\cogdotnet12\Desktop\MItal\CasStudy\FlightBookingService\DAL\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.dll

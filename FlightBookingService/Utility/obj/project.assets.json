@@ -274,6 +274,15 @@
           "lib/netstandard1.0/_._": {}
         }
       },
+      "Microsoft.OpenApi/1.1.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Microsoft.OpenApi.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.OpenApi.dll": {}
+        }
+      },
       "Microsoft.Win32.Primitives/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -544,6 +553,62 @@
             "rid": "ubuntu.16.10-x64"
           }
         }
+      },
+      "Swashbuckle.AspNetCore/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Swashbuckle.AspNetCore.Swagger": "4.0.0",
+          "Swashbuckle.AspNetCore.SwaggerGen": "4.0.0",
+          "Swashbuckle.AspNetCore.SwaggerUI": "4.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Swashbuckle.AspNetCore.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Swashbuckle.AspNetCore.dll": {}
+        }
+      },
+      "Swashbuckle.AspNetCore.Swagger/5.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.OpenApi": "1.1.4"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.Swagger.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.Swagger.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "Swashbuckle.AspNetCore.SwaggerGen/5.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Swashbuckle.AspNetCore.Swagger": "5.0.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "Swashbuckle.AspNetCore.SwaggerUI/5.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "System.AppContext/4.3.0": {
         "type": "package",
@@ -2132,6 +2197,23 @@
         "runtime.json"
       ]
     },
+    "Microsoft.OpenApi/1.1.4": {
+      "sha512": "6SW0tpbJslc8LAY1XniRfLVcJa7bJUbbwvo2/ZRqfkMbJrsqIj9045vg3STtZhDhYRKhpYgjqGU11eeW4Pzyrg==",
+      "type": "package",
+      "path": "microsoft.openapi/1.1.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net46/Microsoft.OpenApi.dll",
+        "lib/net46/Microsoft.OpenApi.pdb",
+        "lib/net46/Microsoft.OpenApi.xml",
+        "lib/netstandard2.0/Microsoft.OpenApi.dll",
+        "lib/netstandard2.0/Microsoft.OpenApi.pdb",
+        "lib/netstandard2.0/Microsoft.OpenApi.xml",
+        "microsoft.openapi.1.1.4.nupkg.sha512",
+        "microsoft.openapi.nuspec"
+      ]
+    },
     "Microsoft.Win32.Primitives/4.3.0": {
       "sha512": "9ZQKCWxH7Ijp9BfahvL2Zyf1cJIk8XYLF6Yjzr2yi0b2cOut/HQ31qf1ThHAgCc3WiZMdnWcfJCgN82/0UunxA==",
       "type": "package",
@@ -2475,6 +2557,63 @@
         "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
         "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.nuspec",
         "runtimes/ubuntu.16.10-x64/native/System.Security.Cryptography.Native.OpenSsl.so"
+      ]
+    },
+    "Swashbuckle.AspNetCore/4.0.0": {
+      "sha512": "MMX6LXrBVGbqp48A5xaPmQ/vDeMSATUge3+lUvVESFt869YgiRHu9de11EXXYapj6N5y+pG73DJSd64WALjJpw==",
+      "type": "package",
+      "path": "swashbuckle.aspnetcore/4.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Swashbuckle.AspNetCore.dll",
+        "swashbuckle.aspnetcore.4.0.0.nupkg.sha512",
+        "swashbuckle.aspnetcore.nuspec"
+      ]
+    },
+    "Swashbuckle.AspNetCore.Swagger/5.0.0": {
+      "sha512": "4MhbjCErPsLnkyYrNc7OFUWVYoyhJRGAoFwbuDONslIOhIn5CmM52a4hO8s/jaM5i55uDms/veh24d/fR1UvZw==",
+      "type": "package",
+      "path": "swashbuckle.aspnetcore.swagger/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.Swagger.dll",
+        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.Swagger.xml",
+        "lib/netstandard2.0/Swashbuckle.AspNetCore.Swagger.dll",
+        "lib/netstandard2.0/Swashbuckle.AspNetCore.Swagger.xml",
+        "swashbuckle.aspnetcore.swagger.5.0.0.nupkg.sha512",
+        "swashbuckle.aspnetcore.swagger.nuspec"
+      ]
+    },
+    "Swashbuckle.AspNetCore.SwaggerGen/5.0.0": {
+      "sha512": "liZs2B35w1bHNacpNoDofNCJKmEhUaHVgvtUsjt/AToKQdZQpk9dvLWrEfRHiuwZVUiKLL30lsiV4dEF/Drzlw==",
+      "type": "package",
+      "path": "swashbuckle.aspnetcore.swaggergen/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerGen.dll",
+        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerGen.xml",
+        "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerGen.dll",
+        "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerGen.xml",
+        "swashbuckle.aspnetcore.swaggergen.5.0.0.nupkg.sha512",
+        "swashbuckle.aspnetcore.swaggergen.nuspec"
+      ]
+    },
+    "Swashbuckle.AspNetCore.SwaggerUI/5.0.0": {
+      "sha512": "MKDE976W6VUKc+3N/os/xgfj/WpxoHLGBlnURNyC8cb81XjKfTduoJ4JcsBgFsevSM2Yp4lxNaBeJ6vRYN3V0Q==",
+      "type": "package",
+      "path": "swashbuckle.aspnetcore.swaggerui/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerUI.dll",
+        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerUI.xml",
+        "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerUI.dll",
+        "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerUI.xml",
+        "swashbuckle.aspnetcore.swaggerui.5.0.0.nupkg.sha512",
+        "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
     },
     "System.AppContext/4.3.0": {
@@ -6258,7 +6397,10 @@
       "Microsoft.AspNetCore.Session >= 2.2.0",
       "Microsoft.Extensions.Configuration.Abstractions >= 6.0.0",
       "Microsoft.Extensions.DependencyInjection.Abstractions >= 6.0.0",
-      "Microsoft.Extensions.Logging.Abstractions >= 6.0.1"
+      "Microsoft.Extensions.Logging.Abstractions >= 6.0.1",
+      "Swashbuckle.AspNetCore >= 4.0.0",
+      "Swashbuckle.AspNetCore.SwaggerGen >= 5.0.0",
+      "Swashbuckle.AspNetCore.SwaggerUI >= 5.0.0"
     ]
   },
   "packageFolders": {
@@ -6269,11 +6411,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cogdotnet12\\Desktop\\Mital\\CasStudy\\FlightBookingService\\Utility\\Utility.csproj",
+      "projectUniqueName": "C:\\Users\\cogdotnet12\\Desktop\\MItal\\CasStudy\\FlightBookingService\\Utility\\Utility.csproj",
       "projectName": "Utility",
-      "projectPath": "C:\\Users\\cogdotnet12\\Desktop\\Mital\\CasStudy\\FlightBookingService\\Utility\\Utility.csproj",
+      "projectPath": "C:\\Users\\cogdotnet12\\Desktop\\MItal\\CasStudy\\FlightBookingService\\Utility\\Utility.csproj",
       "packagesPath": "C:\\Users\\cogdotnet12\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cogdotnet12\\Desktop\\Mital\\CasStudy\\FlightBookingService\\Utility\\obj\\",
+      "outputPath": "C:\\Users\\cogdotnet12\\Desktop\\MItal\\CasStudy\\FlightBookingService\\Utility\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -6335,6 +6477,18 @@
           "Microsoft.Extensions.Logging.Abstractions": {
             "target": "Package",
             "version": "[6.0.1, )"
+          },
+          "Swashbuckle.AspNetCore": {
+            "target": "Package",
+            "version": "[4.0.0, )"
+          },
+          "Swashbuckle.AspNetCore.SwaggerGen": {
+            "target": "Package",
+            "version": "[5.0.0, )"
+          },
+          "Swashbuckle.AspNetCore.SwaggerUI": {
+            "target": "Package",
+            "version": "[5.0.0, )"
           }
         },
         "imports": [

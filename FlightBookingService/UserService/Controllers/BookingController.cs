@@ -1,5 +1,6 @@
 ﻿using Confluent.Kafka;
 using DAL.Models;
+using MassTransit.KafkaIntegration;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -8,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using UserService.Entity;
+using UserService.Events;
 using UserService.ViewModel;
 using Utility;
 
@@ -17,25 +19,45 @@ namespace UserService.Controllers
     [ApiController]
     public class BookingController : ControllerBase
     {
-        ProducerConfig _producerConfig;
+        #region kafka
 
-        public BookingController(ProducerConfig producerConfig)
+        //ProducerConfig _producerConfig;
+
+        //public BookingController(ProducerConfig producerConfig)
+        //{
+        //    _producerConfig = producerConfig;
+        //}
+
+
+        //[HttpPost("Send")]
+        //public async Task<ActionResult> Get(string Topic, [FromBody] Employee employee)
+        //{
+        //    var EmpData = JsonConvert.SerializeObject(employee);
+        //    using (var producer = new ProducerBuilder<Null, string>(_producerConfig).Build())
+        //    {
+        //        await producer.ProduceAsync(Topic, new Message<Null, string> { Value = EmpData });
+        //        producer.Flush(TimeSpan.FromSeconds(10));
+        //        return Ok();
+        //    }
+
+        //}
+
+        private ITopicProducer<VideoDeletation> _topicProducer;
+
+        public BookingController(ITopicProducer<VideoDeletation> topicProducer)
         {
-            _producerConfig = producerConfig;
+            _topicProducer = topicProducer;
         }
 
-        [HttpPost("Send")]
-        public async Task<ActionResult> Get(string Topic, [FromBody] Employee employee)
+        [HttpPost("{Title}")]
+        public async Task<IActionResult> PostAsync(string Title)
         {
-            var EmpData = JsonConvert.SerializeObject(employee);
-            using (var producer = new ProducerBuilder<Null,string>(_producerConfig).Build())
-            {
-                await producer.ProduceAsync(Topic, new Message<Null, string> { Value = EmpData });
-                producer.Flush(TimeSpan.FromSeconds(10));
-                return Ok();
-            }
-
+            await _topicProducer.Produce(new VideoDeletation {title= Title });
+            return Ok(Title);
         }
+
+
+        #endregion
 
         [HttpPost]
         [Route("AddUpdateFlightBooking")]

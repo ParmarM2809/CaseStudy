@@ -1,5 +1,6 @@
 using Confluent.Kafka;
 using MassTransit;
+using MassTransit.KafkaIntegration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -12,7 +13,10 @@ using Swashbuckle.Swagger;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Reflection;
 using System.Threading.Tasks;
+using UserService.Events;
 
 namespace UserService
 {
@@ -41,19 +45,46 @@ namespace UserService
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "www.compilemode.com", Version = "v1" });
             });
+            //RabbitMQ
+            //services.AddMassTransit(x =>
+            //{
+            //    x.UsingRabbitMq((context, cfg) =>
+            //    {
+            //        var uri = new Uri(Configuration["ServiceBus:Uri"]);
+            //        cfg.Host(uri, host =>
+            //        {
+            //            host.Username(Configuration["ServiceBus:Username"]);
+            //            host.Password(Configuration["ServiceBus:Password"]);
+            //        });
+            //    });
+            //});
+
             services.AddMassTransit(x =>
             {
-                x.UsingRabbitMq((context, cfg) =>
+                x.UsingRabbitMq((context, cfg) => cfg.ConfigureEndpoints(context));
+                x.AddRider(rider =>
                 {
-                    var uri = new Uri(Configuration["ServiceBus:Uri"]);
-                    cfg.Host(uri, host =>
+                    rider.AddProducer<VideoDeletation>(nameof(VideoDeletation));
+                    rider.UsingKafka((context, k) =>
                     {
-                        host.Username(Configuration["ServiceBus:Username"]);
-                        host.Password(Configuration["ServiceBus:Password"]);
+                        k.Host("localhost:9092");
+                        k.TopicEndpoint<VideoCreation>(nameof(VideoCreation),
+                            GetUniqueName(nameof(VideoCreation)), e =>
+                            {
+                                e.CheckpointInterval = TimeSpan.FromSeconds(10);
+                            });
                     });
+
                 });
             });
-           
+            services.AddMassTransitHostedService();
+        }
+
+        private string GetUniqueName(string EventName)
+        {
+            string hostName = Dns.GetHostName();
+            string classAssembly = Assembly.GetCallingAssembly().GetName().Name;
+            return $"{hostName}.{classAssembly}.{EventName}";
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

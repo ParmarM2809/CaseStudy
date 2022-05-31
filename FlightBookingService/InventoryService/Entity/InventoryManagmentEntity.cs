@@ -57,6 +57,12 @@ namespace InventoryService.Entity
             return inventoryList;
         }
 
+        public void Update(Inventory inventory)
+        {
+            _flightBookingContext.Add(inventory);
+            _flightBookingContext.SaveChanges();
+        }
+        
         public Inventory AddUpdateFlight(FlightModel flightModel)
         {
             Inventory inventory = new Inventory();

@@ -53,21 +53,21 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
-            "MassTransit": {
-              "target": "Package",
-              "version": "[8.0.2, )"
-            },
             "MassTransit.AspNetCore": {
               "target": "Package",
-              "version": "[7.3.1, )"
+              "version": "[7.0.3, )"
             },
             "MassTransit.Extensions.DependencyInjection": {
               "target": "Package",
-              "version": "[7.3.1, )"
+              "version": "[7.0.3, )"
+            },
+            "MassTransit.Kafka": {
+              "target": "Package",
+              "version": "[7.0.3, )"
             },
             "MassTransit.RabbitMQ": {
               "target": "Package",
-              "version": "[7.3.1, )"
+              "version": "[7.0.3, )"
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
@@ -157,6 +157,10 @@
             "EntityFramework": {
               "target": "Package",
               "version": "[5.0.0, )"
+            },
+            "MassTransit": {
+              "target": "Package",
+              "version": "[7.0.3, )"
             },
             "Microsoft.AspNetCore.Session": {
               "target": "Package",
@@ -260,6 +264,10 @@
             "Consul": {
               "target": "Package",
               "version": "[1.6.10.5, )"
+            },
+            "MassTransit": {
+              "target": "Package",
+              "version": "[7.0.3, )"
             },
             "Microsoft.AspNetCore.Hosting.Abstractions": {
               "target": "Package",

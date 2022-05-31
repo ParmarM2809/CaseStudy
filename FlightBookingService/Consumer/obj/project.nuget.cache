@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "raq8QMqezi1hUyYrvI3jjQkCNRy01UT5xgvkeYWI6xWXh1E4G1fwwIxF0kHFXmxrWqOL5lrPaG0cQQ2aZJCphg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\cogdotnet12\\Desktop\\MItal\\CasStudy\\FlightBookingService\\Consumer\\Consumer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\cogdotnet12\\.nuget\\packages\\confluent.kafka\\1.4.0\\confluent.kafka.1.4.0.nupkg.sha512",
+    "C:\\Users\\cogdotnet12\\.nuget\\packages\\librdkafka.redist\\1.4.0\\librdkafka.redist.1.4.0.nupkg.sha512",
+    "C:\\Users\\cogdotnet12\\.nuget\\packages\\system.memory\\4.5.0\\system.memory.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

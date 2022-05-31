@@ -1,3 +1,4 @@
+using InventoryService.Consumers;
 using MassTransit;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -11,7 +12,10 @@ using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Reflection;
 using System.Threading.Tasks;
+using UserService.Events;
 using Utility;
 
 namespace InventoryService
@@ -35,7 +39,32 @@ namespace InventoryService
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "www.compilemode.com", Version = "v1" });
             });
+            services.AddMassTransit(x =>
+            {
+                x.UsingRabbitMq((context, cfg) => cfg.ConfigureEndpoints(context));
+                x.AddRider(rider =>
+                {
+                    rider.AddConsumer<VideoDeletaionConsumers>();
+                    rider.UsingKafka((context, k) =>
+                    {
+                        k.Host("localhost:9092");
+                        k.TopicEndpoint<VideoDeletation>(nameof(VideoDeletation), 
+                            GetUniqueName(nameof(VideoDeletation)), e =>
+                        {
+                            e.CheckpointInterval = TimeSpan.FromSeconds(10);
+                            e.ConfigureConsumer<VideoDeletaionConsumers>(context);
+                        });
+                    });
+                });
+            });
+            services.AddMassTransitHostedService();
+        }
 
+        private string GetUniqueName(string eventname)
+        {
+            string hostname = Dns.GetHostName();
+            string classAssembly = Assembly.GetCallingAssembly().GetName().Name;
+            return $"{hostname}.{classAssembly}.{eventname}";
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -24,6 +24,19 @@ namespace UserService.Controllers
             _producerConfig = producerConfig;
         }
 
+        [HttpPost("Send")]
+        public async Task<ActionResult> Get(string Topic, [FromBody] Employee employee)
+        {
+            var EmpData = JsonConvert.SerializeObject(employee);
+            using (var producer = new ProducerBuilder<Null,string>(_producerConfig).Build())
+            {
+                await producer.ProduceAsync(Topic, new Message<Null, string> { Value = EmpData });
+                producer.Flush(TimeSpan.FromSeconds(10));
+                return Ok();
+            }
+
+        }
+
         [HttpPost]
         [Route("AddUpdateFlightBooking")]
         public async Task<IActionResult> AddUpdateFlightBooking(BookingModel booking)
@@ -139,14 +152,7 @@ namespace UserService.Controllers
             }
         }
 
-        //public async Task<ActionResult> Get(string Topic , [FromBody]Employee employee)
-        //{
-        //    var EmpData = JsonConvert.SerializeObject(employee);
-        //    using (var producer = new ProducerConfig<Null, string>(_producerConfig).Buid())
-        //    {
-        //        await producer.Pro
-        //    }
-        //}
+
 
     }
 }

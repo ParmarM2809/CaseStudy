@@ -42,18 +42,19 @@ namespace UserService.Controllers
 
         //}
 
-        private ITopicProducer<VideoDeletation> _topicProducer;
+        private ITopicProducer<SeatBookingDeletation> _topicProducer;
 
-        public BookingController(ITopicProducer<VideoDeletation> topicProducer)
+        public BookingController(ITopicProducer<SeatBookingDeletation> topicProducer)
         {
             _topicProducer = topicProducer;
         }
 
-        [HttpPost("{Title}")]
-        public async Task<IActionResult> PostAsync(string Title)
+        [HttpPost()]
+        public async Task<IActionResult> UpdateSeat(BookingModel booking)
         {
-            await _topicProducer.Produce(new VideoDeletation {title= Title });
-            return Ok(Title);
+            await _topicProducer.Produce(new SeatBookingDeletation
+            { SeatCount = booking.BookedSeats, FlightId = booking.FlightId });
+            return Ok(booking);
         }
 
 
@@ -77,6 +78,7 @@ namespace UserService.Controllers
                     resultObject = new ResultObject(APIResponseMessage.UpdateTimePassed, StatusType.Success);
                     return NotFound();
                 }
+                await UpdateSeat(booking);
                 bookingEntity.AddUpdateBooking(booking);
                 resultObject = new ResultObject(APIResponseMessage.DataSaved, StatusType.Success);
                 return Ok();
@@ -152,7 +154,7 @@ namespace UserService.Controllers
             ResultObject resultObject = new ResultObject();
             try
             {
-                if (BookingId == 0 )
+                if (BookingId == 0)
                 {
                     resultObject = new ResultObject(APIResponseMessage.DataNotValid, StatusType.Error);
                     return NotFound();

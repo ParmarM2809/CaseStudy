@@ -44,15 +44,15 @@ namespace InventoryService
                 x.UsingRabbitMq((context, cfg) => cfg.ConfigureEndpoints(context));
                 x.AddRider(rider =>
                 {
-                    rider.AddConsumer<VideoDeletaionConsumers>();
+                    rider.AddConsumer<SeatBookingConsumers>();
                     rider.UsingKafka((context, k) =>
                     {
                         k.Host("localhost:9092");
-                        k.TopicEndpoint<VideoDeletation>(nameof(VideoDeletation), 
-                            GetUniqueName(nameof(VideoDeletation)), e =>
+                        k.TopicEndpoint<SeatBookingDeletation>(nameof(SeatBookingDeletation), 
+                            GetUniqueName(nameof(SeatBookingDeletation)), e =>
                         {
                             e.CheckpointInterval = TimeSpan.FromSeconds(10);
-                            e.ConfigureConsumer<VideoDeletaionConsumers>(context);
+                            e.ConfigureConsumer<SeatBookingConsumers>(context);
                         });
                     });
                 });

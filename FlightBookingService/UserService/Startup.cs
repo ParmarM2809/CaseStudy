@@ -64,12 +64,12 @@ namespace UserService
                 x.UsingRabbitMq((context, cfg) => cfg.ConfigureEndpoints(context));
                 x.AddRider(rider =>
                 {
-                    rider.AddProducer<VideoDeletation>(nameof(VideoDeletation));
+                    rider.AddProducer<SeatBookingDeletation>(nameof(SeatBookingDeletation));
                     rider.UsingKafka((context, k) =>
                     {
                         k.Host("localhost:9092");
-                        k.TopicEndpoint<VideoCreation>(nameof(VideoCreation),
-                            GetUniqueName(nameof(VideoCreation)), e =>
+                        k.TopicEndpoint<SeatBookingCreation>(nameof(SeatBookingCreation),
+                            GetUniqueName(nameof(SeatBookingCreation)), e =>
                             {
                                 e.CheckpointInterval = TimeSpan.FromSeconds(10);
                             });

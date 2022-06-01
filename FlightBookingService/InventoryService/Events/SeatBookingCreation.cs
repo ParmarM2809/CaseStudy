@@ -5,8 +5,9 @@ using System.Threading.Tasks;
 
 namespace UserService.Events
 {
-    public class VideoDeletation
+    public class SeatBookingCreation
     {
-        public string title { get; set; }
+        public long SeatCount { get; set; }
+        public long FlightId { get; set; }
     }
 }

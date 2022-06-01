@@ -57,12 +57,15 @@ namespace InventoryService.Entity
             return inventoryList;
         }
 
-        public void Update(Inventory inventory)
+        public void UpdateSeatAvaiability(Inventory inventory)
         {
-            _flightBookingContext.Add(inventory);
+            inventory = GetFlightByID(inventory.Id);
+            inventory.SeatAvaibility = 95;
+            inventory.UpdatedDate = DateTime.Now;
+            _flightBookingContext.Entry(inventory).State = EntityState.Detached;
             _flightBookingContext.SaveChanges();
         }
-        
+
         public Inventory AddUpdateFlight(FlightModel flightModel)
         {
             Inventory inventory = new Inventory();
@@ -72,11 +75,11 @@ namespace InventoryService.Entity
             inventory.EndPoint = flightModel.EndPoint;
             inventory.IsAvailable = flightModel.IsAvailable;
             inventory.Id = flightModel.Id;
-            inventory.IsDiscountAvailable= flightModel.IsDiscountAvailable;
+            inventory.IsDiscountAvailable = flightModel.IsDiscountAvailable;
             inventory.Price = flightModel.Price;
             inventory.StartPoint = flightModel.StartPoint;
             inventory.UpdatedDate = DateTime.Now;
-            inventory.ScheduledDate = flightModel.ScheduledDate; 
+            inventory.ScheduledDate = flightModel.ScheduledDate;
             inventory.SeatAvaibility = flightModel.SeatAvaibility;
             if (inventory.Id == 0)
             {

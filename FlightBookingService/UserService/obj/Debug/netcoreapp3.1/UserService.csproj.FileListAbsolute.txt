@@ -113,6 +113,7 @@ C:\Users\cogdotnet12\Desktop\MItal\CasStudy\FlightBookingService\UserService\obj
 C:\Users\cogdotnet12\Desktop\MItal\CasStudy\FlightBookingService\UserService\obj\Debug\netcoreapp3.1\staticwebassets\UserService.StaticWebAssets.xml
 C:\Users\cogdotnet12\Desktop\MItal\CasStudy\FlightBookingService\UserService\obj\Debug\netcoreapp3.1\scopedcss\bundle\UserService.styles.css
 C:\Users\cogdotnet12\Desktop\MItal\CasStudy\FlightBookingService\UserService\obj\Debug\netcoreapp3.1\UserService.RazorTargetAssemblyInfo.cache
+C:\Users\cogdotnet12\Desktop\MItal\CasStudy\FlightBookingService\UserService\obj\Debug\netcoreapp3.1\UserService.csproj.CopyComplete
 C:\Users\cogdotnet12\Desktop\MItal\CasStudy\FlightBookingService\UserService\obj\Debug\netcoreapp3.1\UserService.dll
 C:\Users\cogdotnet12\Desktop\MItal\CasStudy\FlightBookingService\UserService\obj\Debug\netcoreapp3.1\UserService.pdb
 C:\Users\cogdotnet12\Desktop\MItal\CasStudy\FlightBookingService\UserService\obj\Debug\netcoreapp3.1\UserService.genruntimeconfig.cache

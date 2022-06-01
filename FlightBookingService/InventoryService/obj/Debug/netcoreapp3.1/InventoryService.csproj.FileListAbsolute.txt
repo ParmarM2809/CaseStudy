@@ -108,6 +108,7 @@ C:\Users\cogdotnet12\Desktop\MItal\CasStudy\FlightBookingService\InventoryServic
 C:\Users\cogdotnet12\Desktop\MItal\CasStudy\FlightBookingService\InventoryService\obj\Debug\netcoreapp3.1\staticwebassets\InventoryService.StaticWebAssets.xml
 C:\Users\cogdotnet12\Desktop\MItal\CasStudy\FlightBookingService\InventoryService\obj\Debug\netcoreapp3.1\scopedcss\bundle\InventoryService.styles.css
 C:\Users\cogdotnet12\Desktop\MItal\CasStudy\FlightBookingService\InventoryService\obj\Debug\netcoreapp3.1\InventoryService.RazorTargetAssemblyInfo.cache
+C:\Users\cogdotnet12\Desktop\MItal\CasStudy\FlightBookingService\InventoryService\obj\Debug\netcoreapp3.1\InventoryService.csproj.CopyComplete
 C:\Users\cogdotnet12\Desktop\MItal\CasStudy\FlightBookingService\InventoryService\obj\Debug\netcoreapp3.1\InventoryService.dll
 C:\Users\cogdotnet12\Desktop\MItal\CasStudy\FlightBookingService\InventoryService\obj\Debug\netcoreapp3.1\InventoryService.pdb
 C:\Users\cogdotnet12\Desktop\MItal\CasStudy\FlightBookingService\InventoryService\obj\Debug\netcoreapp3.1\InventoryService.genruntimeconfig.cache

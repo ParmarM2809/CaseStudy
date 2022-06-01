@@ -375,6 +375,7 @@ C:\Users\cogdotnet12\Desktop\MItal\CasStudy\FlightBookingService\APIGateway\bin\
 C:\Users\cogdotnet12\Desktop\MItal\CasStudy\FlightBookingService\APIGateway\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\msvcp120.dll
 C:\Users\cogdotnet12\Desktop\MItal\CasStudy\FlightBookingService\APIGateway\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\msvcr120.dll
 C:\Users\cogdotnet12\Desktop\MItal\CasStudy\FlightBookingService\APIGateway\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\zlib.dll
+C:\Users\cogdotnet12\Desktop\MItal\CasStudy\FlightBookingService\APIGateway\obj\Debug\netcoreapp3.1\APIGateway.csproj.AssemblyReference.cache
 C:\Users\cogdotnet12\Desktop\MItal\CasStudy\FlightBookingService\APIGateway\obj\Debug\netcoreapp3.1\APIGateway.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\cogdotnet12\Desktop\MItal\CasStudy\FlightBookingService\APIGateway\obj\Debug\netcoreapp3.1\APIGateway.AssemblyInfoInputs.cache
 C:\Users\cogdotnet12\Desktop\MItal\CasStudy\FlightBookingService\APIGateway\obj\Debug\netcoreapp3.1\APIGateway.AssemblyInfo.cs
@@ -403,4 +404,3 @@ C:\Users\cogdotnet12\Desktop\MItal\CasStudy\FlightBookingService\APIGateway\obj\
 C:\Users\cogdotnet12\Desktop\MItal\CasStudy\FlightBookingService\APIGateway\obj\Debug\netcoreapp3.1\APIGateway.dll
 C:\Users\cogdotnet12\Desktop\MItal\CasStudy\FlightBookingService\APIGateway\obj\Debug\netcoreapp3.1\APIGateway.pdb
 C:\Users\cogdotnet12\Desktop\MItal\CasStudy\FlightBookingService\APIGateway\obj\Debug\netcoreapp3.1\APIGateway.genruntimeconfig.cache
-C:\Users\cogdotnet12\Desktop\MItal\CasStudy\FlightBookingService\APIGateway\obj\Debug\netcoreapp3.1\APIGateway.csproj.AssemblyReference.cache

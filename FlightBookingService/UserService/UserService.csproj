@@ -5,13 +5,14 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="MassTransit.AspNetCore" Version="7.0.3" />
-		<PackageReference Include="MassTransit.Extensions.DependencyInjection" Version="7.0.3" />
-		<PackageReference Include="MassTransit.Kafka" Version="7.0.3" />
-		<PackageReference Include="MassTransit.RabbitMQ" Version="7.0.3" />
+		<PackageReference Include="MassTransit" Version="7.1.0" />
+		<PackageReference Include="MassTransit.AspNetCore" Version="7.1.0" />
+		<PackageReference Include="MassTransit.Extensions.DependencyInjection" Version="7.1.0" />
+		<PackageReference Include="MassTransit.Kafka" Version="7.1.0" />
+		<PackageReference Include="MassTransit.RabbitMQ" Version="7.1.0" />
 		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.24" />
 		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.25" />
-		<PackageReference Include="Confluent.kafka" Version="1.5.0" />
+		<!--<PackageReference Include="Confluent.kafka" Version="1.5.0" />-->
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="4.0.0" />
 		<PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="5.0.0" />
 		<PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="5.0.0" />

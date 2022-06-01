@@ -31,12 +31,12 @@
     ".NETCoreApp,Version=v3.1": {
       "InventoryService/1.0.0": {
         "dependencies": {
-          "Confluent.Kafka": "1.5.0",
           "DAL": "1.0.0",
-          "MassTransit.AspNetCore": "7.0.3",
-          "MassTransit.Extensions.DependencyInjection": "7.0.3",
-          "MassTransit.Kafka": "7.0.3",
-          "MassTransit.RabbitMQ": "7.0.3",
+          "MassTransit": "7.1.0",
+          "MassTransit.AspNetCore": "7.1.0",
+          "MassTransit.Extensions.DependencyInjection": "7.1.0",
+          "MassTransit.Kafka": "7.1.0",
+          "MassTransit.RabbitMQ": "7.1.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "3.1.24",
           "Microsoft.AspNetCore.Session": "2.2.0",
           "Swashbuckle.AspNetCore": "4.0.0",
@@ -315,29 +315,29 @@
           "InventoryService.dll": {}
         }
       },
-      "Automatonymous/5.0.1": {
+      "Automatonymous/5.1.0": {
         "dependencies": {
           "GreenPipes": "4.0.0"
         },
         "runtime": {
           "lib/netstandard2.0/Automatonymous.dll": {
-            "assemblyVersion": "5.0.1.0",
-            "fileVersion": "5.0.1.0"
+            "assemblyVersion": "5.1.0.0",
+            "fileVersion": "5.1.0.0"
           }
         },
         "compile": {
           "lib/netstandard2.0/Automatonymous.dll": {}
         }
       },
-      "Confluent.Kafka/1.5.0": {
+      "Confluent.Kafka/1.5.3": {
         "dependencies": {
           "System.Memory": "4.5.4",
-          "librdkafka.redist": "1.5.0"
+          "librdkafka.redist": "1.5.3"
         },
         "runtime": {
           "lib/netcoreapp2.1/Confluent.Kafka.dll": {
-            "assemblyVersion": "1.5.0.0",
-            "fileVersion": "1.5.0.0"
+            "assemblyVersion": "1.5.3.0",
+            "fileVersion": "1.5.3.0"
           }
         },
         "compile": {
@@ -384,7 +384,7 @@
           "lib/netstandard2.0/GreenPipes.dll": {}
         }
       },
-      "librdkafka.redist/1.5.0": {
+      "librdkafka.redist/1.5.3": {
         "runtimeTargets": {
           "runtimes/linux-x64/native/alpine-librdkafka.so": {
             "rid": "linux-x64",
@@ -473,11 +473,11 @@
           }
         }
       },
-      "MassTransit/7.0.3": {
+      "MassTransit/7.1.0": {
         "dependencies": {
-          "Automatonymous": "5.0.1",
+          "Automatonymous": "5.1.0",
           "Microsoft.Extensions.Logging.Abstractions": "6.0.1",
-          "NewId": "3.0.2",
+          "NewId": "3.0.3",
           "Newtonsoft.Json": "11.0.2",
           "Newtonsoft.Json.Bson": "1.0.1",
           "System.Diagnostics.DiagnosticSource": "5.0.0",
@@ -485,78 +485,78 @@
           "System.Reflection.Emit.Lightweight": "4.7.0",
           "System.Reflection.Extensions": "4.3.0",
           "System.Runtime.Loader": "4.3.0",
-          "System.Threading.Channels": "4.7.1",
+          "System.Threading.Channels": "5.0.0",
           "System.Threading.ThreadPool": "4.3.0",
           "System.ValueTuple": "4.5.0",
           "System.Xml.ReaderWriter": "4.3.1"
         },
         "runtime": {
           "lib/netstandard2.0/MassTransit.dll": {
-            "assemblyVersion": "7.0.3.0",
-            "fileVersion": "7.0.3.0"
+            "assemblyVersion": "7.1.0.0",
+            "fileVersion": "7.1.0.0"
           }
         },
         "compile": {
           "lib/netstandard2.0/MassTransit.dll": {}
         }
       },
-      "MassTransit.AspNetCore/7.0.3": {
+      "MassTransit.AspNetCore/7.1.0": {
         "dependencies": {
-          "MassTransit": "7.0.3",
-          "MassTransit.Extensions.DependencyInjection": "7.0.3",
+          "MassTransit": "7.1.0",
+          "MassTransit.Extensions.DependencyInjection": "7.1.0",
           "Microsoft.Extensions.DependencyInjection": "5.0.0",
-          "Microsoft.Extensions.Diagnostics.HealthChecks": "3.1.5",
-          "Microsoft.Extensions.Hosting.Abstractions": "3.1.5"
+          "Microsoft.Extensions.Diagnostics.HealthChecks": "3.1.10",
+          "Microsoft.Extensions.Hosting.Abstractions": "3.1.10"
         },
         "runtime": {
           "lib/netstandard2.0/MassTransit.AspNetCoreIntegration.dll": {
-            "assemblyVersion": "7.0.3.0",
-            "fileVersion": "7.0.3.0"
+            "assemblyVersion": "7.1.0.0",
+            "fileVersion": "7.1.0.0"
           }
         },
         "compile": {
           "lib/netstandard2.0/MassTransit.AspNetCoreIntegration.dll": {}
         }
       },
-      "MassTransit.Extensions.DependencyInjection/7.0.3": {
+      "MassTransit.Extensions.DependencyInjection/7.1.0": {
         "dependencies": {
-          "MassTransit": "7.0.3",
+          "MassTransit": "7.1.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0"
         },
         "runtime": {
           "lib/netstandard2.0/MassTransit.ExtensionsDependencyInjectionIntegration.dll": {
-            "assemblyVersion": "7.0.3.0",
-            "fileVersion": "7.0.3.0"
+            "assemblyVersion": "7.1.0.0",
+            "fileVersion": "7.1.0.0"
           }
         },
         "compile": {
           "lib/netstandard2.0/MassTransit.ExtensionsDependencyInjectionIntegration.dll": {}
         }
       },
-      "MassTransit.Kafka/7.0.3": {
+      "MassTransit.Kafka/7.1.0": {
         "dependencies": {
-          "Confluent.Kafka": "1.5.0",
-          "MassTransit": "7.0.3"
+          "Confluent.Kafka": "1.5.3",
+          "MassTransit": "7.1.0"
         },
         "runtime": {
           "lib/netstandard2.0/MassTransit.KafkaIntegration.dll": {
-            "assemblyVersion": "7.0.3.0",
-            "fileVersion": "7.0.3.0"
+            "assemblyVersion": "7.1.0.0",
+            "fileVersion": "7.1.0.0"
           }
         },
         "compile": {
           "lib/netstandard2.0/MassTransit.KafkaIntegration.dll": {}
         }
       },
-      "MassTransit.RabbitMQ/7.0.3": {
+      "MassTransit.RabbitMQ/7.1.0": {
         "dependencies": {
-          "MassTransit": "7.0.3",
-          "RabbitMQ.Client": "6.1.0"
+          "MassTransit": "7.1.0",
+          "RabbitMQ.Client": "6.2.1"
         },
         "runtime": {
           "lib/netstandard2.0/MassTransit.RabbitMqTransport.dll": {
-            "assemblyVersion": "7.0.3.0",
-            "fileVersion": "7.0.3.0"
+            "assemblyVersion": "7.1.0.0",
+            "fileVersion": "7.1.0.0"
           }
         },
         "compile": {
@@ -596,7 +596,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.Hosting.Server.Abstractions": "2.2.0",
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
-          "Microsoft.Extensions.Hosting.Abstractions": "3.1.5"
+          "Microsoft.Extensions.Hosting.Abstractions": "3.1.10"
         }
       },
       "Microsoft.AspNetCore.Hosting.Server.Abstractions/2.2.0": {
@@ -852,58 +852,58 @@
           "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
         }
       },
-      "Microsoft.Extensions.Diagnostics.HealthChecks/3.1.5": {
+      "Microsoft.Extensions.Diagnostics.HealthChecks/3.1.10": {
         "dependencies": {
-          "Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions": "3.1.5",
-          "Microsoft.Extensions.Hosting.Abstractions": "3.1.5",
+          "Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions": "3.1.10",
+          "Microsoft.Extensions.Hosting.Abstractions": "3.1.10",
           "Microsoft.Extensions.Options": "5.0.0"
         },
         "runtime": {
           "lib/netcoreapp3.1/Microsoft.Extensions.Diagnostics.HealthChecks.dll": {
-            "assemblyVersion": "3.1.5.0",
-            "fileVersion": "3.100.520.27009"
+            "assemblyVersion": "3.1.10.0",
+            "fileVersion": "3.100.1020.51904"
           }
         },
         "compile": {
           "lib/netcoreapp3.1/Microsoft.Extensions.Diagnostics.HealthChecks.dll": {}
         }
       },
-      "Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions/3.1.5": {
+      "Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions/3.1.10": {
         "runtime": {
           "lib/netcoreapp3.1/Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll": {
-            "assemblyVersion": "3.1.5.0",
-            "fileVersion": "3.100.520.27009"
+            "assemblyVersion": "3.1.10.0",
+            "fileVersion": "3.100.1020.51904"
           }
         },
         "compile": {
           "lib/netcoreapp3.1/Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll": {}
         }
       },
-      "Microsoft.Extensions.FileProviders.Abstractions/3.1.5": {
+      "Microsoft.Extensions.FileProviders.Abstractions/3.1.10": {
         "dependencies": {
           "Microsoft.Extensions.Primitives": "6.0.0"
         },
         "runtime": {
           "lib/netcoreapp3.1/Microsoft.Extensions.FileProviders.Abstractions.dll": {
-            "assemblyVersion": "3.1.5.0",
-            "fileVersion": "3.100.520.27009"
+            "assemblyVersion": "3.1.10.0",
+            "fileVersion": "3.100.1020.51904"
           }
         },
         "compile": {
           "lib/netcoreapp3.1/Microsoft.Extensions.FileProviders.Abstractions.dll": {}
         }
       },
-      "Microsoft.Extensions.Hosting.Abstractions/3.1.5": {
+      "Microsoft.Extensions.Hosting.Abstractions/3.1.10": {
         "dependencies": {
           "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
-          "Microsoft.Extensions.FileProviders.Abstractions": "3.1.5",
+          "Microsoft.Extensions.FileProviders.Abstractions": "3.1.10",
           "Microsoft.Extensions.Logging.Abstractions": "6.0.1"
         },
         "runtime": {
           "lib/netcoreapp3.1/Microsoft.Extensions.Hosting.Abstractions.dll": {
-            "assemblyVersion": "3.1.5.0",
-            "fileVersion": "3.100.520.27009"
+            "assemblyVersion": "3.1.10.0",
+            "fileVersion": "3.100.1020.51904"
           }
         },
         "compile": {
@@ -1143,11 +1143,11 @@
           "System.Xml.XDocument": "4.3.0"
         }
       },
-      "NewId/3.0.2": {
+      "NewId/3.0.3": {
         "runtime": {
           "lib/netstandard2.0/NewId.dll": {
-            "assemblyVersion": "3.0.2.0",
-            "fileVersion": "3.0.2.0"
+            "assemblyVersion": "3.0.3.0",
+            "fileVersion": "3.0.3.0"
           }
         },
         "compile": {
@@ -1180,15 +1180,15 @@
           "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
         }
       },
-      "RabbitMQ.Client/6.1.0": {
+      "RabbitMQ.Client/6.2.1": {
         "dependencies": {
           "System.Memory": "4.5.4",
-          "System.Threading.Channels": "4.7.1"
+          "System.Threading.Channels": "5.0.0"
         },
         "runtime": {
           "lib/netstandard2.0/RabbitMQ.Client.dll": {
             "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.1.0.0"
+            "fileVersion": "6.2.1.0"
           }
         },
         "compile": {
@@ -2047,11 +2047,11 @@
           "System.Threading.Tasks": "4.3.0"
         }
       },
-      "System.Threading.Channels/4.7.1": {
+      "System.Threading.Channels/5.0.0": {
         "runtime": {
           "lib/netcoreapp3.0/System.Threading.Channels.dll": {
-            "assemblyVersion": "4.0.2.0",
-            "fileVersion": "4.700.20.21406"
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
           }
         },
         "compile": {
@@ -2164,7 +2164,6 @@
       "DAL/1.0.0": {
         "dependencies": {
           "EntityFramework": "5.0.0",
-          "MassTransit": "7.0.3",
           "Microsoft.AspNetCore.Session": "2.2.0",
           "Microsoft.EntityFrameworkCore": "5.0.0",
           "Microsoft.EntityFrameworkCore.Relational": "5.0.0",
@@ -2183,7 +2182,6 @@
       "Utility/1.0.0": {
         "dependencies": {
           "Consul": "1.6.10.5",
-          "MassTransit": "7.0.3",
           "Microsoft.AspNetCore.Hosting.Abstractions": "2.2.0",
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
           "Microsoft.AspNetCore.Session": "2.2.0",
@@ -3793,19 +3791,19 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Automatonymous/5.0.1": {
+    "Automatonymous/5.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-OMe8VGc+4C+BCWxCeDyMEVjlhCsnNwMcrbK7aiLHXxIlBHUjwVP93eJ/mURc9e9D1pLZMfY1mB9C7w7wWHVxWw==",
-      "path": "automatonymous/5.0.1",
-      "hashPath": "automatonymous.5.0.1.nupkg.sha512"
+      "sha512": "sha512-+gPEJZTMNlxdunodkcIiMvhgypk5v+dCaApXP1M3DkeOcZyPfJXQJaO2055ywL2M2yTYfpFs8hukzg445IX/bg==",
+      "path": "automatonymous/5.1.0",
+      "hashPath": "automatonymous.5.1.0.nupkg.sha512"
     },
-    "Confluent.Kafka/1.5.0": {
+    "Confluent.Kafka/1.5.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ltuOkRPcNy0N/ZIYFOr/RWFSmr3dZLd0qavQN2Tj1k1K7Ts31jobNuZzc4F1cwZeCmS7zuOKmXpIpu+LH0w9PQ==",
-      "path": "confluent.kafka/1.5.0",
-      "hashPath": "confluent.kafka.1.5.0.nupkg.sha512"
+      "sha512": "sha512-rpDn5UaAswv4CGZpogvPCkSPci0Dfzcmt4EZyF1euGoBJsIdJD1WbRqbsqg0/lk6QMtXvO3csVPK2w992MzcoQ==",
+      "path": "confluent.kafka/1.5.3",
+      "hashPath": "confluent.kafka.1.5.3.nupkg.sha512"
     },
     "Consul/1.6.10.5": {
       "type": "package",
@@ -3828,47 +3826,47 @@
       "path": "greenpipes/4.0.0",
       "hashPath": "greenpipes.4.0.0.nupkg.sha512"
     },
-    "librdkafka.redist/1.5.0": {
+    "librdkafka.redist/1.5.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-27vxPMQ8qnzadF+IoMIQ3LcMAh/JwtE3uNFFOZaW4RCD+JV6KETwWYROMCth1pResxcvVtSyU/GdHI+M9t3C5g==",
-      "path": "librdkafka.redist/1.5.0",
-      "hashPath": "librdkafka.redist.1.5.0.nupkg.sha512"
+      "sha512": "sha512-cB4t+bp6Rb3SVAsnn1fbTBcCWLNbsMnwpbbV4T9jucKQ5Z3Sn/Wo3ji8BdJ9B+xWR7DkiRnQuIu3quvanJgFXQ==",
+      "path": "librdkafka.redist/1.5.3",
+      "hashPath": "librdkafka.redist.1.5.3.nupkg.sha512"
     },
-    "MassTransit/7.0.3": {
+    "MassTransit/7.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-b0tMbRzpviJUV8xmDx2B3dxviqxDuH3m1hF7kyZlGcj1tLxBbuoWju2lSUk5ib23TiK0898ldnCVeZFZQEQxHQ==",
-      "path": "masstransit/7.0.3",
-      "hashPath": "masstransit.7.0.3.nupkg.sha512"
+      "sha512": "sha512-ts9tEjXhe3BizbNE4d3ninIyUE83GT5YrUwejliuP+kQ6/l/ORo7LkEaBQl3lX/dN8eQKK0jZaHoTxqTRa0X4Q==",
+      "path": "masstransit/7.1.0",
+      "hashPath": "masstransit.7.1.0.nupkg.sha512"
     },
-    "MassTransit.AspNetCore/7.0.3": {
+    "MassTransit.AspNetCore/7.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-BA2dLOU7BGlEO54ozBCYhQ1ygo7aqiA+IgYIOltBJ2jFiGdKF63++KHhC08L7W7yCJopIO8/WsfVjVvMuQR7rQ==",
-      "path": "masstransit.aspnetcore/7.0.3",
-      "hashPath": "masstransit.aspnetcore.7.0.3.nupkg.sha512"
+      "sha512": "sha512-NrJHczCLrmzVH2oJ+Cxr+yWc209PJCwZ5LjdarUg1962b/rmJOjjFA8KhAZti+6W6OxDr1DNSAMXkxi27Qvuxw==",
+      "path": "masstransit.aspnetcore/7.1.0",
+      "hashPath": "masstransit.aspnetcore.7.1.0.nupkg.sha512"
     },
-    "MassTransit.Extensions.DependencyInjection/7.0.3": {
+    "MassTransit.Extensions.DependencyInjection/7.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-BybY/1n+J8GrPEtJA5toYamOW2zY5Xmn+juzCrND01Eg9yIlLbG8uBVLIrQXFh1y7DcTFoQN4sk3ecEQRzgo6A==",
-      "path": "masstransit.extensions.dependencyinjection/7.0.3",
-      "hashPath": "masstransit.extensions.dependencyinjection.7.0.3.nupkg.sha512"
+      "sha512": "sha512-0SY5Oq3flRx/LoG8IjRWhie4OS7MunToQcxME1F+nqlN5Q48XX0XZ4t/8FgsvV2RZUSZIXURG58RvwXSsf55FQ==",
+      "path": "masstransit.extensions.dependencyinjection/7.1.0",
+      "hashPath": "masstransit.extensions.dependencyinjection.7.1.0.nupkg.sha512"
     },
-    "MassTransit.Kafka/7.0.3": {
+    "MassTransit.Kafka/7.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-q9d/hIovTIvq32ZtRGUIFTQKtGwRqCprZdFo01UUEwbNJSXd/z+M8ZWZ4KXImgkAdjdQQYfrUQIlHTenpg3bfQ==",
-      "path": "masstransit.kafka/7.0.3",
-      "hashPath": "masstransit.kafka.7.0.3.nupkg.sha512"
+      "sha512": "sha512-nh3YSMWMkZjS2udBu91IylGceoR6IVRPxsFFm4ykBrMeTCef/jZYXroAQ4RrzqYXtpNG79B3mgaJ8qWDK/awWQ==",
+      "path": "masstransit.kafka/7.1.0",
+      "hashPath": "masstransit.kafka.7.1.0.nupkg.sha512"
     },
-    "MassTransit.RabbitMQ/7.0.3": {
+    "MassTransit.RabbitMQ/7.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-B6tBzRztKClc3rjmQysYZc3jxUIFiUwJIZ81z2WCq814xmy5RBdEH+DpLizgVVx07CwsgHo9g4cjLyEUoWdNzg==",
-      "path": "masstransit.rabbitmq/7.0.3",
-      "hashPath": "masstransit.rabbitmq.7.0.3.nupkg.sha512"
+      "sha512": "sha512-qLOjH2oiN4MAMf+uzcfVGJdABu2fKjoQpxcM6tI9Pfo6OcUNv+b7InaMtDfiilAEkUJtOY3j1TO5dqJurCkUgg==",
+      "path": "masstransit.rabbitmq/7.1.0",
+      "hashPath": "masstransit.rabbitmq.7.1.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication.JwtBearer/3.1.24": {
       "type": "package",
@@ -4031,33 +4029,33 @@
       "path": "microsoft.extensions.dependencyinjection.abstractions/6.0.0",
       "hashPath": "microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512"
     },
-    "Microsoft.Extensions.Diagnostics.HealthChecks/3.1.5": {
+    "Microsoft.Extensions.Diagnostics.HealthChecks/3.1.10": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-P98MGrBlJihhOWL7iseGhF4wDHn+g4xb170fMHUtKUFD0pBUzcz5k9rQxjPmbck7oES77QTNxkG+8YpBVjSlWw==",
-      "path": "microsoft.extensions.diagnostics.healthchecks/3.1.5",
-      "hashPath": "microsoft.extensions.diagnostics.healthchecks.3.1.5.nupkg.sha512"
+      "sha512": "sha512-uG5TuBm54qQdAZLzN7QjHU7qSda2bDhD3g8Mp86d6xegazq8LJH4pWYVe0de91tfvUsrhWQCmTj8jFBHVhX1yA==",
+      "path": "microsoft.extensions.diagnostics.healthchecks/3.1.10",
+      "hashPath": "microsoft.extensions.diagnostics.healthchecks.3.1.10.nupkg.sha512"
     },
-    "Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions/3.1.5": {
+    "Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions/3.1.10": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-6oo7BLy4cdYGegZJ2d3YXUFT9Pb1Pp2kq8QuTSG7oZOQ6nF0QgHMwJPX/zQqTeWVDbA+UsFaZ4QNyUGHdG5VEg==",
-      "path": "microsoft.extensions.diagnostics.healthchecks.abstractions/3.1.5",
-      "hashPath": "microsoft.extensions.diagnostics.healthchecks.abstractions.3.1.5.nupkg.sha512"
+      "sha512": "sha512-zhOm26WMAloSJ2CRLt+OHlB0kUSlD4MDLeGaWd7mXsEwNSyUMzkAHroTv2UvG6WBANQzTFleVIRxh0frvcMENA==",
+      "path": "microsoft.extensions.diagnostics.healthchecks.abstractions/3.1.10",
+      "hashPath": "microsoft.extensions.diagnostics.healthchecks.abstractions.3.1.10.nupkg.sha512"
     },
-    "Microsoft.Extensions.FileProviders.Abstractions/3.1.5": {
+    "Microsoft.Extensions.FileProviders.Abstractions/3.1.10": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-LrEQ97jhSWw84Y1m+CJfvh9qTUUswt27au54QYn2x5PCMPPgR+yAv/4VTJKMGSSI9T4scSLBXZ/fVhT4fPTCtA==",
-      "path": "microsoft.extensions.fileproviders.abstractions/3.1.5",
-      "hashPath": "microsoft.extensions.fileproviders.abstractions.3.1.5.nupkg.sha512"
+      "sha512": "sha512-Pwu/7fpw1G7WjO1DxPmGfrw6ciruiLHH6k26uNex9Sn/s229uKcwds7GTBUAPbpoh4MI3qo21nqmLBo3N7gVfg==",
+      "path": "microsoft.extensions.fileproviders.abstractions/3.1.10",
+      "hashPath": "microsoft.extensions.fileproviders.abstractions.3.1.10.nupkg.sha512"
     },
-    "Microsoft.Extensions.Hosting.Abstractions/3.1.5": {
+    "Microsoft.Extensions.Hosting.Abstractions/3.1.10": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-e57iK9spITqHE7qNgC3IowzK+PK5NC2rmVY4Sz+ZoDNO24nIsgllIRbanSbt2wQz7Iy/N8Jm3C1sXqKc8zEOMQ==",
-      "path": "microsoft.extensions.hosting.abstractions/3.1.5",
-      "hashPath": "microsoft.extensions.hosting.abstractions.3.1.5.nupkg.sha512"
+      "sha512": "sha512-MjVsTSdfEwLsxgmcGbsmuS2yJBMqNntQZRCNffx8JnecKC5onfrG9RjBw29deNIVS5CDg58usIVVVi+ffwPozg==",
+      "path": "microsoft.extensions.hosting.abstractions/3.1.10",
+      "hashPath": "microsoft.extensions.hosting.abstractions.3.1.10.nupkg.sha512"
     },
     "Microsoft.Extensions.Logging/5.0.0": {
       "type": "package",
@@ -4178,12 +4176,12 @@
       "path": "netstandard.library/1.6.1",
       "hashPath": "netstandard.library.1.6.1.nupkg.sha512"
     },
-    "NewId/3.0.2": {
+    "NewId/3.0.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-nPL7zhPOsTJXFBaffZiQ07RN1PexMBHlDoRt9d+1Xef8CDjc50uga7Y4yt5MSbVcJsI9UntYgC8fKkPnwBCNog==",
-      "path": "newid/3.0.2",
-      "hashPath": "newid.3.0.2.nupkg.sha512"
+      "sha512": "sha512-72cBqYQ+pZpsfuTerhi5Q/ZkfK81s/Dkz2u0WNytirWVLktUm6sy4mRNepM+DL1AB0V61QlYesZHDf0wlmMU5A==",
+      "path": "newid/3.0.3",
+      "hashPath": "newid.3.0.3.nupkg.sha512"
     },
     "Newtonsoft.Json/11.0.2": {
       "type": "package",
@@ -4199,12 +4197,12 @@
       "path": "newtonsoft.json.bson/1.0.1",
       "hashPath": "newtonsoft.json.bson.1.0.1.nupkg.sha512"
     },
-    "RabbitMQ.Client/6.1.0": {
+    "RabbitMQ.Client/6.2.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-XtiIVPRpcR82AWoe64Hh9gDHqBtheFuL/88YubNKkCpNcctkWFQjMlz3zTyf2lGvZouxCXarDm0nYhGBMbt58Q==",
-      "path": "rabbitmq.client/6.1.0",
-      "hashPath": "rabbitmq.client.6.1.0.nupkg.sha512"
+      "sha512": "sha512-kdcin0uz1b9xQPvlLOoa8Y2zQsfu7nRuTrcX02dCLVzwGVlsPp9AFgu1L3kRh4wSFEOGE03OVqpWKxaDlhuowQ==",
+      "path": "rabbitmq.client/6.2.1",
+      "hashPath": "rabbitmq.client.6.2.1.nupkg.sha512"
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
       "type": "package",
@@ -4885,12 +4883,12 @@
       "path": "system.threading/4.3.0",
       "hashPath": "system.threading.4.3.0.nupkg.sha512"
     },
-    "System.Threading.Channels/4.7.1": {
+    "System.Threading.Channels/5.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-6akRtHK/wab3246t4p5v3HQrtQk8LboOt5T4dtpNgsp3zvDeM4/Gx8V12t0h+c/W9/enUrilk8n6EQqdQorZAA==",
-      "path": "system.threading.channels/4.7.1",
-      "hashPath": "system.threading.channels.4.7.1.nupkg.sha512"
+      "sha512": "sha512-RLBIxntLaG9pRmmuVDwY1kc8Bvp/FQzSxPU+19VekkScKkWtVP9r8bLhm28ama3usc816UBrmkg3vv3jUea/hw==",
+      "path": "system.threading.channels/5.0.0",
+      "hashPath": "system.threading.channels.5.0.0.nupkg.sha512"
     },
     "System.Threading.Tasks/4.3.0": {
       "type": "package",

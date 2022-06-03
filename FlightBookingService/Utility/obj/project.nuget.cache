@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "FfExNx0nRg9bmOGL20I3XPJfyYYJJJiTvNVBupajxXGRbBzRGHUeyd1J3IUe3VPkQUbQbGDEBpCHJfzBZOrm1w==",
+  "dgSpecHash": "mSznxbQl3/LlozRagu/UtlkZC0108ucsSRsTdiaFH7tey01atg6T+jcSENJcaehcbrBbguX0KjuuXFMHLJ8Daw==",
   "success": true,
   "projectFilePath": "C:\\Users\\cogdotnet12\\Desktop\\MItal\\CasStudy\\FlightBookingService\\Utility\\Utility.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\cogdotnet12\\.nuget\\packages\\consul\\1.6.10.5\\consul.1.6.10.5.nupkg.sha512",
+    "C:\\Users\\cogdotnet12\\.nuget\\packages\\consul\\1.6.10.6\\consul.1.6.10.6.nupkg.sha512",
     "C:\\Users\\cogdotnet12\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\2.2.0\\microsoft.aspnetcore.cryptography.internal.2.2.0.nupkg.sha512",
     "C:\\Users\\cogdotnet12\\.nuget\\packages\\microsoft.aspnetcore.dataprotection\\2.2.0\\microsoft.aspnetcore.dataprotection.2.2.0.nupkg.sha512",
     "C:\\Users\\cogdotnet12\\.nuget\\packages\\microsoft.aspnetcore.dataprotection.abstractions\\2.2.0\\microsoft.aspnetcore.dataprotection.abstractions.2.2.0.nupkg.sha512",

@@ -5,6 +5,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace Utility
 {
@@ -12,18 +14,20 @@ namespace Utility
     {
         public static IServiceCollection AddConsulConfig(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddSingleton<IConsulClient, ConsulClient>(p=>new ConsulClient(consulconfig=> {
+            services.AddSingleton<IConsulClient, ConsulClient>(p => new ConsulClient(consulconfig =>
+            {
                 var address = configuration["Consul:ConsulAddress"];
                 consulconfig.Address = new Uri(address);
             }));
-
             return services;
         }
 
+        [Obsolete]
         public static IApplicationBuilder UseConsul(this IApplicationBuilder app, IConfiguration configuration)
         {
             var consulClient = app.ApplicationServices.GetRequiredService<IConsulClient>();
-            var logger = app.ApplicationServices.GetRequiredService<ILoggerFactory>().CreateLogger("AppExtensions");
+            var logger = app.ApplicationServices.GetRequiredService<ILoggerFactory>().
+                CreateLogger("AppExtensions");
             var lifetime = app.ApplicationServices.GetRequiredService<IApplicationLifetime>();
 
             var registration = new AgentServiceRegistration()
@@ -42,5 +46,6 @@ namespace Utility
             });
             return app;
         }
+
     }
 }

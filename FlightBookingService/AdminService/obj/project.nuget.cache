@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "ehUgjNmVnNi3MzTsNI+z6mYQOlca44EO+vlcxBhoJZeWxBYdZsWJAKU5QJpSLeP6D3OkvYgjy702q8j+tcaMDQ==",
+  "dgSpecHash": "N1nIZli2EsXzQo5w9VK7w8unkNf0pZJbOiVDtXe9Mqh+1tEjoqblcEXSklLzcj9SE154a+eyd5rzU98z84Wfjg==",
   "success": true,
   "projectFilePath": "C:\\Users\\cogdotnet12\\Desktop\\MItal\\CasStudy\\FlightBookingService\\AdminService\\AdminService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cogdotnet12\\.nuget\\packages\\automatonymous\\5.1.0\\automatonymous.5.1.0.nupkg.sha512",
     "C:\\Users\\cogdotnet12\\.nuget\\packages\\confluent.kafka\\1.5.3\\confluent.kafka.1.5.3.nupkg.sha512",
-    "C:\\Users\\cogdotnet12\\.nuget\\packages\\consul\\1.6.10.5\\consul.1.6.10.5.nupkg.sha512",
+    "C:\\Users\\cogdotnet12\\.nuget\\packages\\consul\\1.6.10.6\\consul.1.6.10.6.nupkg.sha512",
     "C:\\Users\\cogdotnet12\\.nuget\\packages\\entityframework\\5.0.0\\entityframework.5.0.0.nupkg.sha512",
     "C:\\Users\\cogdotnet12\\.nuget\\packages\\greenpipes\\4.0.0\\greenpipes.4.0.0.nupkg.sha512",
     "C:\\Users\\cogdotnet12\\.nuget\\packages\\librdkafka.redist\\1.5.3\\librdkafka.redist.1.5.3.nupkg.sha512",

@@ -263,7 +263,7 @@
           "dependencies": {
             "Consul": {
               "target": "Package",
-              "version": "[1.6.10.5, )"
+              "version": "[1.6.10.6, )"
             },
             "Microsoft.AspNetCore.Hosting.Abstractions": {
               "target": "Package",

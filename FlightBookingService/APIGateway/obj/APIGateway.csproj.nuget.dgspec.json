@@ -46,61 +46,17 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
-            "Consul": {
-              "target": "Package",
-              "version": "[1.6.10.5, )"
-            },
-            "MassTransit": {
-              "target": "Package",
-              "version": "[7.1.0, )"
-            },
-            "MassTransit.AspNetCore": {
-              "target": "Package",
-              "version": "[7.1.0, )"
-            },
-            "MassTransit.Extensions.DependencyInjection": {
-              "target": "Package",
-              "version": "[7.1.0, )"
-            },
-            "MassTransit.Kafka": {
-              "target": "Package",
-              "version": "[7.1.0, )"
-            },
-            "MassTransit.RabbitMQ": {
-              "target": "Package",
-              "version": "[7.1.0, )"
-            },
-            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+            "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
               "target": "Package",
               "version": "[3.1.24, )"
             },
-            "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
-              "target": "Package",
-              "version": "[3.1.19, )"
-            },
-            "Microsoft.AspNetCore.Session": {
-              "target": "Package",
-              "version": "[2.2.0, )"
-            },
             "Ocelot": {
               "target": "Package",
-              "version": "[16.0.0, )"
+              "version": "[16.0.1, )"
             },
             "Ocelot.Provider.Consul": {
               "target": "Package",
-              "version": "[16.0.0, )"
-            },
-            "Swashbuckle.AspNetCore": {
-              "target": "Package",
-              "version": "[4.0.0, )"
-            },
-            "Swashbuckle.AspNetCore.SwaggerGen": {
-              "target": "Package",
-              "version": "[5.0.0, )"
-            },
-            "Swashbuckle.AspNetCore.SwaggerUI": {
-              "target": "Package",
-              "version": "[5.0.0, )"
+              "version": "[16.0.1, )"
             }
           },
           "imports": [

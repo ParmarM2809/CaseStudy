@@ -4,8 +4,16 @@
       "UseServiceDiscovery": true,
       "DownstreamPathTemplate": "/api/Flight/GetAllFlightList",
       "DownstreamScheme": "http",
-      "ServiceName": "InventoryService",
-      "UpstreamPathTemplate": "/api/gateway/GetAllFlights",
+      "ServiceName": "inventoryService",
+      "UpstreamPathTemplate": "/api/gatway/Flight/GetAllFlightList",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/product/findall",
+      "DownstreamScheme": "http",
+      "ServiceName": "productService",
+      "UpstreamPathTemplate": "/api/gatway/product/findall",
       "UpstreamHttpMethod": [ "Get" ]
     }
   ],

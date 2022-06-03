@@ -34,7 +34,6 @@ namespace InventoryService
         {
             services.AddControllers();
             services.AddSwaggerGen();
-            services.AddConsulConfig(Configuration);
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "www.compilemode.com", Version = "v1" });
@@ -57,6 +56,7 @@ namespace InventoryService
                     });
                 });
             });
+            services.AddConsulConfig(Configuration);
             services.AddMassTransitHostedService();
         }
 
@@ -68,13 +68,13 @@ namespace InventoryService
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        [Obsolete]
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseConsul(Configuration);
             app.UseSwagger();
             app.UseSwaggerUI();
             app.UseHttpsRedirection();
@@ -82,7 +82,7 @@ namespace InventoryService
             app.UseRouting();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("./v1/swagger.json", "My API V1"); //originally "./swagger/v1/swagger.json"
+                c.SwaggerEndpoint("./v1/swagger.json", "My API V1");
             });
 
             app.UseAuthorization();
@@ -91,6 +91,7 @@ namespace InventoryService
             {
                 endpoints.MapControllers();
             });
+            app.UseConsul(Configuration);
         }
     }
 }

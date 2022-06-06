@@ -1,3 +1,0 @@
-scaffold-dbcontext "Server=CTSDOTNET101;Database=FlightBooking;User Id=sa;Password=pass@word1" Microsoft.EntityFrameworkCore.SqlServer -o Models -force
-
-Consul => consul agent -dev

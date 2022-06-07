@@ -6,13 +6,13 @@ import { Booking, FlightData, SearchedFlight } from '../models/FlightData';
 import { BookFlightModel } from '../models/BookFlightModel';
 import { Airlines } from '../models/Airlines';
 import { Availablecity } from '../models/Availablecity';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable()
 export class FlightService {
-
+    apiURL = environment.baseApiURL;
     private _EditAvailListUrl = "https://localhost:44339/api/Booking/EditTicketAvaibility"
-
     private _BookingsListUrl = "https://localhost:44340/api/Flight/BookingList/"
     private _AirlineListUrl = "https://localhost:44340/api/Flight/AvailableAirline"
     private _CityUrl = "https://localhost:44340/api/Flight/ServiceCity"
@@ -28,52 +28,49 @@ export class FlightService {
     }
 
     EditFlightAvail(input: BookFlightModel): Observable<BookFlightModel> {
-        debugger
-        return this.http.post<BookFlightModel>(this._EditAvailListUrl,input)
+        return this.http.post<BookFlightModel>(this.apiURL + "EditTicketAvaibility", input)
     }
 
     AvailableFlight(): Observable<FlightData[]> {
-        return this.http.get<FlightData[]>(this._flightListUrl)
+        return this.http.get<FlightData[]>(this.apiURL + "GetAllFlightList")
     }
 
-    Bookings(SearchDate : Date): Observable<Booking[]> {
+    Bookings(SearchDate: Date): Observable<Booking[]> {
         debugger
-        return this.http.get<Booking[]>(this._BookingsListUrl+SearchDate)
+        return this.http.get<Booking[]>(this.apiURL + "BookingList/" + SearchDate)
     }
-
 
     AvailableAirlines(): Observable<Airlines[]> {
-        return this.http.get<Airlines[]>(this._AirlineListUrl)
+        return this.http.get<Airlines[]>(this.apiURL + "AvailableAirline")
     }
 
     AvailableCities(): Observable<Availablecity[]> {
-        return this.http.get<Availablecity[]>(this._CityUrl)
+        return this.http.get<Availablecity[]>(this.apiURL + "ServiceCity")
     }
 
-
     SearchedFlight(SearchText: SearchedFlight): Observable<FlightData[]> {
-        return this.http.post<FlightData[]>(this._GetSearchedFlightUrl,SearchText)
+        return this.http.post<FlightData[]>(this.apiURL + "GetSearchedFlightList/", SearchText)
     }
 
     YourBookings(userId: number): Observable<BookFlightModel[]> {
-        return this.http.get<BookFlightModel[]>(this._YourReservationUrl + userId)
+        return this.http.get<BookFlightModel[]>(this.apiURL + "GetActiveBookingList/" + userId)
     }
 
     BookFlight(bookflight: BookFlightModel) {
-        return this.http.post<any>(this._BookReservationUrl, bookflight)
+        return this.http.post<any>(this.apiURL + "AddUpdateFlightBooking", bookflight)
     }
 
     AddUpdateFlight(flightData: FlightData) {
         console.log(flightData)
-        return this.http.post<any>(this._ModifyAirlineUrl, flightData)
+        return this.http.post<any>(this.apiURL + "AddUpdateFlight", flightData)
     }
 
     GetFlightById(FlightID: number): Observable<FlightData> {
-        return this.http.get<FlightData>(this._FlightIdUrl + FlightID)
+        return this.http.get<FlightData>(this.apiURL + "GetFlightByID/" + FlightID)
     }
 
     GetBookingId(BookingId: number): Observable<BookFlightModel> {
-        return this.http.get<BookFlightModel>(this._GetBookingByIdUrl + BookingId)
+        return this.http.get<BookFlightModel>(this.apiURL + "GetBookingById/" + BookingId)
     }
 
 }

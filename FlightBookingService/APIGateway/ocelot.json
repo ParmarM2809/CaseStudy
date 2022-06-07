@@ -95,6 +95,22 @@
       "ServiceName": "userService",
       "UpstreamPathTemplate": "/gateway/RegisterUser",
       "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/UserManagment/UserList",
+      "DownstreamScheme": "http",
+      "ServiceName": "adminService",
+      "UpstreamPathTemplate": "/gateway/UserList",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/Auth/LogIn",
+      "DownstreamScheme": "http",
+      "ServiceName": "adminService",
+      "UpstreamPathTemplate": "/gateway/LogIn",
+      "UpstreamHttpMethod": [ "Post" ]
     }
   ],
   "GlobalConfiguration": {

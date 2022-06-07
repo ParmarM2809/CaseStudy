@@ -2,9 +2,11 @@ import { HttpClient } from '@angular/common/http'
 import { Router } from '@angular/router'
 import { Injectable } from '@angular/core';
 import { UserData } from '../models/UserData';
+import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class AuthService {
+    apiURL = environment.baseApiURL;
     private _registerUrl = "https://localhost:44339/api/UserAuth/RegisterUser"
     private _loginUrl = "https://localhost:44329/api/Auth/LogIn"
 
@@ -13,11 +15,11 @@ export class AuthService {
     }
 
     loginUser(user: any) {
-        return this.http.post<any>(this._loginUrl, user)
+        return this.http.post<any>(this.apiURL + "LogIn", user)
     }
 
     registerUser(user: UserData) {
-        return this.http.post<any>(this._registerUrl, user)
+        return this.http.post<any>(this.apiURL + "RegisterUser", user)
     }
 
     logoutUser() {

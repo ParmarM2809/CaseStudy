@@ -6,6 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 import { AuthService } from '../services/auth.service';
 import { Airlines } from '../models/Airlines';
 import { Availablecity } from '../models/Availablecity';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-flightlist',

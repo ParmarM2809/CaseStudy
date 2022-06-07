@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cogdotnet12\\Desktop\\MItal\\CasStudy\\FlightBookingService\\APIGateway\\APIGateway.csproj": {}
+    "D:\\Mital\\CaseStudy\\FlightBookingService\\APIGateway\\APIGateway.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cogdotnet12\\Desktop\\MItal\\CasStudy\\FlightBookingService\\APIGateway\\APIGateway.csproj": {
+    "D:\\Mital\\CaseStudy\\FlightBookingService\\APIGateway\\APIGateway.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cogdotnet12\\Desktop\\MItal\\CasStudy\\FlightBookingService\\APIGateway\\APIGateway.csproj",
+        "projectUniqueName": "D:\\Mital\\CaseStudy\\FlightBookingService\\APIGateway\\APIGateway.csproj",
         "projectName": "APIGateway",
-        "projectPath": "C:\\Users\\cogdotnet12\\Desktop\\MItal\\CasStudy\\FlightBookingService\\APIGateway\\APIGateway.csproj",
+        "projectPath": "D:\\Mital\\CaseStudy\\FlightBookingService\\APIGateway\\APIGateway.csproj",
         "packagesPath": "C:\\Users\\cogdotnet12\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cogdotnet12\\Desktop\\MItal\\CasStudy\\FlightBookingService\\APIGateway\\obj\\",
+        "outputPath": "D:\\Mital\\CaseStudy\\FlightBookingService\\APIGateway\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -46,6 +46,10 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Microsoft.AspNet.WebApi.Cors": {
+              "target": "Package",
+              "version": "[5.2.9, )"
+            },
             "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
               "target": "Package",
               "version": "[3.1.24, )"

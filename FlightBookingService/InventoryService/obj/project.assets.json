@@ -8634,11 +8634,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cogdotnet12\\Desktop\\MItal\\CasStudy\\FlightBookingService\\InventoryService\\InventoryService.csproj",
+      "projectUniqueName": "D:\\Mital\\CaseStudy\\FlightBookingService\\InventoryService\\InventoryService.csproj",
       "projectName": "InventoryService",
-      "projectPath": "C:\\Users\\cogdotnet12\\Desktop\\MItal\\CasStudy\\FlightBookingService\\InventoryService\\InventoryService.csproj",
+      "projectPath": "D:\\Mital\\CaseStudy\\FlightBookingService\\InventoryService\\InventoryService.csproj",
       "packagesPath": "C:\\Users\\cogdotnet12\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cogdotnet12\\Desktop\\MItal\\CasStudy\\FlightBookingService\\InventoryService\\obj\\",
+      "outputPath": "D:\\Mital\\CaseStudy\\FlightBookingService\\InventoryService\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -8661,11 +8661,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\cogdotnet12\\Desktop\\MItal\\CasStudy\\FlightBookingService\\DAL\\DAL.csproj": {
-              "projectPath": "C:\\Users\\cogdotnet12\\Desktop\\MItal\\CasStudy\\FlightBookingService\\DAL\\DAL.csproj"
+            "D:\\Mital\\CaseStudy\\FlightBookingService\\DAL\\DAL.csproj": {
+              "projectPath": "D:\\Mital\\CaseStudy\\FlightBookingService\\DAL\\DAL.csproj"
             },
-            "C:\\Users\\cogdotnet12\\Desktop\\MItal\\CasStudy\\FlightBookingService\\Utility\\Utility.csproj": {
-              "projectPath": "C:\\Users\\cogdotnet12\\Desktop\\MItal\\CasStudy\\FlightBookingService\\Utility\\Utility.csproj"
+            "D:\\Mital\\CaseStudy\\FlightBookingService\\Utility\\Utility.csproj": {
+              "projectPath": "D:\\Mital\\CaseStudy\\FlightBookingService\\Utility\\Utility.csproj"
             }
           }
         }

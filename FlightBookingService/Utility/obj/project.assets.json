@@ -6411,11 +6411,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cogdotnet12\\Desktop\\MItal\\CasStudy\\FlightBookingService\\Utility\\Utility.csproj",
+      "projectUniqueName": "D:\\Mital\\CaseStudy\\FlightBookingService\\Utility\\Utility.csproj",
       "projectName": "Utility",
-      "projectPath": "C:\\Users\\cogdotnet12\\Desktop\\MItal\\CasStudy\\FlightBookingService\\Utility\\Utility.csproj",
+      "projectPath": "D:\\Mital\\CaseStudy\\FlightBookingService\\Utility\\Utility.csproj",
       "packagesPath": "C:\\Users\\cogdotnet12\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cogdotnet12\\Desktop\\MItal\\CasStudy\\FlightBookingService\\Utility\\obj\\",
+      "outputPath": "D:\\Mital\\CaseStudy\\FlightBookingService\\Utility\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

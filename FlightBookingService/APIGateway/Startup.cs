@@ -24,11 +24,17 @@ namespace APIGateway
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
             services.AddOcelot().AddConsul();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+
+            app.UseAuthorization();
+            app.UseCors(builder => builder.WithOrigins("http://localhost:4200")
+                                          .AllowAnyMethod()
+                                          .AllowAnyHeader());
             app.UseOcelot().Wait();
         }
     }

@@ -17,7 +17,7 @@ export class FlightService {
     private _AirlineListUrl = "https://localhost:44340/api/Flight/AvailableAirline"
     private _CityUrl = "https://localhost:44340/api/Flight/ServiceCity"
     private _ModifyAirlineUrl = "https://localhost:44340/api/Flight/AddUpdateFlight"
-    private _flightListUrl = "https://localhost:44340/api/Flight/GetAllFlightList"
+    private _flightListUrl = "http://localhost:28749/api/gatway/Flight/GetAllFlightList"
     private _BookReservationUrl = "https://localhost:44339/api/Booking/AddUpdateFlightBooking"
     private _YourReservationUrl = "https://localhost:44339/api/Booking/GetActiveBookingList/"
     private _FlightIdUrl = "https://localhost:44340/api/Flight/GetFlightByID/"

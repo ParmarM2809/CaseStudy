@@ -1,12 +1,10 @@
 ﻿using DAL.Models;
 using InventoryService.Entity;
 using InventoryService.ViewModel;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Utility;
 
 namespace InventoryService.Controllers

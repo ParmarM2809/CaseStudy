@@ -17,6 +17,7 @@ using System.Net;
 using System.Reflection;
 using System.Threading.Tasks;
 using UserService.Events;
+using Utility;
 
 namespace UserService
 {
@@ -77,7 +78,9 @@ namespace UserService
 
                 });
             });
+            services.AddConsulConfig(Configuration);
             services.AddMassTransitHostedService();
+
         }
 
         private string GetUniqueName(string EventName)
@@ -113,6 +116,8 @@ namespace UserService
                 endpoints.MapControllers();
             });
             app.UseDeveloperExceptionPage();
+
+            app.UseConsul(Configuration);
         }
     }
 }

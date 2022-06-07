@@ -97,32 +97,6 @@ namespace InventoryService.Controllers
             }
         }
 
-        [HttpPost]
-        [Route("BlockFlight/{FlightID}")]
-        public ResultObject BlockFlight(long FlightID)
-        {
-            ResultObject resultObject = new ResultObject();
-            try
-            {
-                if (FlightID <= 0)
-                {
-                    resultObject = new ResultObject(APIResponseMessage.DataNotValid, StatusType.Error);
-                    return resultObject;
-                }
-                new InventoryManagmentEntity().BlockFlight(FlightID);
-                resultObject = new ResultObject(APIResponseMessage.DataSaved, StatusType.Success);
-
-            }
-            catch (Exception ex)
-            {
-                resultObject = new ResultObject(APIResponseMessage.SomethingWrong, StatusType.Error);
-                resultObject.ExceptionMessage = ex.Message;
-                resultObject.ExceptionStackTrace = ex.StackTrace;
-                resultObject.ResultException = ex.InnerException;
-            }
-            return resultObject;
-        }
-
         [HttpGet]
         [Route("GetFlightByID/{FlightID}")]
         public IActionResult GetFlightByID(long FlightID)

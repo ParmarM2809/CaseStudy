@@ -1,123 +1,35 @@
 {
   "Routes": [
     {
-      "UseServiceDiscovery": true,
       "DownstreamPathTemplate": "/api/Flight/GetAllFlightList",
       "DownstreamScheme": "http",
-      "ServiceName": "inventoryService",
-      "UpstreamPathTemplate": "/gateway/GetAllFlightList",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 27366
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "categories_auth_scheme",
+        "AllowedScopes": []
+      },
+      "UpstreamPathTemplate": "/api/gatway/Flight/GetAllFlightList",
       "UpstreamHttpMethod": [ "Get" ]
     },
     {
-      "UseServiceDiscovery": true,
-      "DownstreamPathTemplate": "/api/Flight/GetSearchedFlightList/{SearchText}",
-      "DownstreamScheme": "http",
-      "ServiceName": "inventoryService",
-      "UpstreamPathTemplate": "/gateway/GetSearchedFlightList/{SearchText}",
-      "UpstreamHttpMethod": [ "Get" ]
-    },
-    {
-      "UseServiceDiscovery": true,
-      "DownstreamPathTemplate": "/api/Flight/AddUpdateFlight",
-      "DownstreamScheme": "http",
-      "ServiceName": "inventoryService",
-      "UpstreamPathTemplate": "/gateway/AddUpdateFlight",
-      "UpstreamHttpMethod": [ "Post" ]
-    },
-    {
-      "UseServiceDiscovery": true,
-      "DownstreamPathTemplate": "/api/Flight/GetFlightByID/{FlightID}",
-      "DownstreamScheme": "http",
-      "ServiceName": "inventoryService",
-      "UpstreamPathTemplate": "/gateway/GetFlightByID/{FlightID}",
-      "UpstreamHttpMethod": [ "Get" ]
-    },
-    {
-      "UseServiceDiscovery": true,
       "DownstreamPathTemplate": "/api/Flight/AvailableAirline",
       "DownstreamScheme": "http",
-      "ServiceName": "inventoryService",
-      "UpstreamPathTemplate": "/gateway/AvailableAirline",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 27366
+        }
+      ],
+      "UpstreamPathTemplate": "/api/gatway/Flight/AvailableAirline",
       "UpstreamHttpMethod": [ "Get" ]
-    },
-    {
-      "UseServiceDiscovery": true,
-      "DownstreamPathTemplate": "/api/Flight/ServiceCity",
-      "DownstreamScheme": "http",
-      "ServiceName": "inventoryService",
-      "UpstreamPathTemplate": "/gateway/ServiceCity",
-      "UpstreamHttpMethod": [ "Get" ]
-    },
-    {
-      "UseServiceDiscovery": true,
-      "DownstreamPathTemplate": "/api/Flight/BookingList/{Date}",
-      "DownstreamScheme": "http",
-      "ServiceName": "inventoryService",
-      "UpstreamPathTemplate": "/gateway/BookingList/{Date}",
-      "UpstreamHttpMethod": [ "Get" ]
-    },
-    {
-      "UseServiceDiscovery": true,
-      "DownstreamPathTemplate": "/api/Booking/AddUpdateFlightBooking",
-      "DownstreamScheme": "http",
-      "ServiceName": "userService",
-      "UpstreamPathTemplate": "/gateway/AddUpdateFlightBooking",
-      "UpstreamHttpMethod": [ "Post" ]
-    },
-    {
-      "UseServiceDiscovery": true,
-      "DownstreamPathTemplate": "/api/Booking/GetBookingBySearch/{UserID}/{Pnrno}",
-      "DownstreamScheme": "http",
-      "ServiceName": "userService",
-      "UpstreamPathTemplate": "/gateway/GetBookingBySearch/{UserID}/{Pnrno}",
-      "UpstreamHttpMethod": [ "Get" ]
-    },
-    {
-      "UseServiceDiscovery": true,
-      "DownstreamPathTemplate": "/api/Booking/GetActiveBookingList/{UserID}",
-      "DownstreamScheme": "http",
-      "ServiceName": "userService",
-      "UpstreamPathTemplate": "/gateway/GetActiveBookingList/{UserID}",
-      "UpstreamHttpMethod": [ "Get" ]
-    },
-    {
-      "UseServiceDiscovery": true,
-      "DownstreamPathTemplate": "/api/Booking/GetBookingById/{BookingId}",
-      "DownstreamScheme": "http",
-      "ServiceName": "userService",
-      "UpstreamPathTemplate": "/gateway/GetBookingById/{BookingId}",
-      "UpstreamHttpMethod": [ "Get" ]
-    },
-    {
-      "UseServiceDiscovery": true,
-      "DownstreamPathTemplate": "/api/UserAuth/RegisterUser",
-      "DownstreamScheme": "http",
-      "ServiceName": "userService",
-      "UpstreamPathTemplate": "/gateway/RegisterUser",
-      "UpstreamHttpMethod": [ "Post" ]
-    },
-    {
-      "UseServiceDiscovery": true,
-      "DownstreamPathTemplate": "/api/UserManagment/UserList",
-      "DownstreamScheme": "http",
-      "ServiceName": "adminService",
-      "UpstreamPathTemplate": "/gateway/UserList",
-      "UpstreamHttpMethod": [ "Get" ]
-    },
-    {
-      "UseServiceDiscovery": true,
-      "DownstreamPathTemplate": "/api/Auth/LogIn",
-      "DownstreamScheme": "http",
-      "ServiceName": "adminService",
-      "UpstreamPathTemplate": "/gateway/LogIn",
-      "UpstreamHttpMethod": [ "Post" ]
     }
   ],
   "GlobalConfiguration": {
-    "ServiceDiscoveryProvider": {
-      "Host": "localhost",
-      "Port": "8500",
-      "Type": "Consul"
-    }
+    "BaseUrl": "http://localhost:28749"
   }
 }

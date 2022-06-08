@@ -7,31 +7,70 @@ using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
 using Ocelot.Provider.Consul;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace APIGateway
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
-
+        
         public IConfiguration Configuration { get; }
-
+        
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddCors();
             services.AddOcelot().AddConsul();
+            services.AddAuthentication().AddJwtBearer("products_auth_scheme", options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters()
+                {
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("my_products_api_secret")),
+                    ValidAudience = "productsAudience",
+                    ValidIssuer = "productsIssuer",
+                    ValidateIssuerSigningKey = true,
+                    ValidateLifetime = true,
+                    ClockSkew = TimeSpan.Zero
+                };
+
+            }).AddJwtBearer("categories_auth_scheme", options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters()
+                {
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("my_categories_api_secret")),
+                    ValidAudience = "categoriesAudience",
+                    ValidIssuer = "categoriesIssuer",
+                    ValidateIssuerSigningKey = true,
+                    ValidateLifetime = true,
+                    ClockSkew = TimeSpan.Zero
+                };
+
+            });
+
+            //services.AddOcelot(OcelotConfiguration).AddConsul();
+
+            services.AddControllers();
+
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
 
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+
+            app.UseRouting();
+
             app.UseAuthorization();
+            app.UseAuthorization();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
+
             app.UseCors(builder => builder.WithOrigins("http://localhost:4200")
                                           .AllowAnyMethod()
                                           .AllowAnyHeader());

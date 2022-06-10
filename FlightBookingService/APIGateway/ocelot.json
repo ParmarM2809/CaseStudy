@@ -177,22 +177,6 @@
       "UpstreamHttpMethod": [ "Get" ]
     },
     {
-      "DownstreamPathTemplate": "/api/Booking/GetBookingById/{BookingId}",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 26570
-        }
-      ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "categories_auth_scheme",
-        "AllowedScopes": []
-      },
-      "UpstreamPathTemplate": "/gateway/GetBookingById/{BookingId}",
-      "UpstreamHttpMethod": [ "Get" ]
-    },
-    {
       "DownstreamPathTemplate": "/api/UserAuth/RegisterUser",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [

@@ -1,4 +1,4 @@
-import { HttpClient, HttpParams } from '@angular/common/http'
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http'
 import { Router } from '@angular/router'
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -7,6 +7,7 @@ import { BookFlightModel } from '../models/BookFlightModel';
 import { Airlines } from '../models/Airlines';
 import { Availablecity } from '../models/Availablecity';
 import { environment } from 'src/environments/environment';
+import { AuthService } from './auth.service';
 
 
 @Injectable()
@@ -24,14 +25,24 @@ export class FlightService {
     private _GetBookingByIdUrl = "https://localhost:44339/api/Booking/GetBookingById/"
     private _GetSearchedFlightUrl = "https://localhost:44340/api/Flight/GetSearchedFlightList/"
 
-    constructor(private http: HttpClient, private _router: Router) {
+    token: string | null;
+
+    constructor(private http: HttpClient, private _router: Router, private _authService: AuthService) {
+        this.token = _authService.getToken();
     }
+
 
     EditFlightAvail(input: BookFlightModel): Observable<BookFlightModel> {
         return this.http.post<BookFlightModel>(this.apiURL + "EditTicketAvaibility", input)
     }
 
     AvailableFlight(): Observable<FlightData[]> {
+        debugger
+
+        var header = {
+            headers: new HttpHeaders()
+                .set('Authorization', `Basic ${this.token}`)
+        }
         return this.http.get<FlightData[]>(this.apiURL + "GetAllFlightList")
     }
 

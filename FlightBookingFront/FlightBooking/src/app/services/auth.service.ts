@@ -8,14 +8,14 @@ import { environment } from 'src/environments/environment';
 export class AuthService {
     apiURL = environment.baseApiURL;
     private _registerUrl = "https://localhost:44339/api/UserAuth/RegisterUser"
-    private _loginUrl = "https://localhost:44329/api/Auth/LogIn"
+    private _loginUrl = "http://localhost:28749/Auth/LogIn"
 
     constructor(private http: HttpClient, private _router: Router) {
 
     }
 
     loginUser(user: any) {
-        return this.http.post<any>(this.apiURL + "LogIn", user)
+        return this.http.post<any>(this._loginUrl, user)
     }
 
     registerUser(user: UserData) {

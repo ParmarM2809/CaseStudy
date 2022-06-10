@@ -25,7 +25,7 @@ namespace APIGateway
 
             var builder = new ConfigurationBuilder();
             builder.SetBasePath(env.ContentRootPath)
-                   .AddJsonFile("ocelot_Temp.json", optional: false, reloadOnChange: true)
+                   .AddJsonFile("ocelot.json", optional: false, reloadOnChange: true)
                    .AddEnvironmentVariables();
 
             OcelotConfiguration = builder.Build();
@@ -69,6 +69,9 @@ namespace APIGateway
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseCors(builder => builder.WithOrigins("http://localhost:4200")
+                                          .AllowAnyMethod()
+                                          .AllowAnyHeader());
 
             if (env.IsDevelopment())
             {
@@ -84,10 +87,6 @@ namespace APIGateway
             {
                 endpoints.MapControllers();
             });
-
-            app.UseCors(builder => builder.WithOrigins("http://localhost:4200")
-                                          .AllowAnyMethod()
-                                          .AllowAnyHeader());
             app.UseOcelot().Wait();
         }
     }

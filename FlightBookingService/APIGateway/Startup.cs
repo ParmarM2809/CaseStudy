@@ -16,11 +16,26 @@ namespace APIGateway
     {
         
         public IConfiguration Configuration { get; }
-        
+
+        public IConfiguration OcelotConfiguration { get; }
+
+        public Startup(IConfiguration configuration, IHostEnvironment env)
+        {
+            Configuration = configuration;
+
+            var builder = new ConfigurationBuilder();
+            builder.SetBasePath(env.ContentRootPath)
+                   .AddJsonFile("ocelot_Temp.json", optional: false, reloadOnChange: true)
+                   .AddEnvironmentVariables();
+
+            OcelotConfiguration = builder.Build();
+        }
+
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddCors();
-            services.AddOcelot().AddConsul();
+            services.AddOcelot(OcelotConfiguration).AddConsul();
             services.AddAuthentication().AddJwtBearer("products_auth_scheme", options =>
             {
                 options.TokenValidationParameters = new TokenValidationParameters()
@@ -46,9 +61,8 @@ namespace APIGateway
                 };
 
             });
-
-            //services.AddOcelot(OcelotConfiguration).AddConsul();
-
+            //with Service DIscovery
+            //services.AddOcelot().AddConsul();
             services.AddControllers();
 
         }

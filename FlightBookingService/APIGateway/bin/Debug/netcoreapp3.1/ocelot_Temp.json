@@ -77,7 +77,6 @@
       "DownstreamPathTemplate": "/api/Booking/GetActiveBookingList/{UserID}",
       "DownstreamScheme": "http",
       "ServiceName": "userService",
-      
       "UpstreamPathTemplate": "/gateway/GetActiveBookingList/{UserID}",
       "UpstreamHttpMethod": [ "Get" ]
     },

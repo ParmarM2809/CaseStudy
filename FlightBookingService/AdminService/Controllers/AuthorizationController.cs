@@ -32,37 +32,37 @@ namespace AdminService.Controllers
         //    iJWTManager = jWTManager;
         //}
 
-        [AllowAnonymous]
-        [HttpPost]
-        [Route("LogIn")]
-        public IActionResult LogIn(User user)
-        {
-            ResultObject resultObject = new ResultObject();
-            try
-            {
-                //var token = iJWTManager.Authenticate(user);
-                //if (token == null)
-                //{
-                //    return resultObject;
-                //}
-                AuthorizationEntity authorizationEntity = new AuthorizationEntity();
-                UserMaster userMaster = authorizationEntity.IsAdminValid(user);
-                //userMaster.Token = Convert.ToString(token.Token);
-                resultObject = userMaster == null ?
-                        new ResultObject(APIResponseMessage.LogInDetailNotValid, StatusType.NotFound)
-                        : new ResultObject(APIResponseMessage.LogInSucess, StatusType.Success);
-                resultObject.ResultData = userMaster;
-                return Ok(userMaster);
-            }
-            catch (Exception ex)
-            {
-                resultObject = new ResultObject(APIResponseMessage.SomethingWrong, StatusType.Error);
-                resultObject.ExceptionMessage = ex.Message;
-                resultObject.ExceptionStackTrace = ex.StackTrace;
-                resultObject.ResultException = ex.InnerException;
-                return NotFound();
-            }
-        }
+        //[AllowAnonymous]
+        //[HttpPost]
+        //[Route("LogIn")]
+        //public IActionResult LogIn(User user)
+        //{
+        //    ResultObject resultObject = new ResultObject();
+        //    try
+        //    {
+        //        //var token = iJWTManager.Authenticate(user);
+        //        //if (token == null)
+        //        //{
+        //        //    return resultObject;
+        //        //}
+        //        AuthorizationEntity authorizationEntity = new AuthorizationEntity();
+        //        UserMaster userMaster = authorizationEntity.IsAdminValid(user);
+        //        //userMaster.Token = Convert.ToString(token.Token);
+        //        resultObject = userMaster == null ?
+        //                new ResultObject(APIResponseMessage.LogInDetailNotValid, StatusType.NotFound)
+        //                : new ResultObject(APIResponseMessage.LogInSucess, StatusType.Success);
+        //        resultObject.ResultData = userMaster;
+        //        return Ok(userMaster);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        resultObject = new ResultObject(APIResponseMessage.SomethingWrong, StatusType.Error);
+        //        resultObject.ExceptionMessage = ex.Message;
+        //        resultObject.ExceptionStackTrace = ex.StackTrace;
+        //        resultObject.ResultException = ex.InnerException;
+        //        return NotFound();
+        //    }
+        //}
 
         //[AllowAnonymous]
         //[HttpPost]

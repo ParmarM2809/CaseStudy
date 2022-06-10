@@ -16,21 +16,19 @@ namespace APIGateway
         {
             CreateHostBuilder(args).Build().Run();
         }
+        //public static IHostBuilder CreateHostBuilder(string[] args) =>
+        //    Host.CreateDefaultBuilder(args)
+        //        .ConfigureWebHostDefaults(webBuilder =>
+        //        {
+        //            webBuilder.UseStartup<Startup>();
+        //            webBuilder.ConfigureAppConfiguration(config => config.AddJsonFile("ocelot.json"));
+        //        }).ConfigureLogging(logging => logging.AddConsole());
+
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                    webBuilder.ConfigureAppConfiguration(config =>
-                    config.AddJsonFile("ocelot_Temp.json"));
-                }).ConfigureLogging(logging => logging.AddConsole());
-
-        //public static IHostBuilder CreateHostBuilder(string[] args) =>
-        //    Host.CreateDefaultBuilder(args)
-        //        .ConfigureWebHostDefaults(webBuilder =>
-        //        {
-        //            webBuilder.UseStartup<Startup>(); 
-        //            webBuilder.ConfigureAppConfiguration(config => config.AddJsonFile("ocelot.json"));
-        //        }).ConfigureLogging(logging => logging.AddConsole());
+                });
     }
 }

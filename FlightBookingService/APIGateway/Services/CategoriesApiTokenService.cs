@@ -17,7 +17,7 @@ namespace APIGateway.Services
 
             var claims = new[]
             {
-                new Claim(ClaimTypes.Name, user.Username.ToString()),
+                new Claim(ClaimTypes.Name, user.Email.ToString()),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             };
 
